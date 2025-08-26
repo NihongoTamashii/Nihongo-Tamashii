@@ -10,6 +10,9 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
   SidebarFooter,
   SidebarInset,
 } from "@/components/ui/sidebar";
@@ -19,6 +22,7 @@ import {
   SquarePen,
   GitBranch,
   Settings,
+  ChevronDown,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -32,6 +36,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import React from "react";
 
 export default function HomePage() {
@@ -54,12 +59,30 @@ export default function HomePage() {
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton>
-                <BookText />
-                <span>Kotoba</span>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
+            <Collapsible>
+              <SidebarMenuItem>
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton>
+                    <BookText />
+                    <span>Kotoba</span>
+                    <ChevronDown className="ml-auto size-4 transition-transform group-data-[state=open]:rotate-180" />
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+              </SidebarMenuItem>
+              <CollapsibleContent asChild>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton>Learning Kotoba</SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton>Reading Hiragana Text</SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton>Practice Kotoba</SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </CollapsibleContent>
+            </Collapsible>
             <SidebarMenuItem>
               <SidebarMenuButton>
                 <SquarePen />
