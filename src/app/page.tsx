@@ -1,3 +1,6 @@
+
+"use client";
+
 import {
   SidebarProvider,
   Sidebar,
@@ -21,6 +24,15 @@ import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import React from "react";
 
 export default function HomePage() {
   return (
@@ -102,7 +114,33 @@ export default function HomePage() {
               <p className="font-body">
                 Ini adalah area konten utama. Anda dapat menambahkan materi pembelajaran Anda di sini. Mulailah dengan memilih kategori dari sidebar.
               </p>
-              <Button className="mt-4">Start Learning</Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="mt-4">Start Learning</Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Pilih Kategori Pembelajaran</DialogTitle>
+                    <DialogDescription>
+                      Pilih salah satu kategori di bawah ini untuk memulai perjalanan belajar bahasa Jepang Anda.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
+                      <BookText size={24} />
+                      <span className="text-lg">Kotoba</span>
+                    </Button>
+                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
+                      <SquarePen size={24} />
+                      <span className="text-lg">Kanji</span>
+                    </Button>
+                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
+                      <GitBranch size={24} />
+                      <span className="text-lg">Grammar</span>
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </CardContent>
           </Card>
         </main>
