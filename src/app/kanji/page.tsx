@@ -142,7 +142,9 @@ export default function KanjiPage() {
                 <p className="mb-4 text-muted-foreground">
                   Latih kemampuan membaca Anda dengan teks yang menggunakan Kanji.
                 </p>
-                <Button className="w-full">Mulai Membaca</Button>
+                <Link href="/kanji/reading" passHref>
+                  <Button className="w-full">Mulai Membaca</Button>
+                </Link>
               </CardContent>
             </Card>
             <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
