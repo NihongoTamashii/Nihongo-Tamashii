@@ -19,23 +19,18 @@ import {
   SquarePen,
   GitBranch,
   Settings,
+  BookOpenCheck,
+  FileText,
+  ClipboardCheck,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import React from "react";
 import Link from "next/link";
 
-export default function HomePage() {
+export default function KanjiPage() {
   return (
     <SidebarProvider>
       <Sidebar>
@@ -51,7 +46,7 @@ export default function HomePage() {
           <SidebarMenu>
             <SidebarMenuItem>
               <Link href="/">
-                <SidebarMenuButton isActive>
+                <SidebarMenuButton>
                   <Home />
                   <span>Home</span>
                 </SidebarMenuButton>
@@ -67,7 +62,7 @@ export default function HomePage() {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/kanji">
-                <SidebarMenuButton>
+                <SidebarMenuButton isActive>
                   <SquarePen />
                   <span>Kanji</span>
                 </SidebarMenuButton>
@@ -101,59 +96,56 @@ export default function HomePage() {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
-          <h1 className="font-headline text-2xl font-semibold">Dashboard</h1>
+          <h1 className="font-headline text-2xl font-semibold">Kanji</h1>
           <Button variant="ghost" size="icon">
             <Settings />
           </Button>
         </header>
         <main className="flex-1 space-y-6 p-6">
-          <div className="flex items-center justify-between">
-            <h1 className="font-headline text-3xl font-bold">Welcome back!</h1>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <BookOpenCheck className="size-8 text-primary" />
+                  <CardTitle>Learning Kanji</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Pelajari karakter Kanji satu per satu untuk membangun fondasi yang kuat.
+                </p>
+                <Button className="w-full">Mulai Belajar</Button>
+              </CardContent>
+            </Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <FileText className="size-8 text-primary" />
+                  <CardTitle>Reading Kanji</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Latih kemampuan membaca Anda dengan teks yang menggunakan Kanji.
+                </p>
+                <Button className="w-full">Mulai Membaca</Button>
+              </CardContent>
+            </Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <ClipboardCheck className="size-8 text-primary" />
+                  <CardTitle>Practice Kanji</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Uji pemahaman Kanji Anda dengan berbagai latihan interaktif.
+                </p>
+                <Button className="w-full">Mulai Latihan</Button>
+              </CardContent>
+            </Card>
           </div>
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline">Platform Pembelajaran Resmi Nihongo Tamashii</CardTitle>
-              <CardDescription className="font-body">
-                Selamat datang di platform pembelajaran resmi Nihongo Tamashii. Perjalanan Anda untuk menguasai bahasa Jepang dimulai di sini. Jelajahi Kotoba (kosakata), Kanji, dan Tata Bahasa untuk membangun keterampilan Anda. Gunakan sidebar untuk bernavigasi antar bagian. Semoga berhasil!
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="font-body">
-                Ini adalah area konten utama. Anda dapat menambahkan materi pembelajaran Anda di sini. Mulailah dengan memilih kategori dari sidebar.
-              </p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="mt-4">Start Learning</Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Pilih Kategori Pembelajaran</DialogTitle>
-                    <DialogDescription>
-                      Pilih salah satu kategori di bawah ini untuk memulai perjalanan belajar bahasa Jepang Anda.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                    <Link href="/kotoba">
-                      <Button variant="outline" className="flex h-24 w-full flex-col items-center justify-center gap-2">
-                        <BookText size={24} />
-                        <span className="text-lg">Kotoba</span>
-                      </Button>
-                    </Link>
-                    <Link href="/kanji">
-                      <Button variant="outline" className="flex h-24 w-full flex-col items-center justify-center gap-2">
-                        <SquarePen size={24} />
-                        <span className="text-lg">Kanji</span>
-                      </Button>
-                    </Link>
-                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
-                      <GitBranch size={24} />
-                      <span className="text-lg">Grammar</span>
-                    </Button>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
-          </Card>
         </main>
       </SidebarInset>
     </SidebarProvider>

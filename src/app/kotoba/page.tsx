@@ -61,10 +61,12 @@ export default function KotobaPage() {
               </Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton>
-                <SquarePen />
-                <span>Kanji</span>
-              </SidebarMenuButton>
+              <Link href="/kanji">
+                <SidebarMenuButton>
+                  <SquarePen />
+                  <span>Kanji</span>
+                </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
