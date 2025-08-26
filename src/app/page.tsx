@@ -74,10 +74,12 @@ export default function HomePage() {
               </Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton>
-                <GitBranch />
-                <span>Grammar</span>
-              </SidebarMenuButton>
+              <Link href="/grammar">
+                <SidebarMenuButton>
+                  <GitBranch />
+                  <span>Grammar</span>
+                </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarContent>
@@ -145,10 +147,12 @@ export default function HomePage() {
                         <span className="text-lg">Kanji</span>
                       </Button>
                     </Link>
-                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
-                      <GitBranch size={24} />
-                      <span className="text-lg">Grammar</span>
-                    </Button>
+                    <Link href="/grammar">
+                      <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
+                        <GitBranch size={24} />
+                        <span className="text-lg">Grammar</span>
+                      </Button>
+                    </Link>
                   </div>
                 </DialogContent>
               </Dialog>

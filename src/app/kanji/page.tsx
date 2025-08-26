@@ -70,10 +70,12 @@ export default function KanjiPage() {
               </Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton>
-                <GitBranch />
-                <span>Grammar</span>
-              </SidebarMenuButton>
+              <Link href="/grammar">
+                <SidebarMenuButton>
+                  <GitBranch />
+                  <span>Grammar</span>
+                </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarContent>

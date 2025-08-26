@@ -19,19 +19,22 @@ import {
   SquarePen,
   GitBranch,
   Settings,
-  BookOpenCheck,
-  FileText,
-  ClipboardCheck,
-  AlertTriangle,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
+import { grammarSections } from "@/lib/data/grammar";
 
-export default function KotobaPage() {
+export default function GrammarPage() {
   return (
     <SidebarProvider>
       <Sidebar>
@@ -55,7 +58,7 @@ export default function KotobaPage() {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/kotoba">
-                <SidebarMenuButton isActive>
+                <SidebarMenuButton>
                   <BookText />
                   <span>Kotoba</span>
                 </SidebarMenuButton>
@@ -71,7 +74,7 @@ export default function KotobaPage() {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/grammar">
-                <SidebarMenuButton>
+                <SidebarMenuButton isActive>
                   <GitBranch />
                   <span>Grammar</span>
                 </SidebarMenuButton>
@@ -99,73 +102,45 @@ export default function KotobaPage() {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
-          <h1 className="font-headline text-2xl font-semibold">Kotoba</h1>
+          <h1 className="font-headline text-2xl font-semibold">Grammar</h1>
           <Button variant="ghost" size="icon">
             <Settings />
           </Button>
         </header>
         <main className="flex-1 space-y-6 p-6">
-          <Card className="border-primary/50 bg-primary/5">
-            <CardHeader className="flex flex-row items-center gap-4 space-y-0">
-              <AlertTriangle className="size-8 text-primary" />
-              <CardTitle>Sebuah Catatan untuk Anda</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-foreground/80">
-                Jika Anda telah mempelajari dan menguasai semua materi yang tersedia di platform ini, kemampuan Anda sudah lebih dari cukup untuk menghadapi tes JLPT N5, bahkan mendekati level N4. Teruslah berlatih secara konsisten untuk mencapai hasil terbaik!
-              </p>
-            </CardContent>
-          </Card>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+          {grammarSections.map((section) => (
+            <Card key={section.title}>
               <CardHeader>
-                <div className="flex items-center gap-4">
-                  <BookOpenCheck className="size-8 text-primary" />
-                  <CardTitle>Learning Kotoba</CardTitle>
-                </div>
+                <CardTitle className="font-headline text-2xl">
+                  {section.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Mulai perjalanan Anda dengan mempelajari kosakata baru dari dasar.
-                </p>
-                <Link href="/kotoba/learning" passHref>
-                  <Button className="w-full">Mulai Belajar</Button>
-                </Link>
+                <Accordion type="single" collapsible className="w-full">
+                  {section.rules.map((rule, index) => (
+                    <AccordionItem value={`item-${index}`} key={index}>
+                      <AccordionTrigger>{rule.format}</AccordionTrigger>
+                      <AccordionContent>
+                        <div className="space-y-2">
+                          <p>
+                            <strong>Deskripsi:</strong> {rule.description}
+                          </p>
+                          <p>
+                            <strong>Contoh:</strong> {rule.example}
+                          </p>
+                          {rule.translation && (
+                            <p>
+                              <strong>Terjemahan:</strong> {rule.translation}
+                            </p>
+                          )}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </CardContent>
             </Card>
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <FileText className="size-8 text-primary" />
-                  <CardTitle>Reading Hiragana</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Asah kemampuan membaca Anda dengan teks-teks dalam Hiragana.
-                </p>
-                <Link href="/kotoba/reading" passHref>
-                  <Button className="w-full">Mulai Membaca</Button>
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <ClipboardCheck className="size-8 text-primary" />
-                  <CardTitle>Practice Kotoba</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Uji dan perkuat pemahaman kosakata Anda melalui latihan interaktif.
-                </p>
-                <Link href="/kotoba/practice" passHref>
-                  <Button className="w-full">Mulai Latihan</Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
+          ))}
         </main>
       </SidebarInset>
     </SidebarProvider>
