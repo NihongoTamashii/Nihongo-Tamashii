@@ -19,6 +19,9 @@ import {
   SquarePen,
   GitBranch,
   Settings,
+  BookOpenCheck,
+  FileText,
+  ClipboardCheck,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -98,31 +101,46 @@ export default function KotobaPage() {
         </header>
         <main className="flex-1 space-y-6 p-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <CardHeader>
-                <CardTitle>Learning Kotoba</CardTitle>
+                <div className="flex items-center gap-4">
+                  <BookOpenCheck className="size-8 text-primary" />
+                  <CardTitle>Learning Kotoba</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p>Mulai belajar kosakata baru di sini.</p>
-                <Button className="mt-4">Mulai</Button>
+                <p className="mb-4 text-muted-foreground">
+                  Mulai perjalanan Anda dengan mempelajari kosakata baru dari dasar.
+                </p>
+                <Button className="w-full">Mulai Belajar</Button>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <CardHeader>
-                <CardTitle>Reading Hiragana Text</CardTitle>
+                <div className="flex items-center gap-4">
+                  <FileText className="size-8 text-primary" />
+                  <CardTitle>Reading Hiragana</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p>Latih kemampuan membaca teks Hiragana Anda.</p>
-                <Button className="mt-4">Mulai</Button>
+                <p className="mb-4 text-muted-foreground">
+                  Asah kemampuan membaca Anda dengan teks-teks dalam Hiragana.
+                </p>
+                <Button className="w-full">Mulai Membaca</Button>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <CardHeader>
-                <CardTitle>Practice Kotoba</CardTitle>
+                <div className="flex items-center gap-4">
+                  <ClipboardCheck className="size-8 text-primary" />
+                  <CardTitle>Practice Kotoba</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p>Uji pengetahuan kosakata Anda dengan latihan.</p>
-                <Button className="mt-4">Mulai</Button>
+                <p className="mb-4 text-muted-foreground">
+                  Uji dan perkuat pemahaman kosakata Anda melalui latihan interaktif.
+                </p>
+                <Button className="w-full">Mulai Latihan</Button>
               </CardContent>
             </Card>
           </div>
