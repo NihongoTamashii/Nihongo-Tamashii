@@ -128,7 +128,9 @@ export default function KotobaPage() {
                 <p className="mb-4 text-muted-foreground">
                   Asah kemampuan membaca Anda dengan teks-teks dalam Hiragana.
                 </p>
-                <Button className="w-full">Mulai Membaca</Button>
+                <Link href="/kotoba/reading" passHref>
+                  <Button className="w-full">Mulai Membaca</Button>
+                </Link>
               </CardContent>
             </Card>
             <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
