@@ -18,8 +18,9 @@ import { flashcards } from "@/lib/data/data";
 
 const ITEMS_PER_PART = 30;
 
-export default function LearningKanjiPage({ params }: { params: { part: string } }) {
-  const part = parseInt(params.part, 10);
+export default function LearningKanjiPage({ params }: { params: Promise<{ part: string }> }) {
+  const { part: partString } = React.use(params);
+  const part = parseInt(partString, 10);
   
   const kanjiFlashcards = useMemo(
     () => flashcards.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
