@@ -22,20 +22,12 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import React from "react";
 import Link from "next/link";
 
-export default function HomePage() {
+export default function KotobaPage() {
   return (
     <SidebarProvider>
       <Sidebar>
@@ -51,7 +43,7 @@ export default function HomePage() {
           <SidebarMenu>
             <SidebarMenuItem>
               <Link href="/">
-                <SidebarMenuButton isActive>
+                <SidebarMenuButton>
                   <Home />
                   <span>Home</span>
                 </SidebarMenuButton>
@@ -59,7 +51,7 @@ export default function HomePage() {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/kotoba">
-                <SidebarMenuButton>
+                <SidebarMenuButton isActive>
                   <BookText />
                   <span>Kotoba</span>
                 </SidebarMenuButton>
@@ -99,55 +91,41 @@ export default function HomePage() {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
-          <h1 className="font-headline text-2xl font-semibold">Dashboard</h1>
+          <h1 className="font-headline text-2xl font-semibold">Kotoba</h1>
           <Button variant="ghost" size="icon">
             <Settings />
           </Button>
         </header>
         <main className="flex-1 space-y-6 p-6">
-          <div className="flex items-center justify-between">
-            <h1 className="font-headline text-3xl font-bold">Welcome back!</h1>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle>Learning Kotoba</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Mulai belajar kosakata baru di sini.</p>
+                <Button className="mt-4">Mulai</Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Reading Hiragana Text</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Latih kemampuan membaca teks Hiragana Anda.</p>
+                <Button className="mt-4">Mulai</Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Practice Kotoba</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Uji pengetahuan kosakata Anda dengan latihan.</p>
+                <Button className="mt-4">Mulai</Button>
+              </CardContent>
+            </Card>
           </div>
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline">Platform Pembelajaran Resmi Nihongo Tamashii</CardTitle>
-              <CardDescription className="font-body">
-                Selamat datang di platform pembelajaran resmi Nihongo Tamashii. Perjalanan Anda untuk menguasai bahasa Jepang dimulai di sini. Jelajahi Kotoba (kosakata), Kanji, dan Tata Bahasa untuk membangun keterampilan Anda. Gunakan sidebar untuk bernavigasi antar bagian. Semoga berhasil!
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="font-body">
-                Ini adalah area konten utama. Anda dapat menambahkan materi pembelajaran Anda di sini. Mulailah dengan memilih kategori dari sidebar.
-              </p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="mt-4">Start Learning</Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Pilih Kategori Pembelajaran</DialogTitle>
-                    <DialogDescription>
-                      Pilih salah satu kategori di bawah ini untuk memulai perjalanan belajar bahasa Jepang Anda.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
-                      <BookText size={24} />
-                      <span className="text-lg">Kotoba</span>
-                    </Button>
-                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
-                      <SquarePen size={24} />
-                      <span className="text-lg">Kanji</span>
-                    </Button>
-                    <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
-                      <GitBranch size={24} />
-                      <span className="text-lg">Grammar</span>
-                    </Button>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
-          </Card>
         </main>
       </SidebarInset>
     </SidebarProvider>
