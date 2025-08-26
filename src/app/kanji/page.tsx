@@ -114,7 +114,9 @@ export default function KanjiPage() {
                 <p className="mb-4 text-muted-foreground">
                   Pelajari karakter Kanji satu per satu untuk membangun fondasi yang kuat.
                 </p>
-                <Button className="w-full">Mulai Belajar</Button>
+                <Link href="/kanji/learning" passHref>
+                  <Button className="w-full">Mulai Belajar</Button>
+                </Link>
               </CardContent>
             </Card>
             <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
