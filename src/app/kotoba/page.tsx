@@ -103,6 +103,17 @@ export default function KotobaPage() {
           </Button>
         </header>
         <main className="flex-1 space-y-6 p-6">
+          <Card className="border-primary/50 bg-primary/5">
+            <CardHeader className="flex flex-row items-center gap-4 space-y-0">
+              <AlertTriangle className="size-8 text-primary" />
+              <CardTitle>Sebuah Catatan untuk Anda</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/80">
+                Jika Anda telah mempelajari dan menguasai semua materi yang tersedia di platform ini, kemampuan Anda sudah lebih dari cukup untuk menghadapi tes JLPT N5, bahkan mendekati level N4. Teruslah berlatih secara konsisten untuk mencapai hasil terbaik!
+              </p>
+            </CardContent>
+          </Card>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <CardHeader>
@@ -151,17 +162,6 @@ export default function KotobaPage() {
               </CardContent>
             </Card>
           </div>
-          <Card className="border-primary/50 bg-primary/5">
-            <CardHeader className="flex flex-row items-center gap-4 space-y-0">
-              <AlertTriangle className="size-8 text-primary" />
-              <CardTitle>Sebuah Catatan untuk Anda</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-foreground/80">
-                Jika Anda telah mempelajari dan menguasai semua materi yang tersedia di platform ini, kemampuan Anda sudah lebih dari cukup untuk menghadapi tes JLPT N5, bahkan mendekati level N4. Teruslah berlatih secara konsisten untuk mencapai hasil terbaik!
-              </p>
-            </CardContent>
-          </Card>
         </main>
       </SidebarInset>
     </SidebarProvider>
