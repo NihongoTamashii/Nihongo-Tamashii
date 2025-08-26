@@ -22,17 +22,24 @@ export default function LearningKanjiPage() {
   const [progress, setProgress] = useState(0);
   const [speech, setSpeech] = useState<SpeechSynthesis | null>(null);
 
+  const kanjiFlashcards = useMemo(
+    () => flashcards.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    []
+  );
+
   useEffect(() => {
     setSpeech(window.speechSynthesis);
   }, []);
 
   useEffect(() => {
-    setProgress(((currentIndex + 1) / flashcards.length) * 100);
+    if (kanjiFlashcards.length > 0) {
+      setProgress(((currentIndex + 1) / kanjiFlashcards.length) * 100);
+    }
     setIsFlipped(false);
-  }, [currentIndex]);
+  }, [currentIndex, kanjiFlashcards]);
 
   const handleNext = () => {
-    if (currentIndex < flashcards.length - 1) {
+    if (currentIndex < kanjiFlashcards.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -49,14 +56,46 @@ export default function LearningKanjiPage() {
 
   const handleSpeak = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (speech) {
-      const utterance = new SpeechSynthesisUtterance(flashcards[currentIndex].front);
+    if (speech && kanjiFlashcards.length > 0) {
+      const utterance = new SpeechSynthesisUtterance(
+        kanjiFlashcards[currentIndex].front
+      );
       utterance.lang = "ja-JP";
       speech.speak(utterance);
     }
   };
 
-  const currentCard = useMemo(() => flashcards[currentIndex], [currentIndex]);
+  const currentCard = useMemo(() => {
+    if (kanjiFlashcards.length > 0) {
+      return kanjiFlashcards[currentIndex];
+    }
+    return null;
+  }, [currentIndex, kanjiFlashcards]);
+
+  if (!currentCard) {
+    return (
+        <div className="flex h-screen w-full flex-col bg-background">
+      <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
+        <div className="flex items-center gap-4">
+          <Link href="/kanji" passHref>
+            <Button variant="ghost" size="icon">
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+          </Link>
+          <h1 className="font-headline text-2xl font-semibold">
+            Learning Kanji
+          </h1>
+        </div>
+        <Button variant="ghost" size="icon">
+          <Settings />
+        </Button>
+      </header>
+        <main className="flex flex-1 items-center justify-center">
+            <p>Tidak ada kartu Kanji yang tersedia.</p>
+        </main>
+        </div>
+    );
+  }
 
   return (
     <div className="flex h-screen w-full flex-col bg-background">
@@ -80,7 +119,7 @@ export default function LearningKanjiPage() {
         <div className="w-full max-w-2xl space-y-2">
           <Progress value={progress} />
           <p className="text-center text-sm text-muted-foreground">
-            {currentIndex + 1} / {flashcards.length}
+            {currentIndex + 1} / {kanjiFlashcards.length}
           </p>
         </div>
 
@@ -131,7 +170,7 @@ export default function LearningKanjiPage() {
           </Button>
           <Button
             onClick={handleNext}
-            disabled={currentIndex === flashcards.length - 1}
+            disabled={currentIndex === kanjiFlashcards.length - 1}
             size="lg"
             className="bg-primary hover:bg-primary/90"
           >
