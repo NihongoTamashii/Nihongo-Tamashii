@@ -50,7 +50,7 @@ export default function LearningKotobaPage() {
   const handleSpeak = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (speech) {
-      const utterance = new SpeechSynthesisUtterance(flashcards[currentIndex].jp);
+      const utterance = new SpeechSynthesisUtterance(flashcards[currentIndex].front);
       utterance.lang = "ja-JP";
       speech.speak(utterance);
     }
@@ -95,8 +95,11 @@ export default function LearningKotobaPage() {
             {/* Front of the card */}
             <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card [backface-visibility:hidden]">
               <h2 className="text-5xl font-bold text-card-foreground">
-                {currentCard.jp}
+                {currentCard.front}
               </h2>
+              <p className="text-xl text-muted-foreground">
+                {currentCard.frontSub}
+              </p>
               <Button
                 variant="ghost"
                 size="icon"
@@ -110,7 +113,7 @@ export default function LearningKotobaPage() {
             {/* Back of the card */}
             <CardContent className="absolute flex h-full w-full items-center justify-center rounded-xl bg-card [backface-visibility:hidden] [transform:rotateY(180deg)]">
               <h3 className="text-4xl font-semibold text-card-foreground">
-                {currentCard.en}
+                {currentCard.back}
               </h3>
             </CardContent>
           </Card>
