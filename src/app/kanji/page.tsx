@@ -22,6 +22,7 @@ import {
   BookOpenCheck,
   FileText,
   ClipboardCheck,
+  AlertTriangle,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -148,6 +149,17 @@ export default function KanjiPage() {
               </CardContent>
             </Card>
           </div>
+          <Card className="border-primary/50 bg-primary/5">
+            <CardHeader className="flex flex-row items-center gap-4 space-y-0">
+              <AlertTriangle className="size-8 text-primary" />
+              <CardTitle>Sebuah Catatan untuk Anda</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/80">
+                Jika Anda telah mempelajari dan menguasai semua materi yang tersedia di platform ini, kemampuan Anda sudah lebih dari cukup untuk menghadapi tes JLPT N5, bahkan mendekati level N4. Teruslah berlatih secara konsisten untuk mencapai hasil terbaik!
+              </p>
+            </CardContent>
+          </Card>
         </main>
       </SidebarInset>
     </SidebarProvider>
