@@ -158,7 +158,9 @@ export default function KotobaPage() {
                 <p className="mb-4 text-muted-foreground">
                   Uji dan perkuat pemahaman kosakata Anda melalui latihan interaktif.
                 </p>
-                <Button className="w-full">Mulai Latihan</Button>
+                <Link href="/kotoba/practice" passHref>
+                  <Button className="w-full">Mulai Latihan</Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

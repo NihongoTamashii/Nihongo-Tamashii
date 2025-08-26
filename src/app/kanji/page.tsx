@@ -158,7 +158,9 @@ export default function KanjiPage() {
                 <p className="mb-4 text-muted-foreground">
                   Uji pemahaman Kanji Anda dengan berbagai latihan interaktif.
                 </p>
-                <Button className="w-full">Mulai Latihan</Button>
+                <Link href="/kanji/practice" passHref>
+                  <Button className="w-full">Mulai Latihan</Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
