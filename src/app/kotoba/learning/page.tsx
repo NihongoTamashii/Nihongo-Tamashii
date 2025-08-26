@@ -98,7 +98,7 @@ export default function LearningKotobaPage() {
                 {currentCard.front}
               </h2>
               <p className="text-xl text-muted-foreground">
-                {currentCard.frontSub}
+                {currentCard.romaji}
               </p>
               <Button
                 variant="ghost"
