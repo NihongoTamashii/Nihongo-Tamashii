@@ -93,14 +93,14 @@ export default function HomePage() {
           </div>
           <Card>
             <CardHeader>
-              <CardTitle className="font-headline">Your Learning Journey</CardTitle>
+              <CardTitle className="font-headline">Selamat Datang di Nihongo Tamashii</CardTitle>
               <CardDescription className="font-body">
-                Your journey to mastering Japanese starts here. Explore Kotoba (vocabulary), Kanji, and Grammar to build your skills. Use the sidebar to navigate between sections. Good luck!
+                Ini adalah platform pembelajaran resmi untuk Nihongo Tamashii. Perjalanan Anda untuk menguasai bahasa Jepang dimulai di sini. Jelajahi Kotoba (kosakata), Kanji, dan Tata Bahasa untuk membangun keterampilan Anda. Gunakan sidebar untuk bernavigasi antar bagian. Semoga berhasil!
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="font-body">
-                This is the main content area. You can add your learning materials here. Start by selecting a category from the sidebar.
+                Ini adalah area konten utama. Anda dapat menambahkan materi pembelajaran Anda di sini. Mulailah dengan memilih kategori dari sidebar.
               </p>
               <Button className="mt-4">Start Learning</Button>
             </CardContent>
