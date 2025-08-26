@@ -112,7 +112,9 @@ export default function KotobaPage() {
                 <p className="mb-4 text-muted-foreground">
                   Mulai perjalanan Anda dengan mempelajari kosakata baru dari dasar.
                 </p>
-                <Button className="w-full">Mulai Belajar</Button>
+                <Link href="/kotoba/learning" passHref>
+                  <Button className="w-full">Mulai Belajar</Button>
+                </Link>
               </CardContent>
             </Card>
             <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
