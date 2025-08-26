@@ -7,7 +7,7 @@ import {
   ChevronRight,
   Volume2,
   Settings,
-  X,
+  ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -76,7 +76,7 @@ export default function LearningKotobaPage() {
         <div className="flex items-center gap-4">
           <Link href="/kotoba" passHref>
             <Button variant="ghost" size="icon">
-              <X className="h-5 w-5" />
+              <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
           <h1 className="font-headline text-2xl font-semibold">
