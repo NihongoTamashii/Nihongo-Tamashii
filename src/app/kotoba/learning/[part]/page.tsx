@@ -35,9 +35,11 @@ export default function LearningKotobaPage({ params }: { params: { part: string 
   }, []);
 
   useEffect(() => {
-    setProgress(((currentIndex + 1) / currentFlashcards.length) * 100);
+    if (currentFlashcards.length > 0) {
+      setProgress(((currentIndex + 1) / currentFlashcards.length) * 100);
+    }
     setIsFlipped(false);
-  }, [currentIndex, currentFlashcards.length]);
+  }, [currentIndex, currentFlashcards]);
 
   const handleNext = () => {
     if (currentIndex < currentFlashcards.length - 1) {
@@ -57,14 +59,20 @@ export default function LearningKotobaPage({ params }: { params: { part: string 
 
   const handleSpeak = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (speech) {
+    if (speech && currentFlashcards.length > 0) {
       const utterance = new SpeechSynthesisUtterance(currentFlashcards[currentIndex].front);
       utterance.lang = "ja-JP";
       speech.speak(utterance);
     }
   };
 
-  const currentCard = useMemo(() => currentFlashcards[currentIndex], [currentIndex, currentFlashcards]);
+  const currentCard = useMemo(() => {
+    if (currentFlashcards.length > 0) {
+      return currentFlashcards[currentIndex];
+    }
+    return null;
+  }, [currentIndex, currentFlashcards]);
+
 
   if (!currentCard) {
     return (
