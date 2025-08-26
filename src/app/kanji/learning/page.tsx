@@ -1,101 +1,22 @@
 
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Volume2,
-  Settings,
-  ArrowLeft,
-} from "lucide-react";
+import React, { useMemo } from "react";
+import { ArrowLeft, BookOpenCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { flashcards } from "@/lib/data/data";
 
-export default function LearningKanjiPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [speech, setSpeech] = useState<SpeechSynthesis | null>(null);
+const ITEMS_PER_PART = 30;
 
+export default function LearningKanjiSelectionPage() {
   const kanjiFlashcards = useMemo(
     () => flashcards.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
     []
   );
 
-  useEffect(() => {
-    setSpeech(window.speechSynthesis);
-  }, []);
-
-  useEffect(() => {
-    if (kanjiFlashcards.length > 0) {
-      setProgress(((currentIndex + 1) / kanjiFlashcards.length) * 100);
-    }
-    setIsFlipped(false);
-  }, [currentIndex, kanjiFlashcards]);
-
-  const handleNext = () => {
-    if (currentIndex < kanjiFlashcards.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
-
-  const handleSpeak = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (speech && kanjiFlashcards.length > 0) {
-      const utterance = new SpeechSynthesisUtterance(
-        kanjiFlashcards[currentIndex].front
-      );
-      utterance.lang = "ja-JP";
-      speech.speak(utterance);
-    }
-  };
-
-  const currentCard = useMemo(() => {
-    if (kanjiFlashcards.length > 0) {
-      return kanjiFlashcards[currentIndex];
-    }
-    return null;
-  }, [currentIndex, kanjiFlashcards]);
-
-  if (!currentCard) {
-    return (
-        <div className="flex h-screen w-full flex-col bg-background">
-      <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
-        <div className="flex items-center gap-4">
-          <Link href="/kanji" passHref>
-            <Button variant="ghost" size="icon">
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-          </Link>
-          <h1 className="font-headline text-2xl font-semibold">
-            Learning Kanji
-          </h1>
-        </div>
-        <Button variant="ghost" size="icon">
-          <Settings />
-        </Button>
-      </header>
-        <main className="flex flex-1 items-center justify-center">
-            <p>Tidak ada kartu Kanji yang tersedia.</p>
-        </main>
-        </div>
-    );
-  }
+  const totalParts = Math.ceil(kanjiFlashcards.length / ITEMS_PER_PART);
 
   return (
     <div className="flex h-screen w-full flex-col bg-background">
@@ -107,76 +28,30 @@ export default function LearningKanjiPage() {
             </Button>
           </Link>
           <h1 className="font-headline text-2xl font-semibold">
-            Learning Kanji
+            Pilih Bagian Kanji
           </h1>
         </div>
-        <Button variant="ghost" size="icon">
-          <Settings />
-        </Button>
       </header>
 
-      <main className="flex flex-1 flex-col items-center justify-center space-y-8 p-6">
-        <div className="w-full max-w-2xl space-y-2">
-          <Progress value={progress} />
-          <p className="text-center text-sm text-muted-foreground">
-            {currentIndex + 1} / {kanjiFlashcards.length}
-          </p>
-        </div>
-
-        <div className="relative h-64 w-full max-w-2xl [perspective:1000px]">
-          <Card
-            onClick={handleFlip}
-            className={cn(
-              "absolute h-full w-full cursor-pointer rounded-xl border-2 shadow-xl transition-transform duration-700 [transform-style:preserve-3d]",
-              isFlipped ? "[transform:rotateY(180deg)]" : ""
-            )}
-          >
-            {/* Front of the card */}
-            <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card [backface-visibility:hidden]">
-              <h2 className="text-5xl font-bold text-card-foreground">
-                {currentCard.frontSub}
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                {currentCard.front}
-              </p>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute bottom-4 right-4 rounded-full"
-                onClick={handleSpeak}
-              >
-                <Volume2 />
-              </Button>
-            </CardContent>
-
-            {/* Back of the card */}
-            <CardContent className="absolute flex h-full w-full items-center justify-center rounded-xl bg-card [backface-visibility:hidden] [transform:rotateY(180deg)]">
-              <h3 className="text-4xl font-semibold text-card-foreground">
-                {currentCard.back}
-              </h3>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="flex w-full max-w-2xl items-center justify-between">
-          <Button
-            onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            variant="outline"
-            size="lg"
-          >
-            <ChevronLeft className="mr-2" />
-            Previous
-          </Button>
-          <Button
-            onClick={handleNext}
-            disabled={currentIndex === kanjiFlashcards.length - 1}
-            size="lg"
-            className="bg-primary hover:bg-primary/90"
-          >
-            Next
-            <ChevronRight className="ml-2" />
-          </Button>
+      <main className="flex-1 overflow-y-auto p-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {Array.from({ length: totalParts }, (_, i) => i + 1).map((part) => (
+            <Link key={part} href={`/kanji/learning/${part}`} passHref>
+              <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <BookOpenCheck className="size-8 text-primary" />
+                    <CardTitle>Bagian {part}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Kanji {(part - 1) * ITEMS_PER_PART + 1} - {Math.min(part * ITEMS_PER_PART, kanjiFlashcards.length)}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
         </div>
       </main>
     </div>
