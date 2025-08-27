@@ -19,10 +19,6 @@ import {
   SquarePen,
   GitBranch,
   Settings,
-  BookOpenCheck,
-  FileText,
-  ClipboardCheck,
-  AlertTriangle,
   BookOpen,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
@@ -31,8 +27,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
+// import { ebooks } from "@/lib/data/ebooks";
 
-export default function KanjiPage() {
+export default function ReadingPage() {
   return (
     <SidebarProvider>
       <Sidebar>
@@ -64,7 +61,7 @@ export default function KanjiPage() {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/kanji">
-                <SidebarMenuButton isActive>
+                <SidebarMenuButton>
                   <SquarePen />
                   <span>Kanji</span>
                 </SidebarMenuButton>
@@ -80,7 +77,7 @@ export default function KanjiPage() {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/reading">
-                <SidebarMenuButton>
+                <SidebarMenuButton isActive>
                   <BookOpen />
                   <span>Reading</span>
                 </SidebarMenuButton>
@@ -108,75 +105,44 @@ export default function KanjiPage() {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
-          <h1 className="font-headline text-2xl font-semibold">Kanji</h1>
+          <h1 className="font-headline text-2xl font-semibold">Reading Books</h1>
           <Button variant="ghost" size="icon">
             <Settings />
           </Button>
         </header>
-        <main className="flex-1 space-y-6 p-6">
-          <Card className="border-primary/50 bg-primary/5">
-            <CardHeader className="flex flex-row items-center gap-4 space-y-0">
-              <AlertTriangle className="size-8 text-primary" />
-              <CardTitle>Sebuah Catatan untuk Anda</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-foreground/80">
-                Jika Anda telah mempelajari dan menguasai semua materi yang tersedia di platform ini, kemampuan Anda sudah lebih dari cukup untuk menghadapi tes JLPT N5, bahkan mendekati level N4. Teruslah berlatih secara konsisten untuk mencapai hasil terbaik!
+        <main className="flex-1 p-6">
+          <div className="flex h-[calc(100vh-10rem)] items-center justify-center rounded-lg border-2 border-dashed">
+            <div className="text-center">
+              <p className="text-muted-foreground">
+                Fitur E-Book sedang dalam pengembangan.
               </p>
-            </CardContent>
-          </Card>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <BookOpenCheck className="size-8 text-primary" />
-                  <CardTitle>Learning Kanji</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Pelajari karakter Kanji satu per satu untuk membangun fondasi yang kuat.
-                </p>
-                <Link href="/kanji/learning" passHref>
-                  <Button className="w-full">Mulai Belajar</Button>
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <FileText className="size-8 text-primary" />
-                  <CardTitle>Reading Kanji</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Latih kemampuan membaca Anda dengan teks yang menggunakan Kanji.
-                </p>
-                <Link href="/kanji/reading" passHref>
-                  <Button className="w-full">Mulai Membaca</Button>
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <ClipboardCheck className="size-8 text-primary" />
-                  <CardTitle>Practice Kanji</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Uji pemahaman Kanji Anda dengan berbagai latihan interaktif.
-                </p>
-                <Link href="/kanji/practice" passHref>
-                  <Button className="w-full">Mulai Latihan</Button>
-                </Link>
-              </CardContent>
-            </Card>
+              <p className="text-muted-foreground">
+                Silakan berikan file PDF Anda untuk ditampilkan di sini.
+              </p>
+            </div>
           </div>
+          {/* <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {ebooks.map((book) => (
+              <Link key={book.id} href={`/reading/${book.id}`} passHref>
+                <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                  <CardHeader>
+                    <div className="flex items-center gap-4">
+                      <BookOpen className="size-8 text-primary" />
+                      <CardTitle>{book.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      oleh {book.author}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div> */}
         </main>
       </SidebarInset>
     </SidebarProvider>
   );
 }
+

@@ -23,6 +23,7 @@ import {
   FileText,
   ClipboardCheck,
   AlertTriangle,
+  BookOpen,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -74,6 +75,14 @@ export default function KotobaPage() {
                 <SidebarMenuButton>
                   <GitBranch />
                   <span>Grammar</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/reading">
+                <SidebarMenuButton>
+                  <BookOpen />
+                  <span>Reading</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>

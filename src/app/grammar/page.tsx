@@ -21,6 +21,7 @@ import {
   Settings,
   Type,
   Atom,
+  BookOpen,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -72,6 +73,14 @@ export default function GrammarPage() {
                 <SidebarMenuButton isActive>
                   <GitBranch />
                   <span>Grammar</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/reading">
+                <SidebarMenuButton>
+                  <BookOpen />
+                  <span>Reading</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
