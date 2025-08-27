@@ -936,3 +936,38 @@ export const waParticle: ParticleData = {
     },
   ],
 };
+
+export const yaParticle: ParticleData = {
+  title: "Partikel YA や",
+  particle: "や",
+  meaning: "Partikel YA や secara umum berarti 'dan... dan lain-lain'",
+  usages: [
+    {
+      title: "1. Menyebut sebagian dari benda yang digunakan sebagai contoh.",
+      description: "'... dan ... dan lain-lain'",
+      examples: [
+        {
+          romaji: "Fuku ya kutsu ya kaban nado o kaimashita.",
+          japanese: "服やくつやかばんなどを買いました。",
+          translation: "Saya telah membeli pakaian, sepatu, tas dan lain-lain.",
+        },
+        {
+          romaji: "Tozan ya jogingu ya saikuringu wa ii supōtsu desu.",
+          japanese: "登山やジョギングやサイクリングはいいスポーツです。",
+          translation: "Mendaki gunung, joging, bersepeda (dan lain-lain) adalah olahraga yang baik.",
+        },
+      ],
+    },
+    {
+      title: "2. Digunakan kaum lelaki dalam percakapan informal terhadap orang yang sederajat atau lebih rendah kedudukannya untuk mengajak atau menyuruh melakukan sesuatu.",
+      description: "",
+      examples: [
+        {
+          romaji: "Hayaku dero ya.",
+          japanese: "早く出ろや。",
+          translation: "Keluar cepat!",
+        },
+      ],
+    },
+  ],
+};
