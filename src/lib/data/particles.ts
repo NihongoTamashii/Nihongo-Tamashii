@@ -252,3 +252,59 @@ export const gaParticle: ParticleData = {
     },
   ],
 };
+
+export const kaParticle: ParticleData = {
+    title: "Partikel KA か",
+    particle: "か",
+    meaning: "Secara umum berarti '...kah; apakah?'",
+    usages: [
+        {
+            title: "1. Diletakkan pada akhir kalimat digunakan untuk bertanya.",
+            description: "",
+            examples: [
+                {
+                    romaji: "Anata wa donata desu ka.",
+                    japanese: "あなたはどなたですか。",
+                    translation: "Kamu siapa?",
+                },
+                {
+                    romaji: "Kore wa nan desu ka.",
+                    japanese: "これは何ですか。",
+                    translation: "Ini apa?",
+                },
+            ],
+        },
+        {
+            title: "2. Diletakkan di belakang kata tanya untuk menunjukkan sesuatu yang tidak jelas/tentu.",
+            description: "",
+            examples: [
+                {
+                    romaji: "Poribukuro no naka ni nanika arimasu.",
+                    japanese: "ポリ袋の中に何かあります。",
+                    translation: "Di dalam kantong plastik ada sesuatu.",
+                },
+                {
+                    romaji: "Itsuka tenki no ii hi ni tsuri ni ikitai desu.",
+                    japanese: "いつか天気のいい日につりに行きたいです。",
+                    translation: "Kapan-kapan pada hari yang bercuaca baik saya ingin pergi memancing.",
+                },
+            ],
+        },
+        {
+            title: "3. Digunakan dua hal atau lebih untuk menunjukkan salah satu.",
+            description: "'atau'",
+            examples: [
+                {
+                    romaji: "Suika ka meron ka papaiya no you na kudamono o kudasai.",
+                    japanese: "すいかかメロンかパパイヤのような果物をください。",
+                    translation: "Berikan saya buah seperti semangka atau melon atau pepaya.",
+                },
+                {
+                    romaji: "Iku ka ikanai ka tenki shidai desu.",
+                    japanese: "行くか行かないか天気次第です。",
+                    translation: "Pergi atau tidak tergantung cuaca.",
+                },
+            ],
+        },
+    ],
+};
