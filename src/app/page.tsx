@@ -131,38 +131,38 @@ export default function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="font-body">
-                Ini adalah area konten utama. Anda dapat menambahkan materi pembelajaran Anda di sini. Mulailah dengan memilih kategori dari sidebar.
-              </p>
-              <Dialog>
+               <Dialog>
                 <DialogTrigger asChild>
                   <Button className="mt-4">Start Learning</Button>
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="sm:max-w-2xl">
                   <DialogHeader>
-                    <DialogTitle>Pilih Kategori Pembelajaran</DialogTitle>
+                    <DialogTitle className="font-headline text-2xl">Pilih Perjalanan Belajar Anda</DialogTitle>
                     <DialogDescription>
-                      Pilih salah satu kategori di bawah ini untuk memulai perjalanan belajar bahasa Jepang Anda.
+                      Setiap kategori dirancang untuk membangun fondasi bahasa Jepang Anda. Mulai dari mana saja!
                     </DialogDescription>
                   </DialogHeader>
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                    <Link href="/kotoba">
-                      <Button variant="outline" className="flex h-24 w-full flex-col items-center justify-center gap-2">
-                        <BookText size={24} />
-                        <span className="text-lg">Kotoba</span>
-                      </Button>
+                  <div className="grid grid-cols-1 gap-6 pt-4 md:grid-cols-3">
+                    <Link href="/kotoba" passHref>
+                      <Card className="flex h-full transform cursor-pointer flex-col items-center justify-center p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <BookText size={48} className="mb-4 text-primary" />
+                        <h3 className="font-headline text-xl font-semibold">Kotoba</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">Perluas kosakata Anda.</p>
+                      </Card>
                     </Link>
-                    <Link href="/kanji">
-                      <Button variant="outline" className="flex h-24 w-full flex-col items-center justify-center gap-2">
-                        <SquarePen size={24} />
-                        <span className="text-lg">Kanji</span>
-                      </Button>
+                    <Link href="/kanji" passHref>
+                      <Card className="flex h-full transform cursor-pointer flex-col items-center justify-center p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <SquarePen size={48} className="mb-4 text-primary" />
+                        <h3 className="font-headline text-xl font-semibold">Kanji</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">Kuasai karakter Jepang.</p>
+                      </Card>
                     </Link>
-                    <Link href="/grammar">
-                      <Button variant="outline" className="flex h-24 flex-col items-center justify-center gap-2">
-                        <GitBranch size={24} />
-                        <span className="text-lg">Grammar</span>
-                      </Button>
+                    <Link href="/grammar" passHref>
+                      <Card className="flex h-full transform cursor-pointer flex-col items-center justify-center p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <GitBranch size={48} className="mb-4 text-primary" />
+                        <h3 className="font-headline text-xl font-semibold">Grammar</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">Pahami struktur kalimat.</p>
+                      </Card>
                     </Link>
                   </div>
                 </DialogContent>
@@ -208,3 +208,5 @@ export default function HomePage() {
     </SidebarProvider>
   );
 }
+
+    
