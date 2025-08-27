@@ -420,3 +420,81 @@ export const madeParticle: ParticleData = {
         },
     ],
 };
+
+export const moParticle: ParticleData = {
+  title: "Partikel MO も",
+  particle: "も",
+  meaning: "Secara umum berarti 'juga;pun'",
+  usages: [
+    {
+      title: "1. Menunjukkan hal yang sama seperti lainnya.",
+      description: "'juga'",
+      examples: [
+        {
+          romaji: "Anata ga ikeba, watashi mo ikimasu.",
+          japanese: "あなたが行けば、わたしも行きます。",
+          translation: "Kalau kamu pergi, saya juga pergi.",
+        },
+      ],
+    },
+    {
+      title: "2. Bentuk '... mo ... mo' menunjukkan beberapa hal semuanya sama.",
+      description: "'Baik ... maupun ...'",
+      examples: [
+        {
+          romaji: "Chichi mo haha mo aikawarazu genki desu.",
+          japanese: "父も母も相変わらず元気です。",
+          translation: "Baik ayah maupun ibuku semua sehat.",
+        },
+        {
+          romaji: "Washoku mo Yōshoku mo suki desu.",
+          japanese: "和食も洋食も好きです。",
+          translation: "Baik masakan Jepang maupun masakan Barat saya suka.",
+        },
+      ],
+    },
+    {
+      title: "3. Mengikuti derajat atau jumlah yang banyak.",
+      description: "'sampai'",
+      examples: [
+        {
+          romaji: "Kare wa biiru o roppon mo nomimashita.",
+          japanese: "彼はビールを六本も飲みました。",
+          translation: "Dia telah minum bir sampai enam botol.",
+        },
+      ],
+    },
+    {
+      title: "4. Dalam bentuk '-te/de mo' menunjukkan arti 'walaupun;meskipun'",
+      description: "",
+      examples: [
+        {
+          romaji: "Nankai yonde mo wakarimasen.",
+          japanese: "何回読んでも分かりません。",
+          translation: "Walau membaca berapa kali pun tidak mengerti.",
+        },
+        {
+          romaji: "Isoide itte mo maniawanai deshō.",
+          japanese: "急いで行っても間に合わないでしょう。",
+          translation: "Walapun kita bergegas pergi tidak akan keburu.",
+        },
+      ],
+    },
+    {
+      title: "5. Dalam kalimat negatif.",
+      description: "'... pun tidak ...'",
+      examples: [
+        {
+          romaji: "Chūgoku-go ga sukoshi mo wakarimasen.",
+          japanese: "中国語が少しも分かりません。",
+          translation: "Saya tidak mengerti bahasa Mandarin sedikit pun.",
+        },
+        {
+          romaji: "Nani mo arimasen.",
+          japanese: "何もありません。",
+          translation: "Apa pun tidak ada.",
+        },
+      ],
+    },
+  ],
+};
