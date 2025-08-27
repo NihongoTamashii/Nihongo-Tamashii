@@ -771,3 +771,112 @@ export const oParticle: ParticleData = {
     },
   ],
 };
+
+export const toParticle: ParticleData = {
+    title: "Partikel TO と",
+    particle: "と",
+    meaning: "Partikel TO と secara umum berarti 'dan;dengan'",
+    usages: [
+        {
+            title: "1. Menunjukkan lebih dari satu benda atau sejenisnya.",
+            description: "'dan'",
+            examples: [
+                {
+                    romaji: "Surippa to sutokkingu o issoku zutsu kaimashita.",
+                    japanese: "スリッパとストキングを一足ずつ買いました。",
+                    translation: "Saya telah membeli sandal dan stocking masing-masing satu pasang.",
+                },
+                {
+                    romaji: "Indoneshia to Nihon to wa mukashi kara kankei ga fukai desu.",
+                    japanese: "インドネシアと日本とは昔から関係が深いです。",
+                    translation: "Indonesia dan Jepang berhubungan erat sejak zaman dahulu.",
+                },
+            ],
+        },
+        {
+            title: "2. Menunjukkan pihak lain sebagai lawan dalam melakukan sesuatu.",
+            description: "'bersama;dengan'",
+            examples: [
+                {
+                    romaji: "Yonin no tomodachi to kuruma ni norimashita.",
+                    japanese: "四人の友だちと車に乗りました。",
+                    translation: "Telah naik kendaraan bersama-sama 4 orang teman.",
+                },
+                {
+                    romaji: "Unmei to tatakatte imasu.",
+                    japanese: "運命と戦っています。",
+                    translation: "Bertarung dengan nasib.",
+                },
+            ],
+        },
+        {
+            title: "3. Menunjukkan objek perbandingan.",
+            description: "'dengan'",
+            examples: [
+                {
+                    romaji: "Kore to onaji saizu no kutsu o kudasai.",
+                    japanese: "これと同じサイズのくつをください。",
+                    translation: "Berikan saya sepatu yang ukurannya sama dengan yang ini.",
+                },
+                {
+                    romaji: "Otōto wa ani to chigatte, sei ga takai desu.",
+                    japanese: "弟は兄と違って、背が高いです。",
+                    translation: "Adik lelaki saya badannya tinggi, berbeda dengan kakak lelaki.",
+                },
+            ],
+        },
+        {
+            title: "4. Menunjukkan isi dari apa yang dikatakan/ditanya/didengar dsb (menggunakan bentuk informal).",
+            description: "",
+            examples: [
+                {
+                    romaji: "Onamae wa nan to iimasu ka.",
+                    japanese: "お名前は何と言いますか。",
+                    translation: "Siapa nama Anda?",
+                },
+                {
+                    romaji: "Kimura-san wa mō sugu kekkon suru to kikimashita.",
+                    japanese: "木村さんはもうすぐ結婚すると聞きました。",
+                    translation: "Saya dengar Kimura sebentar lagi menikah.",
+                },
+                 {
+                    romaji: "Ii to omoimasu.",
+                    japanese: "いいと思います。",
+                    translation: "Saya pikir/kira baik/boleh.",
+                },
+            ],
+        },
+        {
+            title: "5. Menunjukkan suatu hal terjadi/dilakukan segera setelah suatu hal terjadi.",
+            description: "'begitu ...;segera'",
+            examples: [
+                {
+                    romaji: "Uchi ni kaeru to, gohan o tabemashita.",
+                    japanese: "家に帰ると、ご飯を食べました。",
+                    translation: "Begitu pulang ke rumah, saya segera makan.",
+                },
+                 {
+                    romaji: "Nihon ni tsuku to, sugu uchi ni denwa o kakemashita.",
+                    japanese: "日本に着くと、すぐ家に電話をかけました。",
+                    translation: "Setiba di Jepang, segera telepon ke rumah.",
+                },
+            ],
+        },
+        {
+            title: "6. Menunjukkan suatu hal pasti terjadi bila keadaan seperti itu.",
+            description: "'bila'",
+            examples: [
+                {
+                    romaji: "Yoru ni naru to, kuraku narimasu.",
+                    japanese: "夜になると、暗くなります。",
+                    translation: "Begitu malam tiba, akan menjadi gelap.",
+                },
+                 {
+                    romaji: "Ame ga furanai to, taihen atsuku narimasu.",
+                    japanese: "雨が降らないと、大変暑くなります。",
+                    translation: "Bila tidak turun hujan, akan menjadi sangat panas.",
+                },
+            ],
+        },
+    ],
+};
