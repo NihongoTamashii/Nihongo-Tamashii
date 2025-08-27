@@ -380,3 +380,43 @@ export const karaParticle: ParticleData = {
         },
     ],
 };
+
+export const madeParticle: ParticleData = {
+    title: "Partikel MADE まで",
+    particle: "まで",
+    meaning: "Secara umum berarti 'sampai'",
+    usages: [
+        {
+            title: "1. Menunjukkan batas akhir sesuatu dilakukan/berlangsung.",
+            description: "'sampai'",
+            examples: [
+                {
+                    romaji: "Itsu made Indoneshia ni imasu ka.",
+                    japanese: "いつまでインドネシアにいますか。",
+                    translation: "Anda akan berada/tinggal di Indonesia sampai kapan?",
+                },
+                {
+                    romaji: "Ame ga yamu made machimashō.",
+                    japanese: "雨がやむまで待ちましょう。",
+                    translation: "Mari kita menunggu sampai hujan berhenti.",
+                },
+                {
+                    romaji: "Gakkō kara eki made arukimashita.",
+                    japanese: "学校から駅まで歩きました。",
+                    translation: "Saya telah berjalan kaki dari sekolah sampai stasiun.",
+                },
+            ],
+        },
+        {
+            title: "2. Bentuk '... made ni ....' berarti 'selambat-lambatnya;sebelum'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Oshiharai wa kongetsu no hatsuka made ni osumashi negaimasu.",
+                    japanese: "お支払いは今月の二十日までにお済まし願います。",
+                    translation: "Kami minta pembayaran dilunasi selambat-lambatnya tanggal 20 bulan ini.",
+                },
+            ],
+        },
+    ],
+};
