@@ -19,7 +19,10 @@ import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   (props, ref) => {
@@ -111,7 +114,7 @@ export default function FlipBookViewer() {
             </h1>
             {numPages && (
                 <p className="text-sm text-muted-foreground">
-                    Halaman {currentPage * 2} dari {numPages}
+                    Halaman {currentPage * 2 || 1} dari {numPages}
                 </p>
             )}
         </div>
@@ -134,7 +137,7 @@ export default function FlipBookViewer() {
             file={book.filePath}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={(error) => {
-                toast({ title: "Gagal memuat PDF", description: error.message, variant: "destructive" });
+                toast({ title: "Gagal memuat PDF", description: "Pastikan file PDF ada di folder public/ebooks/ dan path-nya benar.", variant: "destructive" });
             }}
             loading={
               <div className="flex items-center">
