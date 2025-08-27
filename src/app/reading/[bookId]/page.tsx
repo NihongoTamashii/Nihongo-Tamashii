@@ -19,8 +19,6 @@ import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   (props, ref) => {
     return (
@@ -62,6 +60,10 @@ export default function FlipBookViewer() {
 
   const bookId = params.bookId as string;
   const book = ebooks.find(b => b.id === bookId);
+  
+  useEffect(() => {
+    pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+  }, []);
 
   useEffect(() => {
     if (!book) {
