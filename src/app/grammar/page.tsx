@@ -19,7 +19,7 @@ import {
   SquarePen,
   GitBranch,
   Settings,
-  Volume2,
+  Type,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,18 +27,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
-import { grammarSections } from "@/lib/data/grammar";
 
 export default function GrammarPage() {
-  const handleSpeak = (e: React.MouseEvent, text: string) => {
-    e.stopPropagation();
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      const utterance = new SpeechSynthesisUtterance(text.split(" (")[0]);
-      utterance.lang = "ja-JP";
-      window.speechSynthesis.speak(utterance);
-    }
-  };
-  
   return (
     <SidebarProvider>
       <Sidebar>
@@ -113,49 +103,21 @@ export default function GrammarPage() {
         </header>
         <main className="flex-1 p-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {grammarSections.map((section) =>
-              section.rules.map((rule, index) => {
-                const translationParts = rule.translation.split(" - ");
-                const arti = translationParts.find(p => p.startsWith("arti:"))?.replace("arti: ", "");
-                const romaji = translationParts.find(p => p.startsWith("romaji:"))?.replace("romaji: ", "");
-
-                return(
-                <Card key={index}>
-                  <CardHeader className="flex flex-row items-center justify-between pb-4">
-                    <CardTitle className="text-lg font-semibold leading-none tracking-tight">{rule.format}</CardTitle>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={(e) => handleSpeak(e, rule.example)}
-                    >
-                      <Volume2 />
-                    </Button>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div>
-                      <p className="font-semibold text-foreground/80">Deskripsi:</p>
-                      <p>{rule.description}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground/80">Contoh:</p>
-                      <p>{rule.example}</p>
-                    </div>
-                    {arti && (
-                        <div>
-                          <p className="font-semibold text-foreground/80">Terjemahan:</p>
-                          <p>{arti}</p>
-                        </div>
-                    )}
-                    {romaji && (
-                        <div>
-                          <p className="font-semibold text-foreground/80">Romaji:</p>
-                          <p>{romaji}</p>
-                        </div>
-                    )}
-                  </CardContent>
-                </Card>
-              )})
-            )}
+            <Link href="/grammar/kata-sifat">
+              <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <Type className="size-8 text-primary" />
+                    <CardTitle>Kata Sifat</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Pelajari tentang kata sifat i-keiyōshi dan na-keiyōshi dalam bahasa Jepang.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </main>
       </SidebarInset>
