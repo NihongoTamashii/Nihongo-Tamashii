@@ -20,6 +20,7 @@ import {
   GitBranch,
   Settings,
   Type,
+  Atom,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -114,6 +115,21 @@ export default function GrammarPage() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     Pelajari tentang kata sifat i-keiyōshi dan na-keiyōshi dalam bahasa Jepang.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/grammar/partikel-de">
+              <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <Atom className="size-8 text-primary" />
+                    <CardTitle>Partikel DE で</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Pelajari penggunaan partikel DE untuk menandakan alat, tempat, sebab, dan lainnya.
                   </p>
                 </CardContent>
               </Card>
