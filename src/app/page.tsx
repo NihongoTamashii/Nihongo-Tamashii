@@ -200,31 +200,6 @@ export default function HomePage() {
                     Dukung di Saweria
                   </Button>
                 </a>
-                 <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" className="w-full">
-                      <QrCode className="mr-2 h-5 w-5" />
-                      Tampilkan QR Code
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-xs">
-                    <DialogHeader>
-                      <DialogTitle>Pindai untuk Donasi</DialogTitle>
-                      <DialogDescription>
-                        Gunakan aplikasi perbankan atau e-wallet Anda untuk memindai QR code ini.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="flex items-center justify-center p-4">
-                       <Image 
-                        src="https://saweria.co/widgets/qr?streamKey=8783d8a09de548afdcc3b7f9a8bb1681"
-                        alt="QR Code Saweria"
-                        width={250}
-                        height={250}
-                        className="rounded-lg"
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
               </CardContent>
             </Card>
           </div>
