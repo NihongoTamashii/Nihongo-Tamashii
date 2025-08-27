@@ -17,19 +17,14 @@ import { useToast } from "@/hooks/use-toast";
 import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import { pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.mjs`;
 
 // Dynamically import react-pdf and react-pageflip to avoid SSR issues
 const Document = dynamic(() => import('react-pdf').then(mod => mod.Document), { ssr: false });
 const Page = dynamic(() => import('react-pdf').then(mod => mod.Page), { ssr: false });
 const HTMLFlipBook = dynamic(() => import('react-pageflip'), { ssr: false });
-const { pdfjs } = dynamic(() => import('react-pdf'), { ssr: false }) as any;
-
-if (pdfjs) {
-  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    "pdfjs-dist/build/pdf.worker.min.mjs",
-    import.meta.url
-  ).toString();
-}
 
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   (props, ref) => {
@@ -140,46 +135,46 @@ export default function FlipBookViewer() {
              <Button variant="outline" size="icon" className="absolute -left-12 z-10 rounded-full" onClick={goToPrevPage} disabled={currentPage === 0}>
                 <ChevronLeft/>
             </Button>
-          <Document
-            file={book.filePath}
-            onLoadSuccess={onDocumentLoadSuccess}
-            onLoadError={(error) => {
-                console.error("PDF Load Error:", error);
-                toast({ title: "Gagal memuat PDF", description: `Pastikan file PDF ada di folder public dan path-nya benar. Pesan error: ${error.message}`, variant: "destructive" });
-            }}
-            loading={
-              <div className="flex items-center">
-                <Loader2 className="h-6 w-6 animate-spin text-primary" />
-                <p className="ml-2">Memuat E-Book...</p>
-              </div>
-            }
-          >
-           {HTMLFlipBook && (
-              <HTMLFlipBook
-                width={400 * zoom}
-                height={565 * zoom}
-                size="stretch"
-                minWidth={315}
-                maxWidth={1000}
-                minHeight={400}
-                maxHeight={1533}
-                maxShadowOpacity={0.5}
-                showCover={true}
-                mobileScrollSupport={true}
-                onFlip={onFlip}
-                className="mx-auto"
-                ref={flipBookRef}
-              >
-                <PageCover>{book.title}</PageCover>
-                {Array.from(new Array(numPages || 0), (el, index) => (
-                  <PageContent key={`page_${index + 1}`}>
-                    <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
-                  </PageContent>
-                ))}
-                <PageCover>Selesai</PageCover>
-              </HTMLFlipBook>
-            )}
-          </Document>
+          {Document && Page && HTMLFlipBook && (
+            <Document
+              file={book.filePath}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={(error) => {
+                  console.error("PDF Load Error:", error);
+                  toast({ title: "Gagal memuat PDF", description: `Pastikan file PDF ada di folder public dan path-nya benar. Error: ${error.message}`, variant: "destructive" });
+              }}
+              loading={
+                <div className="flex items-center">
+                  <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                  <p className="ml-2">Memuat E-Book...</p>
+                </div>
+              }
+            >
+                <HTMLFlipBook
+                  width={400 * zoom}
+                  height={565 * zoom}
+                  size="stretch"
+                  minWidth={315}
+                  maxWidth={1000}
+                  minHeight={400}
+                  maxHeight={1533}
+                  maxShadowOpacity={0.5}
+                  showCover={true}
+                  mobileScrollSupport={true}
+                  onFlip={onFlip}
+                  className="mx-auto"
+                  ref={flipBookRef}
+                >
+                  <PageCover>{book.title}</PageCover>
+                  {Array.from(new Array(numPages || 0), (el, index) => (
+                    <PageContent key={`page_${index + 1}`}>
+                      <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
+                    </PageContent>
+                  ))}
+                  <PageCover>Selesai</PageCover>
+                </HTMLFlipBook>
+            </Document>
+          )}
            <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= (numPages / 2) }>
                 <ChevronRight/>
             </Button>
