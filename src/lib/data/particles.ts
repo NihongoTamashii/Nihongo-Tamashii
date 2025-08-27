@@ -143,3 +143,112 @@ export const eParticle: ParticleData = {
     },
   ],
 };
+
+export const gaParticle: ParticleData = {
+  title: "Partikel GA が",
+  particle: "が",
+  meaning: "Partikel GA が memiliki banyak fungsi, yaitu:",
+  usages: [
+    {
+      title: "1. Menunjukkan subjek dan kata bantu dari kata kerja intransitif",
+      description: "",
+      examples: [
+        {
+          romaji: "Ame ga furimasu.",
+          japanese: "雨が降ります。",
+          translation: "Hujan turun.",
+        },
+        {
+          romaji: "Bukka ga agarimasu.",
+          japanese: "物価が上がります。",
+          translation: "Harga barang-barang naik.",
+        },
+      ],
+    },
+    {
+      title: "2. Menunjukkan keberadaan sesuatu.",
+      description: "(Bentuk GA ARIMASU (benda mati), GA IMASU (mahkluk hidup))",
+      examples: [
+        {
+          romaji: "Chōdo asoko ni ebāguriin Nihongo gakkō ga arimasu.",
+          japanese: "ちょうどあそこにエバーグリーン日本語学校があります。",
+          translation: "Persis di sana ada sekolah Bahasa Jepang Evergreen.",
+        },
+        {
+          romaji: "Kurasu ni gakusei ga jūnin imasu.",
+          japanese: "クラスに学生が十人います。",
+          translation: "Di kelas ada 10 orang siswa.",
+        },
+      ],
+    },
+    {
+      title: "3. Menunjukkan kata ganti tanya berfungsi sbg subjek.",
+      description: "",
+      examples: [
+        {
+          romaji: "Nani ga oishii desu ka.",
+          japanese: "何がおいしいですか。",
+          translation: "Apa yang enak?",
+        },
+        {
+          romaji: "Doko ga warui desu ka.",
+          japanese: "どこが悪いですか。",
+          translation: "Bagian mana yang sakit/rusak?",
+        },
+      ],
+    },
+    {
+      title: "4. Memberi penegasan pada subjek.",
+      description: "",
+      examples: [
+        {
+          romaji: "Kore ga oishii desu.",
+          japanese: "これがおいしいです。",
+          translation: "Inilah yang enak. (di antara yang lain)",
+        },
+      ],
+    },
+    {
+      title: "5. Menunjukkan benda yang menjadi objek dari kata2 seperti mempunyai, perlu, bisa, mengerti, suka dsb",
+      description: "",
+      examples: [
+        {
+          romaji: "Watashi wa hon ga takusan arimasu.",
+          japanese: "わたしは本がたくさんあります。",
+          translation: "Saya mempunyai banyak buku.",
+        },
+        {
+          romaji: "Nihongo ga sukoshi dekimasu.",
+          japanese: "日本語が少しできます。",
+          translation: "Saya dapat berbahasa Jepang sedikit.",
+        },
+        {
+          romaji: "Eigo ga wakarimasu ka.",
+          japanese: "英語が分かりますか。",
+          translation: "Apakah Anda mengerti bahasa Inggris?",
+        },
+        {
+          romaji: "Anata no koto ga suki desu.",
+          japanese: "あなたのことが好きです。",
+          translation: "Saya suka kamu.",
+        },
+      ],
+    },
+    {
+      title: "6. Menunjukkan memiliki sifat/keadaan.",
+      description: "",
+      examples: [
+        {
+          romaji: "Zō wa hana ga nagai desu.",
+          japanese: "象は鼻が長いです。",
+          translation: "Gajah belalainya panjang.",
+        },
+        {
+          romaji: "Koko wa keshiki ga kirei desu.",
+          japanese: "ここは景色がきれいです。",
+          translation: "Di sini pemandangannya indah.",
+        },
+      ],
+    },
+  ],
+};
