@@ -224,6 +224,21 @@ export default function GrammarPage() {
                 </CardContent>
               </Card>
             </Link>
+            <Link href="/grammar/partikel-ni">
+              <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <Atom className="size-8 text-primary" />
+                    <CardTitle>Partikel NI に</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Pelajari penggunaan partikel NI untuk menandakan 'di', 'pada', 'ke', dan 'untuk'.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </main>
       </SidebarInset>

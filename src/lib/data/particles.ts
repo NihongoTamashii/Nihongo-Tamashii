@@ -498,3 +498,91 @@ export const moParticle: ParticleData = {
     },
   ],
 };
+
+export const niParticle: ParticleData = {
+    title: "Partikel NI に",
+    particle: "に",
+    meaning: "Secara umum berarti 'di;pada;ke;untuk'",
+    usages: [
+        {
+            title: "1. Menunjukkan letak/beradanya sesuatu 'di'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Gakusei tachi wa kyōshitsu ni imasu.",
+                    japanese: "学生たちは教室にいます。",
+                    translation: "Murid-murid ada di ruangan kelas.",
+                },
+                {
+                    romaji: "Basurūmu ni shawā ga tsukete arimasu ka.",
+                    japanese: "バスルームにシャワーが付けてありますか。",
+                    translation: "Apakah di kamar mandi ada dipasang shower?",
+                },
+            ],
+        },
+        {
+            title: "2. Menunjukkan pada apa kita melakukan sesuatu 'di;pada'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Nōto ni kakimasu.",
+                    japanese: "ノートに書きます。",
+                    translation: "Menulis di buku catatan.",
+                },
+                {
+                    romaji: "Koko ni goshomei kudasai.",
+                    japanese: "ここにご署名ください。",
+                    translation: "Silahkan tanda tangan di sini.",
+                },
+            ],
+        },
+        {
+            title: "3. Untuk menyatakan waktu. 'pada'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Jippun hodo mae ni tōchaku shimashita.",
+                    japanese: "十分ほど前に到着しました。",
+                    translation: "Saya tiba pada kira-kira sepuluh menit lalu.",
+                },
+                {
+                    romaji: "Ichiji ni kōen e ikimashita.",
+                    japanese: "一時に公園へ行きました。",
+                    translation: "Saya telah pergi ke taman pada jam 1.",
+                },
+            ],
+        },
+        {
+            title: "4. Menunjukkan menghadap/menuju/memasukkan ke suatu arah/tempat. 'ke'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Watakushi no uchi wa kita ni muite imasu.",
+                    japanese: "私の家は北に向いています。",
+                    translation: "Rumah saya menghadap ke utara.",
+                },
+                {
+                    romaji: "Baketsu ni mizu o iremasu.",
+                    japanese: "バケツに水を入れます。",
+                    translation: "Memasukkan air ke ember.",
+                },
+            ],
+        },
+        {
+            title: "5. Menunjukkan objek yang dituju/dipengaruhi. 'kepada'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Anata ni dake hanashimasu.",
+                    japanese: "あなたにだけ話します。",
+                    translation: "Saya hanya berbicara kepada kamu saja.",
+                },
+                {
+                    romaji: "Nihon no yōsu ni tsuite tomodachi ni kikimashita.",
+                    japanese: "日本の様子について友達に聞きました。",
+                    translation: "Saya telah bertanya kepada teman tentang keadaan Jepang.",
+                },
+            ],
+        },
+    ],
+};
