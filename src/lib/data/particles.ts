@@ -586,3 +586,111 @@ export const niParticle: ParticleData = {
         },
     ],
 };
+
+export const noParticle: ParticleData = {
+  title: "Partikel NO の",
+  particle: "の",
+  meaning: "Secara umum berarti 'punya;kepunyaan'",
+  usages: [
+    {
+      title: "1. Menunjukkan milik dari seseorang/sesuatu.",
+      description: "",
+      examples: [
+        {
+          romaji: "Watashi no baggu.",
+          japanese: "わたしのバッグ。",
+          translation: "Tas (punya) saya.",
+        },
+        {
+          romaji: "Ano basu wa kaisha no desu.",
+          japanese: "あのバスは会社のです。",
+          translation: "Bus itu milik perusahaan.",
+        },
+        {
+          romaji: "Indoneshia-jin no fūzoku wa Nihon-jin no to mattaku chigaimasu.",
+          japanese: "インドネシア人の風俗は日本人のとまったく違います。",
+          translation: "Adat istiadat orang Indonesia berbeda sama sekali dengan orang Jepang.",
+        },
+      ],
+    },
+    {
+      title: "2. Menggabung dua kata benda.",
+      description: "(Kata benda pertama menerangkan kata benda selanjutnya)",
+      examples: [
+        {
+          romaji: "Nihon-go no sensei.",
+          japanese: "日本語の先生。",
+          translation: "Guru bahasa Jepang.",
+        },
+        {
+          romaji: "Kotoshi no kome no shūkaku wa ōi desu.",
+          japanese: "ことしの米の収穫は多いです。",
+          translation: "Panen beras tahun ini banyak.",
+        },
+        {
+          romaji: "Watashi no tomodachi no Tono-san wa chūgakkō de gengogaku no sensei o shite imasu.",
+          japanese: "わたしの友達のトノさんは中学校で言語学の先生をしています。",
+          translation: "Temanku Tono adalah guru bahasa di SMP negeri.",
+        },
+      ],
+    },
+    {
+      title: "3. Menunjukkan tempat berada.",
+      description: "",
+      examples: [
+        {
+          romaji: "Jakaruta no shoppingu sentā wa itsumo nigiyaka desu.",
+          japanese: "ジャカルタのショッピングセンターはいつもにぎやかです。",
+          translation: "Pusat perbelanjaan di Jakarta selalu ramai.",
+        },
+        {
+          romaji: "Nihon no haru wa totemo kirei desu.",
+          japanese: "日本の春はとてもきれいです。",
+          translation: "Musim semi di Jepang sangat indah.",
+        },
+      ],
+    },
+    {
+      title: "4. Untuk menominakan anak kalimat yg berbentuk kata kerja atau kata sifat",
+      description: "",
+      examples: [
+        {
+          romaji: "Kanji o oboeru no wa taihen muzukashii desu.",
+          japanese: "漢字を覚えるのは大変難しいです。",
+          translation: "Susah sekali mengingat kanji.",
+        },
+        {
+          romaji: "Kare wa daigaku o yameta no wa okane ga nai tame desu.",
+          japanese: "彼は大学をやめたのはお金がないためです。",
+          translation: "Dia berhenti kuliah karena tidak mempunyai uang.",
+        },
+      ],
+    },
+    {
+      title: "5. Diletakkan di akhir kalimat untuk",
+      description: "Dalam ucapan informal, の sering diganti dengan ん",
+      examples: [
+        {
+          romaji: "Dō shita no.",
+          japanese: "どうしたの。",
+          translation: "Kenapa kamu? (bertanya secara akrab)",
+        },
+        {
+          romaji: "Ashita yōji ga aru no desu.",
+          japanese: "あした用事があるのです。",
+          translation: "Besok saya ada urusan. (penegasan)",
+        },
+        {
+          romaji: "Neru mae ni ha o migaku no.",
+          japanese: "寝る前に歯をみがくの。",
+          translation: "Sebelum tidur kamu harus menggosok gigi. (memberi perintah bernada keras)",
+        },
+        {
+          romaji: "Suki na no?",
+          japanese: "好きなの?",
+          translation: "Suka? (untuk Kata sifat II, kata benda, kata ganti dsb. harus ditambah kata NA な)",
+        },
+      ],
+    },
+  ],
+};

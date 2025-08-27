@@ -239,6 +239,21 @@ export default function GrammarPage() {
                 </CardContent>
               </Card>
             </Link>
+            <Link href="/grammar/partikel-no">
+              <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <Atom className="size-8 text-primary" />
+                    <CardTitle>Partikel NO の</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Pelajari penggunaan partikel NO untuk menandakan 'punya', 'milik', dan lainnya.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </main>
       </SidebarInset>
