@@ -13,7 +13,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -22,14 +22,14 @@ import "react-pdf/dist/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
-  ({ children }, ref) => {
+  (props, ref) => {
     return (
       <div
         ref={ref}
         className="flex items-center justify-center rounded-md border bg-card shadow-md"
       >
         <h2 className="py-4 text-center font-headline text-2xl font-bold text-card-foreground">
-          {children}
+          {props.children}
         </h2>
       </div>
     );
@@ -38,28 +38,30 @@ const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }
 PageCover.displayName = "PageCover";
 
 const PageContent = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
-  ({ children }, ref) => {
+  (props, ref) => {
     return (
       <div
         ref={ref}
         className="flex items-center justify-center rounded-md border bg-background shadow-md"
       >
-        {children}
+        {props.children}
       </div>
     );
   }
 );
 PageContent.displayName = "PageContent";
 
-export default function FlipBookViewer({ params }: { params: { bookId: string } }) {
+export default function FlipBookViewer() {
   const router = useRouter();
+  const params = useParams();
   const { toast } = useToast();
   const [numPages, setNumPages] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [zoom, setZoom] = useState(1);
   const flipBookRef = useRef<any>(null);
 
-  const book = ebooks.find(b => b.id === params.bookId);
+  const bookId = params.bookId as string;
+  const book = ebooks.find(b => b.id === bookId);
 
   useEffect(() => {
     if (!book) {
