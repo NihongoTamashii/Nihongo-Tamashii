@@ -880,3 +880,59 @@ export const toParticle: ParticleData = {
         },
     ],
 };
+
+export const waParticle: ParticleData = {
+  title: "Partikel WA は",
+  particle: "は",
+  meaning: "Partikel WA は berfungsi sebagai kata bantu subjek.",
+  usages: [
+    {
+      title: "1. Menunjukkan subjek pembicaraan atau pokok kalimat.",
+      description: "",
+      examples: [
+        {
+          romaji: "Watashi wa gakusei desu.",
+          japanese: "わたしは学生です。",
+          translation: "Saya adalah siswa.",
+        },
+        {
+          romaji: "Indoneshia wa kirei na kuni desu.",
+          japanese: "インドネシアはきれいな国です。",
+          translation: "Indonesia adalah negara yang indah.",
+        },
+      ],
+    },
+    {
+      title: "2. Menunjukkan penekanan/penegasan",
+      description: "",
+      examples: [
+        {
+          romaji: "Akai bōshi wa arimasu ga, kuroi bōshi wa arimasen",
+          japanese: "赤い帽子はありますが、黒い帽子はありません。",
+          translation: "Saya mempunyai topi merah, tetapi tidak mempunyai topi hitam.",
+        },
+        {
+          romaji: "Keimusho kara wa demashita.",
+          japanese: "刑務所からは出ました。",
+          translation: "Dia sudah keluar dari penjara.",
+        },
+      ],
+    },
+    {
+      title: "3. Menunjukkan suatu hal yang kontras/bertentangan dengan yang diutarakan selanjutnya.",
+      description: "",
+      examples: [
+        {
+          romaji: "Kakaku wa takai desu ga, hinshitsu wa warui desu.",
+          japanese: "価格は高いですが、品質は悪いです。",
+          translation: "Harganya mahal, tetapi kualitasnya jelek.",
+        },
+        {
+          romaji: "Kōhii wa kaimashita ga, satō wa kaimasen deshita.",
+          japanese: "コーヒーは買いましたが、砂糖は買いませんでした。",
+          translation: "Saya telah membeli kopi, tetapi tidak membeli gula.",
+        },
+      ],
+    },
+  ],
+};
