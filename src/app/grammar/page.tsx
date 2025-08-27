@@ -23,13 +23,7 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
@@ -126,46 +120,39 @@ export default function GrammarPage() {
                 const romaji = translationParts.find(p => p.startsWith("romaji:"))?.replace("romaji: ", "");
 
                 return(
-                <Card key={index} className="overflow-hidden">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value={`item-${index}`} className="border-b-0">
-                      <AccordionTrigger className="relative p-4 text-left font-semibold hover:no-underline">
-                        {rule.format}
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="absolute right-12 top-1/2 -translate-y-1/2"
-                          onClick={(e) => handleSpeak(e, rule.example)}
-                        >
-                          <Volume2 />
-                        </Button>
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="space-y-3 px-4 pb-4">
-                          <div>
-                            <p className="font-semibold text-foreground/80">Deskripsi:</p>
-                            <p>{rule.description}</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold text-foreground/80">Contoh:</p>
-                            <p>{rule.example}</p>
-                          </div>
-                          {arti && (
-                             <div>
-                                <p className="font-semibold text-foreground/80">Terjemahan:</p>
-                                <p>{arti}</p>
-                             </div>
-                          )}
-                          {romaji && (
-                             <div>
-                                <p className="font-semibold text-foreground/80">Romaji:</p>
-                                <p>{romaji}</p>
-                             </div>
-                          )}
+                <Card key={index}>
+                  <CardHeader className="flex flex-row items-center justify-between pb-4">
+                    <CardTitle className="text-lg font-semibold leading-none tracking-tight">{rule.format}</CardTitle>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={(e) => handleSpeak(e, rule.example)}
+                    >
+                      <Volume2 />
+                    </Button>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div>
+                      <p className="font-semibold text-foreground/80">Deskripsi:</p>
+                      <p>{rule.description}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground/80">Contoh:</p>
+                      <p>{rule.example}</p>
+                    </div>
+                    {arti && (
+                        <div>
+                          <p className="font-semibold text-foreground/80">Terjemahan:</p>
+                          <p>{arti}</p>
                         </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                    )}
+                    {romaji && (
+                        <div>
+                          <p className="font-semibold text-foreground/80">Romaji:</p>
+                          <p>{romaji}</p>
+                        </div>
+                    )}
+                  </CardContent>
                 </Card>
               )})
             )}
