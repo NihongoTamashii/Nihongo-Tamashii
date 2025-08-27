@@ -19,6 +19,7 @@ import {
   SquarePen,
   GitBranch,
   Settings,
+  Volume2,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -35,6 +36,15 @@ import Link from "next/link";
 import { grammarSections } from "@/lib/data/grammar";
 
 export default function GrammarPage() {
+  const handleSpeak = (e: React.MouseEvent, text: string) => {
+    e.stopPropagation();
+    if (typeof window !== "undefined" && window.speechSynthesis) {
+      const utterance = new SpeechSynthesisUtterance(text.split(" (")[0]);
+      utterance.lang = "ja-JP";
+      window.speechSynthesis.speak(utterance);
+    }
+  };
+  
   return (
     <SidebarProvider>
       <Sidebar>
@@ -85,7 +95,7 @@ export default function GrammarPage() {
         <SidebarFooter>
           <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
             <Avatar className="size-9">
-              <AvatarImage src="https://picsum.photos/100/100" data-ai-hint="person face" />
+              <AvatarImage src="https://i.ibb.co/svjvCLZL/icon.jpg" data-ai-hint="person face" />
               <AvatarFallback>YT</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
@@ -110,12 +120,25 @@ export default function GrammarPage() {
         <main className="flex-1 p-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {grammarSections.map((section) =>
-              section.rules.map((rule, index) => (
+              section.rules.map((rule, index) => {
+                const translationParts = rule.translation.split(" - ");
+                const arti = translationParts.find(p => p.startsWith("arti:"))?.replace("arti: ", "");
+                const romaji = translationParts.find(p => p.startsWith("romaji:"))?.replace("romaji: ", "");
+
+                return(
                 <Card key={index} className="overflow-hidden">
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value={`item-${index}`} className="border-b-0">
-                      <AccordionTrigger className="p-4 text-left font-semibold hover:no-underline">
+                      <AccordionTrigger className="relative p-4 text-left font-semibold hover:no-underline">
                         {rule.format}
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="absolute right-12 top-1/2 -translate-y-1/2"
+                          onClick={(e) => handleSpeak(e, rule.example)}
+                        >
+                          <Volume2 />
+                        </Button>
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="space-y-3 px-4 pb-4">
@@ -127,10 +150,16 @@ export default function GrammarPage() {
                             <p className="font-semibold text-foreground/80">Contoh:</p>
                             <p>{rule.example}</p>
                           </div>
-                          {rule.translation && (
+                          {arti && (
                              <div>
                                 <p className="font-semibold text-foreground/80">Terjemahan:</p>
-                                <p>{rule.translation}</p>
+                                <p>{arti}</p>
+                             </div>
+                          )}
+                          {romaji && (
+                             <div>
+                                <p className="font-semibold text-foreground/80">Romaji:</p>
+                                <p>{romaji}</p>
                              </div>
                           )}
                         </div>
@@ -138,7 +167,7 @@ export default function GrammarPage() {
                     </AccordionItem>
                   </Accordion>
                 </Card>
-              ))
+              )})
             )}
           </div>
         </main>
