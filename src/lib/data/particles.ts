@@ -103,3 +103,43 @@ export const deParticle: ParticleData = {
     },
   ],
 };
+
+export const eParticle: ParticleData = {
+  title: "Partikel E へ",
+  particle: "へ",
+  meaning: "Partikel E へ (ditulis he へ) secara umum berarti 'ke'",
+  usages: [
+    {
+      title: "1. Menunjukkan arah gerakan.",
+      description: "'ke ...'",
+      examples: [
+        {
+          romaji: "Itsu Bari e ikimasu ka.",
+          japanese: "いつバリへ行きますか。",
+          translation: "Kapan Anda akan pergi ke Bali.",
+        },
+        {
+          romaji: "Kyō wa doko e odekake desu ka.",
+          japanese: "今日はどこへお出かけですか。",
+          translation: "Hari ini Anda mau pergi ke mana?",
+        },
+      ],
+    },
+    {
+      title: "2. Menunjukkan penerima suatu perbuatan.",
+      description: "'untuk;kepada'",
+      examples: [
+        {
+          romaji: "Kore wa tomodachi e no omiyage desu.",
+          japanese: "これは友だちへのお土産です。",
+          translation: "Ini adalah oleh-oleh untuk teman.",
+        },
+        {
+          romaji: "Tarō-san wa okusan e no tanjōbi no okurimono o kaimashita.",
+          japanese: "太郎さんは奥さんへの誕生日の贈り物を買いました。",
+          translation: "Taro telah membeli hadiah ulang tahun untuk istrinya.",
+        },
+      ],
+    },
+  ],
+};
