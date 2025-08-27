@@ -20,71 +20,17 @@ import {
   GitBranch,
   Settings,
   BookOpen,
-  FileUp,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import React, { useState, useCallback } from "react";
+import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useToast } from "@/hooks/use-toast";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
+import { ebooks } from "@/lib/data/books";
 
 export default function ReadingPage() {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [file, setFile] = useState<File | null>(null);
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = event.target.files?.[0];
-    if (selectedFile && selectedFile.type === "application/pdf") {
-      setFile(selectedFile);
-    } else {
-      setFile(null);
-      toast({
-        title: "File Tidak Valid",
-        description: "Silakan pilih file dengan format PDF.",
-        variant: "destructive",
-      });
-    }
-  };
-
-  const handleViewBook = useCallback(() => {
-    if (!file) {
-      toast({
-        title: "Tidak Ada File",
-        description: "Silakan pilih file PDF terlebih dahulu.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const pdfData = reader.result as string;
-      try {
-        localStorage.setItem("pdfData", pdfData);
-        router.push(`/reading/view`);
-      } catch (error) {
-        toast({
-          title: "Gagal Membuka File",
-          description: "Ukuran file PDF terlalu besar untuk dibuka di browser.",
-          variant: "destructive",
-        });
-      }
-    };
-    reader.onerror = () => {
-      toast({
-        title: "Gagal Membaca File",
-        description: "Terjadi kesalahan saat membaca file PDF.",
-        variant: "destructive",
-      });
-    };
-  }, [file, router, toast]);
-
   return (
     <SidebarProvider>
       <Sidebar>
@@ -160,48 +106,37 @@ export default function ReadingPage() {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
-          <h1 className="font-headline text-2xl font-semibold">Reading Books</h1>
+          <h1 className="font-headline text-2xl font-semibold">E-Book Library</h1>
           <Button variant="ghost" size="icon">
             <Settings />
           </Button>
         </header>
         <main className="flex-1 p-6">
-          <div className="flex h-[calc(100vh-10rem)] items-center justify-center">
-            <Card className="w-full max-w-md">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <FileUp className="size-6" />
-                  <span>Unggah E-Book Anda</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
-                  Pilih file PDF dari komputer Anda untuk mulai membaca.
-                </p>
-                <Input
-                  type="file"
-                  accept="application/pdf"
-                  onChange={handleFileChange}
-                  className="file:text-foreground"
-                />
-                {file && (
-                  <div className="text-sm text-muted-foreground">
-                    File terpilih:{" "}
-                    <span className="font-medium text-foreground">
-                      {file.name}
-                    </span>
-                  </div>
-                )}
-                <Button
-                  onClick={handleViewBook}
-                  disabled={!file}
-                  className="w-full"
-                >
-                  <BookOpen className="mr-2" />
-                  Mulai Membaca
-                </Button>
-              </CardContent>
-            </Card>
+           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {ebooks.map((book) => (
+              <Link key={book.id} href={`/reading/${book.id}`} passHref>
+                <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                  <CardHeader>
+                     <Image
+                        src={book.coverImage}
+                        alt={`Cover of ${book.title}`}
+                        width={300}
+                        height={400}
+                        className="rounded-t-lg object-cover"
+                        data-ai-hint="book cover"
+                      />
+                    <CardTitle className="pt-4">{book.title}</CardTitle>
+                    <CardDescription>Oleh: {book.author}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-clamp-3">
+                      {book.description}
+                    </p>
+                     <Button className="mt-4 w-full">Mulai Membaca</Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
         </main>
       </SidebarInset>
