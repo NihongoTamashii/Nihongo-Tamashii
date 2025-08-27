@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import HTMLFlipBook from "react-pageflip";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,7 @@ import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   ({ children }, ref) => {
@@ -57,18 +54,15 @@ PageContent.displayName = "PageContent";
 export default function FlipBookViewer({ params }: { params: { bookId: string } }) {
   const router = useRouter();
   const { toast } = useToast();
-  const [book, setBook] = useState<(typeof ebooks)[0] | null>(null);
   const [numPages, setNumPages] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
   const [zoom, setZoom] = useState(1);
-  const flipBookRef = React.useRef<any>(null);
+  const flipBookRef = useRef<any>(null);
+
+  const book = ebooks.find(b => b.id === params.bookId);
 
   useEffect(() => {
-    const foundBook = ebooks.find(b => b.id === params.bookId);
-    if (foundBook) {
-      setBook(foundBook);
-    } else {
+    if (!book) {
       toast({
         title: "Buku Tidak Ditemukan",
         description: "E-book yang Anda cari tidak ada di perpustakaan.",
@@ -76,11 +70,10 @@ export default function FlipBookViewer({ params }: { params: { bookId: string } 
       });
       router.push("/reading");
     }
-  }, [params.bookId, router, toast]);
+  }, [book, router, toast]);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
-    setIsLoading(false);
   };
   
   const onFlip = useCallback((e: { data: number }) => {
@@ -116,7 +109,7 @@ export default function FlipBookViewer({ params }: { params: { bookId: string } 
             </h1>
             {numPages && (
                 <p className="text-sm text-muted-foreground">
-                    Halaman {currentPage + 1} dari {numPages}
+                    Halaman {currentPage * 2} dari {numPages}
                 </p>
             )}
         </div>
@@ -130,13 +123,15 @@ export default function FlipBookViewer({ params }: { params: { bookId: string } 
             </Button>
         </div>
       </header>
-      <main className="flex-1 overflow-hidden p-4">
-        <div className="flex h-full w-full items-center justify-center">
+      <main className="flex flex-1 items-center justify-center overflow-hidden p-4">
+        <div className="relative flex items-center">
+             <Button variant="outline" size="icon" className="absolute -left-12 z-10 rounded-full" onClick={goToPrevPage} disabled={currentPage === 0}>
+                <ChevronLeft/>
+            </Button>
           <Document
             file={book.filePath}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={(error) => {
-                setIsLoading(false);
                 toast({ title: "Gagal memuat PDF", description: error.message, variant: "destructive" });
             }}
             loading={
@@ -146,38 +141,33 @@ export default function FlipBookViewer({ params }: { params: { bookId: string } 
               </div>
             }
           >
-            <div className="relative flex items-center">
-                 <Button variant="outline" size="icon" className="absolute -left-12 z-10 rounded-full" onClick={goToPrevPage} disabled={currentPage === 0}>
-                    <ChevronLeft/>
-                </Button>
-              <HTMLFlipBook
-                width={400 * zoom}
-                height={565 * zoom}
-                size="stretch"
-                minWidth={315}
-                maxWidth={1000}
-                minHeight={400}
-                maxHeight={1533}
-                maxShadowOpacity={0.5}
-                showCover={true}
-                mobileScrollSupport={true}
-                onFlip={onFlip}
-                className="mx-auto"
-                ref={flipBookRef}
-              >
-                <PageCover>{book.title}</PageCover>
-                {Array.from(new Array(numPages), (el, index) => (
-                  <PageContent key={`page_${index + 1}`}>
-                    <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
-                  </PageContent>
-                ))}
-                <PageCover>Selesai</PageCover>
-              </HTMLFlipBook>
-               <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= numPages - 1}>
-                    <ChevronRight/>
-                </Button>
-            </div>
+            <HTMLFlipBook
+              width={400 * zoom}
+              height={565 * zoom}
+              size="stretch"
+              minWidth={315}
+              maxWidth={1000}
+              minHeight={400}
+              maxHeight={1533}
+              maxShadowOpacity={0.5}
+              showCover={true}
+              mobileScrollSupport={true}
+              onFlip={onFlip}
+              className="mx-auto"
+              ref={flipBookRef}
+            >
+              <PageCover>{book.title}</PageCover>
+              {Array.from(new Array(numPages || 0), (el, index) => (
+                <PageContent key={`page_${index + 1}`}>
+                  <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
+                </PageContent>
+              ))}
+              <PageCover>Selesai</PageCover>
+            </HTMLFlipBook>
           </Document>
+           <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= numPages - 1}>
+                <ChevronRight/>
+            </Button>
         </div>
       </main>
     </div>
