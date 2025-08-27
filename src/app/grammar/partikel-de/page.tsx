@@ -1,8 +1,8 @@
 
 "use client";
 
-import React from "react";
-import { ArrowLeft } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowLeft, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -10,6 +10,20 @@ import { deParticle } from "@/lib/data/particles";
 import { Separator } from "@/components/ui/separator";
 
 export default function ParticleDePage() {
+  const [speech, setSpeech] = useState<SpeechSynthesis | null>(null);
+
+  useEffect(() => {
+    setSpeech(window.speechSynthesis);
+  }, []);
+
+  const handleSpeak = (text: string) => {
+    if (speech) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "ja-JP";
+      speech.speak(utterance);
+    }
+  };
+
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
@@ -44,7 +58,12 @@ export default function ParticleDePage() {
               {usage.examples.map((ex, exIndex) => (
                 <div key={exIndex}>
                   <div className="space-y-1 rounded-lg border bg-muted/30 p-4">
-                    <p className="font-semibold">{ex.romaji}</p>
+                    <div className="flex items-center justify-between">
+                      <p className="font-semibold">{ex.romaji}</p>
+                      <Button variant="ghost" size="icon" onClick={() => handleSpeak(ex.japanese)}>
+                        <Volume2 className="h-5 w-5" />
+                      </Button>
+                    </div>
                     <p className="text-lg">{ex.japanese}</p>
                     <p className="text-sm text-muted-foreground">{ex.translation}</p>
                   </div>
