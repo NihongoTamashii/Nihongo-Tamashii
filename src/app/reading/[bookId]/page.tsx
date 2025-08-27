@@ -2,8 +2,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import HTMLFlipBook from "react-pageflip";
+import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,
@@ -19,6 +18,18 @@ import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
+// Dynamically import react-pdf and react-pageflip to avoid SSR issues
+const Document = dynamic(() => import('react-pdf').then(mod => mod.Document), { ssr: false });
+const Page = dynamic(() => import('react-pdf').then(mod => mod.Page), { ssr: false });
+const HTMLFlipBook = dynamic(() => import('react-pageflip'), { ssr: false });
+const { pdfjs } = dynamic(() => import('react-pdf'), { ssr: false }) as any;
+
+if (pdfjs) {
+  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    "pdfjs-dist/build/pdf.worker.min.mjs",
+    import.meta.url
+  ).toString();
+}
 
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   (props, ref) => {
@@ -58,13 +69,6 @@ export default function FlipBookViewer() {
   const [currentPage, setCurrentPage] = useState(0);
   const [zoom, setZoom] = useState(1);
   const flipBookRef = useRef<any>(null);
-
-  useEffect(() => {
-    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-      "pdfjs-dist/build/pdf.worker.min.mjs",
-      import.meta.url
-    ).toString();
-  }, []);
 
   const bookId = params.bookId as string;
   const book = ebooks.find(b => b.id === bookId);
@@ -125,7 +129,7 @@ export default function FlipBookViewer() {
             <Button variant="ghost" size="icon" onClick={() => setZoom(z => Math.max(0.5, z-0.1))}>
                 <ZoomOut className="h-5 w-5" />
             </Button>
-            <span className="text-sm font-semiboldtabular-nums">{(zoom*100).toFixed(0)}%</span>
+            <span className="text-sm font-semibold tabular-nums">{(zoom*100).toFixed(0)}%</span>
              <Button variant="ghost" size="icon" onClick={() => setZoom(z => Math.min(2, z+0.1))}>
                 <ZoomIn className="h-5 w-5" />
             </Button>
@@ -140,8 +144,8 @@ export default function FlipBookViewer() {
             file={book.filePath}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={(error) => {
-                console.error(error);
-                toast({ title: "Gagal memuat PDF", description: "Pastikan file PDF ada di folder public/ebooks/ dan path-nya benar.", variant: "destructive" });
+                console.error("PDF Load Error:", error);
+                toast({ title: "Gagal memuat PDF", description: `Pastikan file PDF ada di folder public dan path-nya benar. Pesan error: ${error.message}`, variant: "destructive" });
             }}
             loading={
               <div className="flex items-center">
@@ -150,29 +154,31 @@ export default function FlipBookViewer() {
               </div>
             }
           >
-            <HTMLFlipBook
-              width={400 * zoom}
-              height={565 * zoom}
-              size="stretch"
-              minWidth={315}
-              maxWidth={1000}
-              minHeight={400}
-              maxHeight={1533}
-              maxShadowOpacity={0.5}
-              showCover={true}
-              mobileScrollSupport={true}
-              onFlip={onFlip}
-              className="mx-auto"
-              ref={flipBookRef}
-            >
-              <PageCover>{book.title}</PageCover>
-              {Array.from(new Array(numPages || 0), (el, index) => (
-                <PageContent key={`page_${index + 1}`}>
-                  <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
-                </PageContent>
-              ))}
-              <PageCover>Selesai</PageCover>
-            </HTMLFlipBook>
+           {HTMLFlipBook && (
+              <HTMLFlipBook
+                width={400 * zoom}
+                height={565 * zoom}
+                size="stretch"
+                minWidth={315}
+                maxWidth={1000}
+                minHeight={400}
+                maxHeight={1533}
+                maxShadowOpacity={0.5}
+                showCover={true}
+                mobileScrollSupport={true}
+                onFlip={onFlip}
+                className="mx-auto"
+                ref={flipBookRef}
+              >
+                <PageCover>{book.title}</PageCover>
+                {Array.from(new Array(numPages || 0), (el, index) => (
+                  <PageContent key={`page_${index + 1}`}>
+                    <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
+                  </PageContent>
+                ))}
+                <PageCover>Selesai</PageCover>
+              </HTMLFlipBook>
+            )}
           </Document>
            <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= (numPages / 2) }>
                 <ChevronRight/>
