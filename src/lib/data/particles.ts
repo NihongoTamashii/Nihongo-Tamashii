@@ -308,3 +308,75 @@ export const kaParticle: ParticleData = {
         },
     ],
 };
+
+export const karaParticle: ParticleData = {
+    title: "Partikel KARA から",
+    particle: "から",
+    meaning: "Partikel KARA から secara umum berarti 'dari;karena'",
+    usages: [
+        {
+            title: "1. Menunjukkan tempat/arah/angka.",
+            description: "'dari'",
+            examples: [
+                {
+                    romaji: "Anohito-tachi wa kurasu kara demashita.",
+                    japanese: "あの人たちはクラスから出ました。",
+                    translation: "Mereka telah keluar dari kelas.",
+                },
+                {
+                    romaji: "Uchi kara gakkō made arukimasu.",
+                    japanese: "家から学校まで歩きます。",
+                    translation: "Berjalan kaki dari rumah sampai sekolah.",
+                },
+            ],
+        },
+        {
+            title: "2. Menunjukkan batas waktu.",
+            description: "'dari;sejak'",
+            examples: [
+                {
+                    romaji: "Ashita kara nisenjūnen ni narimasu.",
+                    japanese: "あしたから二千十年になります。",
+                    translation: "Mulai besok masuk tahun 2010.",
+                },
+                {
+                    romaji: "Kore kara motto majime ni benkyō shimasu.",
+                    japanese: "これからもっとまじめに勉強します。",
+                    translation: "Mulai sekarang saya akan belajar lebih serius.",
+                },
+            ],
+        },
+        {
+            title: "3. Menunjukkan penyebab/alasan sesuatu hal dilakukan.",
+            description: "'karena'",
+            examples: [
+                {
+                    romaji: "Tōi kara, hakkiri miemasen.",
+                    japanese: "遠いから、はっきり見えません。",
+                    translation: "Karena jauh, tak tampak jelas.",
+                },
+                {
+                    romaji: "Ōame ga furimashita kara, ikemasen deshita.",
+                    japanese: "大雨が降りましたから、行けませんでした。",
+                    translation: "Karena telah turun hujan besar, tidak bisa pergi.",
+                },
+            ],
+        },
+        {
+            title: "4. Bentuk '-te kara' menunjukkan arti 'setelah;sesudah'",
+            description: "",
+            examples: [
+                {
+                    romaji: "Te o aratte kara, gohan o tabemasu.",
+                    japanese: "手を洗ってから、ご飯を食べます。",
+                    translation: "Makan setelah mencuci tangan.",
+                },
+                {
+                    romaji: "Umarete kara, zutto kono machi ni sunde imasu.",
+                    japanese: "生まれてから、ずっとこの町に住んでいます。",
+                    translation: "Sejak lahir saya terus tinggal di kota ini.",
+                },
+            ],
+        },
+    ],
+};
