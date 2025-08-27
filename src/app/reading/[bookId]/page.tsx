@@ -1,185 +1,135 @@
 
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import dynamic from 'next/dynamic';
-import { Button } from "@/components/ui/button";
 import {
-  ArrowLeft,
-  ChevronLeft,
-  ChevronRight,
-  Loader2,
-  ZoomIn,
-  ZoomOut,
+  SidebarProvider,
+  Sidebar,
+  SidebarHeader,
+  SidebarTrigger,
+  SidebarContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarFooter,
+  SidebarInset,
+} from "@/components/ui/sidebar";
+import {
+  Home,
+  BookText,
+  SquarePen,
+  GitBranch,
+  Settings,
+  BookOpen,
+  Construction,
 } from "lucide-react";
-import { useRouter, useParams } from "next/navigation";
-import { useToast } from "@/hooks/use-toast";
-import { ebooks } from "@/lib/data/books";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
-import { pdfjs } from "react-pdf";
+import { Logo } from "@/components/logo";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.mjs`;
-
-// Dynamically import react-pdf and react-pageflip to avoid SSR issues
-const Document = dynamic(() => import('react-pdf').then(mod => mod.Document), { ssr: false });
-const Page = dynamic(() => import('react-pdf').then(mod => mod.Page), { ssr: false });
-const HTMLFlipBook = dynamic(() => import('react-pageflip'), { ssr: false });
-
-const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
-  (props, ref) => {
-    return (
-      <div
-        ref={ref}
-        className="flex items-center justify-center rounded-md border bg-card shadow-md"
-      >
-        <h2 className="py-4 text-center font-headline text-2xl font-bold text-card-foreground">
-          {props.children}
-        </h2>
-      </div>
-    );
-  }
-);
-PageCover.displayName = "PageCover";
-
-const PageContent = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
-  (props, ref) => {
-    return (
-      <div
-        ref={ref}
-        className="flex items-center justify-center rounded-md border bg-background shadow-md"
-      >
-        {props.children}
-      </div>
-    );
-  }
-);
-PageContent.displayName = "PageContent";
-
-export default function FlipBookViewer() {
-  const router = useRouter();
-  const params = useParams();
-  const { toast } = useToast();
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [zoom, setZoom] = useState(1);
-  const flipBookRef = useRef<any>(null);
-
-  const bookId = params.bookId as string;
-  const book = ebooks.find(b => b.id === bookId);
-  
-  useEffect(() => {
-    if (!book) {
-      toast({
-        title: "Buku Tidak Ditemukan",
-        description: "E-book yang Anda cari tidak ada di perpustakaan.",
-        variant: "destructive",
-      });
-      router.push("/reading");
-    }
-  }, [book, router, toast]);
-
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-  };
-  
-  const onFlip = useCallback((e: { data: number }) => {
-    setCurrentPage(e.data);
-  }, []);
-
-  const goToNextPage = () => {
-    flipBookRef.current?.pageFlip()?.flipNext();
-  };
-
-  const goToPrevPage = () => {
-    flipBookRef.current?.pageFlip()?.flipPrev();
-  };
-  
-  if (!book) {
-    return (
-      <div className="flex h-screen w-full items-center justify-center bg-background">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-        <p className="ml-4 text-lg">Mencari buku...</p>
-      </div>
-    );
-  }
-
+export default function ReadingFeatureComingSoonPage() {
   return (
-    <div className="flex h-screen w-full flex-col bg-muted/40">
-      <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
-        <Button variant="ghost" size="icon" onClick={() => router.push('/reading')}>
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <div className="text-center">
-            <h1 className="font-headline text-lg font-semibold">
-              {book.title}
-            </h1>
-            {numPages && (
-                <p className="text-sm text-muted-foreground">
-                    Halaman {currentPage * 2 || 1} dari {numPages}
-                </p>
-            )}
-        </div>
-        <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={() => setZoom(z => Math.max(0.5, z-0.1))}>
-                <ZoomOut className="h-5 w-5" />
-            </Button>
-            <span className="text-sm font-semibold tabular-nums">{(zoom*100).toFixed(0)}%</span>
-             <Button variant="ghost" size="icon" onClick={() => setZoom(z => Math.min(2, z+0.1))}>
-                <ZoomIn className="h-5 w-5" />
-            </Button>
-        </div>
-      </header>
-      <main className="flex flex-1 items-center justify-center overflow-hidden p-4">
-        <div className="relative flex items-center">
-             <Button variant="outline" size="icon" className="absolute -left-12 z-10 rounded-full" onClick={goToPrevPage} disabled={currentPage === 0}>
-                <ChevronLeft/>
-            </Button>
-          {Document && Page && HTMLFlipBook && (
-            <Document
-              file={book.filePath}
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={(error) => {
-                  console.error("PDF Load Error:", error);
-                  toast({ title: "Gagal memuat PDF", description: `Pastikan file PDF ada di folder public dan path-nya benar. Error: ${error.message}`, variant: "destructive" });
-              }}
-              loading={
-                <div className="flex items-center">
-                  <Loader2 className="h-6 w-6 animate-spin text-primary" />
-                  <p className="ml-2">Memuat E-Book...</p>
-                </div>
-              }
-            >
-                <HTMLFlipBook
-                  width={400 * zoom}
-                  height={565 * zoom}
-                  size="stretch"
-                  minWidth={315}
-                  maxWidth={1000}
-                  minHeight={400}
-                  maxHeight={1533}
-                  maxShadowOpacity={0.5}
-                  showCover={true}
-                  mobileScrollSupport={true}
-                  onFlip={onFlip}
-                  className="mx-auto"
-                  ref={flipBookRef}
-                >
-                  <PageCover>{book.title}</PageCover>
-                  {Array.from(new Array(numPages || 0), (el, index) => (
-                    <PageContent key={`page_${index + 1}`}>
-                      <Page pageNumber={index + 1} scale={zoom} renderTextLayer={false}/>
-                    </PageContent>
-                  ))}
-                  <PageCover>Selesai</PageCover>
-                </HTMLFlipBook>
-            </Document>
-          )}
-           <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= (numPages / 2) }>
-                <ChevronRight/>
-            </Button>
-        </div>
-      </main>
-    </div>
+    <SidebarProvider>
+      <Sidebar>
+        <SidebarHeader>
+          <div className="flex items-center gap-3">
+            <Logo />
+            <h2 className="font-headline text-lg font-semibold text-sidebar-foreground">
+              Nihongo Tamashii
+            </h2>
+          </div>
+        </SidebarHeader>
+        <SidebarContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <Link href="/">
+                <SidebarMenuButton>
+                  <Home />
+                  <span>Home</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/kotoba">
+                <SidebarMenuButton>
+                  <BookText />
+                  <span>Kotoba</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/kanji">
+                <SidebarMenuButton>
+                  <SquarePen />
+                  <span>Kanji</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/grammar">
+                <SidebarMenuButton>
+                  <GitBranch />
+                  <span>Grammar</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/reading">
+                <SidebarMenuButton isActive>
+                  <BookOpen />
+                  <span>Reading</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarContent>
+        <SidebarFooter>
+          <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
+            <Avatar className="size-9">
+              <AvatarImage src="https://picsum.photos/100/100" data-ai-hint="person face" />
+              <AvatarFallback>YT</AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col">
+              <span className="font-headline font-semibold text-sidebar-foreground">
+                Your Name
+              </span>
+              <span className="text-xs text-sidebar-foreground/70">
+                Logout
+              </span>
+            </div>
+          </div>
+        </SidebarFooter>
+      </Sidebar>
+      <SidebarInset>
+        <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
+          <SidebarTrigger />
+          <h1 className="font-headline text-2xl font-semibold">E-Book Library</h1>
+          <Button variant="ghost" size="icon">
+            <Settings />
+          </Button>
+        </header>
+        <main className="flex flex-1 items-center justify-center p-6">
+           <Card className="w-full max-w-md">
+            <CardHeader className="items-center text-center">
+              <Construction className="size-16 text-primary" />
+              <CardTitle className="text-2xl font-headline">
+                Feature Coming Soon!
+              </CardTitle>
+              <CardDescription>
+                Fitur perpustakaan e-book sedang dalam pengembangan. Nantikan pembaruan selanjutnya!
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex justify-center">
+                <Link href="/reading" passHref>
+                    <Button>Kembali ke Library</Button>
+                </Link>
+            </CardContent>
+           </Card>
+        </main>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }

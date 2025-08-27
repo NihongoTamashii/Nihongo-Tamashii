@@ -28,7 +28,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ebooks } from "@/lib/data/books";
+import { Construction } from "lucide-react";
 
 export default function ReadingPage() {
   return (
@@ -111,33 +111,23 @@ export default function ReadingPage() {
             <Settings />
           </Button>
         </header>
-        <main className="flex-1 p-6">
-           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {ebooks.map((book) => (
-              <Link key={book.id} href={`/reading/${book.id}`} passHref>
-                <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                  <CardHeader>
-                     <Image
-                        src={book.coverImage}
-                        alt={`Cover of ${book.title}`}
-                        width={300}
-                        height={400}
-                        className="rounded-t-lg object-cover"
-                        data-ai-hint="book cover"
-                      />
-                    <CardTitle className="pt-4">{book.title}</CardTitle>
-                    <CardDescription>Oleh: {book.author}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      {book.description}
-                    </p>
-                     <Button className="mt-4 w-full">Mulai Membaca</Button>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+        <main className="flex flex-1 items-center justify-center p-6">
+           <Card className="w-full max-w-md">
+            <CardHeader className="items-center text-center">
+              <Construction className="size-16 text-primary" />
+              <CardTitle className="text-2xl font-headline">
+                Feature Coming Soon!
+              </CardTitle>
+              <CardDescription>
+                Fitur perpustakaan e-book sedang dalam pengembangan. Nantikan pembaruan selanjutnya!
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex justify-center">
+                <Link href="/" passHref>
+                    <Button>Kembali ke Home</Button>
+                </Link>
+            </CardContent>
+           </Card>
         </main>
       </SidebarInset>
     </SidebarProvider>
