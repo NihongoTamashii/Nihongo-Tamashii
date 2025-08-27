@@ -13,7 +13,7 @@ export interface GrammarSection {
 
 export const grammarSections: GrammarSection[] = [
   {
-    title: "50 Pola Kalimat Minna no Nihongo",
+    title: "Pola Kalimat",
     rules: [
       {
         format: "[Verb ます] + ます",
@@ -306,5 +306,3 @@ export const grammarSections: GrammarSection[] = [
     ],
   },
 ];
-
-    

@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -107,40 +107,40 @@ export default function GrammarPage() {
             <Settings />
           </Button>
         </header>
-        <main className="flex-1 space-y-6 p-6">
-          {grammarSections.map((section) => (
-            <Card key={section.title}>
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">
-                  {section.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  {section.rules.map((rule, index) => (
-                    <AccordionItem value={`item-${index}`} key={index}>
-                      <AccordionTrigger>{rule.format}</AccordionTrigger>
+        <main className="flex-1 p-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {grammarSections.map((section) =>
+              section.rules.map((rule, index) => (
+                <Card key={index} className="overflow-hidden">
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value={`item-${index}`} className="border-b-0">
+                      <AccordionTrigger className="p-4 text-left font-semibold hover:no-underline">
+                        {rule.format}
+                      </AccordionTrigger>
                       <AccordionContent>
-                        <div className="space-y-2">
-                          <p>
-                            <strong>Deskripsi:</strong> {rule.description}
-                          </p>
-                          <p>
-                            <strong>Contoh:</strong> {rule.example}
-                          </p>
+                        <div className="space-y-3 px-4 pb-4">
+                          <div>
+                            <p className="font-semibold text-foreground/80">Deskripsi:</p>
+                            <p>{rule.description}</p>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-foreground/80">Contoh:</p>
+                            <p>{rule.example}</p>
+                          </div>
                           {rule.translation && (
-                            <p>
-                              <strong>Terjemahan:</strong> {rule.translation}
-                            </p>
+                             <div>
+                                <p className="font-semibold text-foreground/80">Terjemahan:</p>
+                                <p>{rule.translation}</p>
+                             </div>
                           )}
                         </div>
                       </AccordionContent>
                     </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
-          ))}
+                  </Accordion>
+                </Card>
+              ))
+            )}
+          </div>
         </main>
       </SidebarInset>
     </SidebarProvider>
