@@ -694,3 +694,80 @@ export const noParticle: ParticleData = {
     },
   ],
 };
+
+export const oParticle: ParticleData = {
+  title: "Partikel O を",
+  particle: "を",
+  meaning: "Partikel O を (ditulis wo) berfungsi sebagai kata bantu untuk kata kerja.",
+  usages: [
+    {
+      title: "1. Menunjukkan objek dari kata kerja.",
+      description: "",
+      examples: [
+        {
+          romaji: "Biiru o nomimasu.",
+          japanese: "ビールを飲みます。",
+          translation: "Minum bir.",
+        },
+        {
+          romaji: "Hambāgā o tabemasu.",
+          japanese: "ハンバーガーを食べます。",
+          translation: "Makan hamburger.",
+        },
+        {
+          romaji: "Nihongo no benkyō o shimasu.",
+          japanese: "日本語の勉強をします。",
+          translation: "Belajar Bahasa Jepang.",
+        },
+      ],
+    },
+    {
+      title: "2. Menunjukkan tempat dilalui/dilewati.",
+      description: "",
+      examples: [
+        {
+          romaji: "Niwa o arukimasu.",
+          japanese: "庭を歩きます。",
+          translation: "Berjalan di pekarangan.",
+        },
+        {
+          romaji: "Hashi o watarimasu.",
+          japanese: "橋を渡ります。",
+          translation: "Menyeberangi jembatan.",
+        },
+      ],
+    },
+    {
+      title: "3. Menunjukkan tempat titik tolak dari verba intransitif.",
+      description: "",
+      examples: [
+        {
+          romaji: "Uchi o dete, gakkō e ikimasu.",
+          japanese: "家を出て、学校へ行きます。",
+          translation: "Keluar rumah, pergi ke sekolah.",
+        },
+        {
+          romaji: "Daigaku o sotsugyō shimashita.",
+          japanese: "大学を卒業しました。",
+          translation: "Tamat universitas/kuliah.",
+        },
+      ],
+    },
+    {
+      title: "4. Bekerja atau menjabat sesuatu.",
+      description: "(bentuk ... o shite imasu をしています)",
+      examples: [
+        {
+          romaji: "Otōsan wa keikan o shite imasu.",
+          japanese: "おとうさんは警官をしています。",
+          translation: "Ayahnya adalah seorang polisi.",
+        },
+        {
+          romaji: "Kanojo wa shachō o shite imasu.",
+          japanese: "彼女は社長をしています。",
+          translation: "Dia adalah seorang presiden direktur.",
+        },
+      ],
+    },
+  ],
+};
