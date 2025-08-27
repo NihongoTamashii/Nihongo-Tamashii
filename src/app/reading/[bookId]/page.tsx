@@ -19,10 +19,6 @@ import { ebooks } from "@/lib/data/books";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
 
 const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   (props, ref) => {
@@ -62,6 +58,13 @@ export default function FlipBookViewer() {
   const [currentPage, setCurrentPage] = useState(0);
   const [zoom, setZoom] = useState(1);
   const flipBookRef = useRef<any>(null);
+
+  useEffect(() => {
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+      "pdfjs-dist/build/pdf.worker.min.mjs",
+      import.meta.url
+    ).toString();
+  }, []);
 
   const bookId = params.bookId as string;
   const book = ebooks.find(b => b.id === bookId);
@@ -137,6 +140,7 @@ export default function FlipBookViewer() {
             file={book.filePath}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={(error) => {
+                console.error(error);
                 toast({ title: "Gagal memuat PDF", description: "Pastikan file PDF ada di folder public/ebooks/ dan path-nya benar.", variant: "destructive" });
             }}
             loading={
@@ -170,7 +174,7 @@ export default function FlipBookViewer() {
               <PageCover>Selesai</PageCover>
             </HTMLFlipBook>
           </Document>
-           <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= numPages - 1}>
+           <Button variant="outline" size="icon" className="absolute -right-12 z-10 rounded-full" onClick={goToNextPage} disabled={!numPages || currentPage >= (numPages / 2) }>
                 <ChevronRight/>
             </Button>
         </div>
