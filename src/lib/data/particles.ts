@@ -971,3 +971,38 @@ export const yaParticle: ParticleData = {
     },
   ],
 };
+
+export const yoriParticle: ParticleData = {
+    title: "Partikel YORI より",
+    particle: "より",
+    meaning: "Partikel YORI より secara umum berarti 'daripada'",
+    usages: [
+        {
+            title: "1. Menunjukkan suatu perbandingan.",
+            description: "'daripada;ketimbang'",
+            examples: [
+                {
+                    romaji: "Kyō wa kinō yori zutto atsui desu.",
+                    japanese: "今日は昨日よりずっと暑いです。",
+                    translation: "Hari ini jauh lebih panas daripada kemarin.",
+                },
+                {
+                    romaji: "Kare wa watashi yori sei ga takai desu.",
+                    japanese: "彼はわたしより背が高いです。",
+                    translation: "Dia lebih tinggi daripada saya.",
+                },
+            ],
+        },
+        {
+            title: "2. Sama arti dengan 'KARA から' (dari).",
+            description: "Bentuk ini biasa digunakan dalam bahasa tulisan.",
+            examples: [
+                {
+                    romaji: "Kita yori no kaze ga fukimasu.",
+                    japanese: "北よりの風が吹きます。",
+                    translation: "Bertiup angin dari utara.",
+                },
+            ],
+        },
+    ],
+};
