@@ -24,6 +24,7 @@ import {
   ClipboardCheck,
   AlertTriangle,
   BookOpen,
+  LogOut,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -31,8 +32,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function KotobaPage() {
+  const { user, logout } = useAuth();
+  if (!user) return null;
+
   return (
     <SidebarProvider>
       <Sidebar>
@@ -47,7 +52,7 @@ export default function KotobaPage() {
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <Link href="/">
+              <Link href="/home">
                 <SidebarMenuButton>
                   <Home />
                   <span>Home</span>
@@ -89,20 +94,26 @@ export default function KotobaPage() {
           </SidebarMenu>
         </SidebarContent>
         <SidebarFooter>
-          <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
-            <Avatar className="size-9">
-              <AvatarImage src="https://picsum.photos/100/100" data-ai-hint="person face" />
-              <AvatarFallback>YT</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col">
-              <span className="font-headline font-semibold text-sidebar-foreground">
-                Your Name
-              </span>
-              <span className="text-xs text-sidebar-foreground/70">
-                Logout
-              </span>
+           <div className="flex flex-col gap-2">
+            <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
+                <Avatar className="size-9">
+                <AvatarImage src={user.photoURL ?? "https://picsum.photos/100/100"} data-ai-hint="person face" />
+                <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col">
+                <span className="font-headline font-semibold text-sidebar-foreground">
+                    {user.displayName ?? user.email}
+                </span>
+                <span className="text-xs text-sidebar-foreground/70">
+                    Nihongo Member
+                </span>
+                </div>
             </div>
-          </div>
+            <Button variant="ghost" className="w-full justify-start gap-2" onClick={logout}>
+                <LogOut />
+                <span>Logout</span>
+            </Button>
+           </div>
         </SidebarFooter>
       </Sidebar>
       <SidebarInset>
@@ -180,3 +191,4 @@ export default function KotobaPage() {
     </SidebarProvider>
   );
 }
+
