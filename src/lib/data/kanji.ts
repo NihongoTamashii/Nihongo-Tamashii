@@ -1,3 +1,4 @@
+
 export const kanjiN5 = [
   {
     front: "日",
