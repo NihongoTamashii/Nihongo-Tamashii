@@ -22,7 +22,7 @@ export default function LearningKanjiPage({ params }: { params: { part: string }
   const part = parseInt(params.part, 10);
   
   const kanjiFlashcards = useMemo(
-    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiN5,
     []
   );
 
@@ -143,12 +143,9 @@ export default function LearningKanjiPage({ params }: { params: { part: string }
           >
             {/* Front of the card */}
             <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card [backface-visibility:hidden]">
-              <h2 className="text-5xl font-bold text-card-foreground">
-                {currentCard.frontSub}
-              </h2>
-              <p className="text-xl text-muted-foreground">
+              <h2 className="text-8xl font-bold text-card-foreground">
                 {currentCard.front}
-              </p>
+              </h2>
               <Button
                 variant="ghost"
                 size="icon"
@@ -160,10 +157,10 @@ export default function LearningKanjiPage({ params }: { params: { part: string }
             </CardContent>
 
             {/* Back of the card */}
-            <CardContent className="absolute flex h-full w-full items-center justify-center rounded-xl bg-card [backface-visibility:hidden] [transform:rotateY(180deg)]">
-              <h3 className="text-4xl font-semibold text-card-foreground">
+            <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="whitespace-pre-wrap text-center text-xl font-semibold text-card-foreground">
                 {currentCard.back}
-              </h3>
+              </div>
             </CardContent>
           </Card>
         </div>
