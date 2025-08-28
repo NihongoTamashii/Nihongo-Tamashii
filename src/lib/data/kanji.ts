@@ -294,7 +294,7 @@ export const kanjiN5: Kanji[] = [
       { japanese: '北海道', reading: 'ほっかいどう (Hokkaidō)', meaning: 'Hokkaido' },
     ],
   },
-  {
+   {
     character: '百',
     onyomi: 'ヒャク (hyaku)',
     kunyomi: 'もも (momo)',
@@ -334,139 +334,186 @@ export const kanjiN5: Kanji[] = [
       { japanese: '円い', reading: 'まるい (marui)', meaning: 'Bulat' },
     ],
   },
+   {
+    character: '口',
+    onyomi: 'コウ (kō), ク (ku)',
+    kunyomi: 'くち (kuchi)',
+    meaning: 'Mulut',
+    examples: [
+      { japanese: '人口', reading: 'じんこう (jinkō)', meaning: 'Populasi' },
+      { japanese: '入口', reading: 'いりぐち (iriguchi)', meaning: 'Pintu masuk' },
+    ],
+  },
   {
-    character: '帰',
+    character: '目',
+    onyomi: 'モク (moku)',
+    kunyomi: 'め (me)',
+    meaning: 'Mata',
+    examples: [
+      { japanese: '目的', reading: 'もくてき (mokuteki)', meaning: 'Tujuan' },
+      { japanese: '目薬', reading: 'めぐすり (megusuri)', meaning: 'Obat mata' },
+    ],
+  },
+    {
+    character: '青',
+    onyomi: 'セイ (sei)',
+    kunyomi: 'あお (ao), あおい (aoi)',
+    meaning: 'Biru',
+    examples: [
+      { japanese: '空は青いです。', reading: 'そらはあおいです (sora wa aoi desu)', meaning: 'Langit berwarna biru.' },
+    ],
+  },
+  {
+    character: '赤',
+    onyomi: 'セキ (seki)',
+    kunyomi: 'あか (aka), あかい (akai)',
+    meaning: 'Merah',
+    examples: [
+      { japanese: '赤いりんごを食べます。', reading: 'あかいりんごをたべます (akai ringo o tabemasu)', meaning: 'Saya makan apel merah.' },
+    ],
+  },
+  {
+    character: '立',
+    onyomi: 'リツ (ritsu)',
+    kunyomi: 'たつ (tatsu)',
+    meaning: 'Berdiri',
+    examples: [
+      { japanese: '先生が立っています。', reading: 'せんせいがたっています (sensei ga tatte imasu)', meaning: 'Guru sedang berdiri.' },
+    ],
+  },
+  {
+    character: '外',
+    onyomi: 'ガイ (gai)',
+    kunyomi: 'そと (soto)',
+    meaning: 'Luar',
+    examples: [
+      { japanese: '外で遊びます。', reading: 'そとであそびます (soto de asobimasu)', meaning: 'Saya bermain di luar.' },
+    ],
+  },
+  {
+    character: '入',
+    onyomi: 'ニュウ (nyuu)',
+    kunyomi: 'はいる (hairu), いれる (ireru)',
+    meaning: 'Masuk',
+    examples: [
+      { japanese: '学校に入ります。', reading: 'がっこうにはいります (gakkō ni hairimasu)', meaning: 'Saya masuk sekolah.' },
+    ],
+  },
+  {
+    character: '出',
+    onyomi: 'シュツ (shutsu)',
+    kunyomi: 'でる (deru), だす (dasu)',
+    meaning: 'Keluar',
+    examples: [
+      { japanese: '家を出ます。', reading: 'いえをでます (ie o demasu)', meaning: 'Saya keluar rumah.' },
+    ],
+  },
+  {
+    character: '東',
+    onyomi: 'トウ (tou)',
+    kunyomi: 'ひがし (higashi)',
+    meaning: 'Timur',
+    examples: [
+      { japanese: '東口で会いましょう。', reading: 'ひがしぐちであいましょう (higashiguchi de aimashō)', meaning: 'Mari bertemu di pintu timur.' },
+    ],
+  },
+  {
+    character: '西',
+    onyomi: 'セイ (sei), サイ (sai)',
+    kunyomi: 'にし (nishi)',
+    meaning: 'Barat',
+    examples: [
+      { japanese: '西の空が赤いです。', reading: 'にしのそらがあかいです (nishi no sora ga akai desu)', meaning: 'Langit barat tampak merah.' },
+    ],
+  },
+  {
+    character: '南',
+    onyomi: 'ナン (nan)',
+    kunyomi: 'みなみ (minami)',
+    meaning: 'Selatan',
+    examples: [
+      { japanese: '南の町に住んでいます。', reading: 'みなみのまちにすんでいます (minami no machi ni sunde imasu)', meaning: 'Saya tinggal di kota selatan.' },
+    ],
+  },
+  {
+    character: '北',
+    onyomi: 'ホク (hoku)',
+    kunyomi: 'きた (kita)',
+    meaning: 'Utara',
+    examples: [
+      { japanese: '北風が吹いています。', reading: 'きたかぜがふいています (kitakaze ga fuite imasu)', meaning: 'Angin utara sedang bertiup.' },
+    ],
+  },
+  {
+    character: '毎',
+    onyomi: 'マイ (mai)',
+    kunyomi: '-',
+    meaning: 'Setiap',
+    examples: [
+      { japanese: '毎日勉強します。', reading: 'まいにちべんきょうします (mainichi benkyō shimasu)', meaning: 'Saya belajar setiap hari.' },
+    ],
+  },
+  {
+    character: '朝',
+    onyomi: 'チョウ (chou)',
+    kunyomi: 'あさ (asa)',
+    meaning: 'Pagi',
+    examples: [
+      { japanese: '朝ごはんを食べました。', reading: 'あさごはんをたべました (asagohan o tabemashita)', meaning: 'Saya makan sarapan pagi.' },
+    ],
+  },
+  {
+    character: '昼',
+    onyomi: 'チュウ (chuu)',
+    kunyomi: 'ひる (hiru)',
+    meaning: 'Siang',
+    examples: [
+      { japanese: '昼ごはんはラーメンです。', reading: 'ひるごはんはらーめんです (hirugohan wa rāmen desu)', meaning: 'Makan siang saya adalah ramen.' },
+    ],
+  },
+  {
+    character: '夜',
+    onyomi: 'ヤ (ya)',
+    kunyomi: 'よる (yoru)',
+    meaning: 'Malam',
+    examples: [
+      { japanese: '夜に本を読みます。', reading: 'よるにほんをよみます (yoru ni hon o yomimasu)', meaning: 'Saya membaca buku di malam hari.' },
+    ],
+  },
+  {
+    character: '天',
+    onyomi: 'テン (ten)',
+    kunyomi: '-',
+    meaning: 'Langit / Cuaca',
+    examples: [
+      { japanese: '天気がいいです。', reading: 'てんきがいいです (tenki ga ii desu)', meaning: 'Cuacanya bagus.' },
+    ],
+  },
+  {
+    character: '気',
     onyomi: 'キ (ki)',
-    kunyomi: 'かえる (kaeru)',
-    meaning: 'Pulang',
-    examples: [
-      { japanese: '家へ帰ります。', reading: 'いえへかえります (ie e kaerimasu)', meaning: 'Saya pulang ke rumah.' },
-    ],
-  },
-  {
-    character: '曜',
-    onyomi: 'ヨウ (you)',
     kunyomi: '-',
-    meaning: 'Hari (dalam minggu)',
+    meaning: 'Perasaan / Cuaca',
     examples: [
-      { japanese: '月曜日から金曜日まで学校があります。', reading: 'げつようびからきんようびまでがっこうがあります (getsuyōbi kara kin\'yōbi made gakkō ga arimasu)', meaning: 'Sekolah dari Senin sampai Jumat.' },
+      { japanese: '元気ですか。', reading: 'げんきですか (genki desu ka)', meaning: 'Apa kabar?' },
     ],
   },
   {
-    character: '電',
-    onyomi: 'デン (den)',
-    kunyomi: '-',
-    meaning: 'Listrik',
+    character: '曇',
+    onyomi: 'ドン (don)',
+    kunyomi: 'くもり (kumori)',
+    meaning: 'Berawan',
     examples: [
-      { japanese: '電話をかけます。', reading: 'でんわをかけます (denwa o kakemasu)', meaning: 'Saya menelepon.' },
+      { japanese: '今日は曇りです。', reading: 'きょうはくもりです (kyō wa kumori desu)', meaning: 'Hari ini berawan.' },
     ],
   },
   {
-    character: '話',
-    onyomi: 'ワ (wa)',
-    kunyomi: 'はなす (hanasu)',
-    meaning: 'Bicara',
+    character: '雨',
+    onyomi: 'ウ (u)',
+    kunyomi: 'あめ (ame)',
+    meaning: 'Hujan',
     examples: [
-      { japanese: '先生と話しました。', reading: 'せんせいとはなしました (sensei to hanashimashita)', meaning: 'Saya bicara dengan guru.' },
-    ],
-  },
-  {
-    character: '新',
-    onyomi: 'シン (shin)',
-    kunyomi: 'あたらしい (atarashii)',
-    meaning: 'Baru',
-    examples: [
-      { japanese: '新しい車を買いました。', reading: 'あたらしいくるまをかいました (atarashii kuruma o kaimashita)', meaning: 'Saya membeli mobil baru.' },
-    ],
-  },
-  {
-    character: '古',
-    onyomi: 'コ (ko)',
-    kunyomi: 'ふるい (furui)',
-    meaning: 'Lama',
-    examples: [
-      { japanese: '古い本を読みました。', reading: 'ふるいほんをよみました (furui hon o yomimashita)', meaning: 'Saya membaca buku lama.' },
-    ],
-  },
-  {
-    character: '書',
-    onyomi: 'ショ (sho)',
-    kunyomi: 'かく (kaku)',
-    meaning: 'Menulis',
-    examples: [
-      { japanese: '名前を書いてください。', reading: 'なまえをかいてください (namae o kaite kudasai)', meaning: 'Tolong tulis namamu.' },
-    ],
-  },
-  {
-    character: '読',
-    onyomi: 'ドク (doku)',
-    kunyomi: 'よむ (yomu)',
-    meaning: 'Membaca',
-    examples: [
-      { japanese: '本を読みます。', reading: 'ほんをよみます (hon o yomimasu)', meaning: 'Saya membaca buku.' },
-    ],
-  },
-  {
-    character: '聞',
-    onyomi: 'ブン (bun)',
-    kunyomi: 'きく (kiku) / きこえる (kikoeru)',
-    meaning: 'Mendengar / Bertanya',
-    examples: [
-      { japanese: '音楽を聞きます。', reading: 'おんがくをききます (ongaku o kikimasu)', meaning: 'Saya mendengarkan musik.' },
-    ],
-  },
-  {
-    character: '買',
-    onyomi: 'バイ (bai)',
-    kunyomi: 'かう (kau)',
-    meaning: 'Membeli',
-    examples: [
-      { japanese: 'パンを買いました。', reading: 'パンをかいました (pan o kaimashita)', meaning: 'Saya membeli roti.' },
-    ],
-  },
-  {
-    character: '安',
-    onyomi: 'アン (an)',
-    kunyomi: 'やすい (yasui)',
-    meaning: 'Murah / Aman',
-    examples: [
-      { japanese: 'この店は安いです。', reading: 'このみせはやすいです (kono mise wa yasui desu)', meaning: 'Toko ini murah.' },
-    ],
-  },
-  {
-    character: '白',
-    onyomi: 'ハク (haku)',
-    kunyomi: 'しろ (shiro) / しろい (shiroi)',
-    meaning: 'Putih',
-    examples: [
-      { japanese: '白い服を着ます。', reading: 'しろいふくをきます (shiroi fuku o kimasu)', meaning: 'Saya memakai baju putih.' },
-    ],
-  },
-  {
-    character: '黒',
-    onyomi: 'コク (koku)',
-    kunyomi: 'くろ (kuro) / くろい (kuroi)',
-    meaning: 'Hitam',
-    examples: [
-      { japanese: '黒い車が好きです。', reading: 'くろいくるまがすきです (kuroi kuruma ga suki desu)', meaning: 'Saya suka mobil hitam.' },
-    ],
-  },
-  {
-    character: '空',
-    onyomi: 'クウ (kuu)',
-    kunyomi: 'そら (sora) / あく (aku) / から (kara)',
-    meaning: 'Langit / Kosong',
-    examples: [
-      { japanese: '空が青いです。', reading: 'そらがあおいです (sora ga aoi desu)', meaning: 'Langit berwarna biru.' },
-    ],
-  },
-  {
-    character: '花',
-    onyomi: 'カ (ka)',
-    kunyomi: 'はな (hana)',
-    meaning: 'Bunga',
-    examples: [
-      { japanese: '花が咲きました。', reading: 'はながさきました (hana ga sakimashita)', meaning: 'Bunganya sudah mekar.' },
+      { japanese: '雨が降っています。', reading: 'あめがふっています (ame ga futte imasu)', meaning: 'Hujan sedang turun.' },
     ],
   },
 ];
