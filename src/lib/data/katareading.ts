@@ -1,24 +1,8 @@
 
 export const katakanaReadings = [
   {
-    title: "Di Kafe",
-    japanese: `A：いらっしゃいませ。ご注文（チュウモン）は？
-B：ええと、コーヒーとケーキセットをお願（ねが）いします。
-A：コーヒーはホットですか、アイスですか？
-B：アイスで。ケーキはチーズケーキをお願（ねが）いします。
-A：かしこまりました。少々（ショウショウ）お待（ま）ちください。
-...
-A：お待（ま）たせいたしました。アイスコーヒーとチーズケーキです。
-B：どうも。ああ、フォークをいただけますか？
-A：申（モウ）し訳（わけ）ございません。すぐにお持（も）ちします。`,
-    translation: `A: Selamat datang. Mau pesan apa?
-B: Hmm, saya minta set kopi dan kue.
-A: Kopinya mau panas atau dingin (es)?
-B: Es saja. Untuk kuenya, saya minta cheesecake.
-A: Baik, mohon ditunggu sebentar.
-...
-A: Maaf sudah menunggu. Ini es kopi dan cheesecake-nya.
-B: Terima kasih. Oh, boleh saya minta garpu?
-A: Mohon maaf. Akan segera saya bawakan.`,
+    title: "Perkenalan Sakura (dalam Katakana)",
+    japanese: `コンニチハ、ワタシノナマエハサクラデス。ワタシハニホンノトウキョウニスンデイマス。ワタシハ２０サイデ、ダイガクデニホンゴヲベンキョウシテイマス。ニホンゴヲベンキョウスルコトガダイスキデス。ワタシハマイニチ、ニホンゴノホンヤ、エイガ、ソシテオンガクヲキイテ、ニホンゴノレンシュウヲシテイマス。\n\nワタシノシュミハオンガクヲキクコトト、エヲカクコトデス。ヨク、ジブンノカンガエヲエデアラワスコトガタノシイデス。マタ、ワタシハタクサンノニホンノショクジヲタベルコトモスキデス。イチバンスキナショクジハ、スシヤラーメンデス。シュウマツニハ、トモダチトイッショニコウエンヲアルイタリ、エイガヲミタリシマス。\n\nワタシハセイカツガタノシクテ、マイニチガワクワクシテイマス。デモ、ニホンゴヲモットジョウズニハナセルヨウニナリタイノデ、モットタクサンベンキョウシタイトオモッテイマス。ワタシノユメハ、ニホンノキョウシトシテ、タクサンノヒトニニホンゴヲオシエルコトデス。ダカラ、ニホンゴノベンキョウヲアキラメズニ、ガンバリツヅケマス。\n\nドウゾヨロシクオネガイイタシマス。`,
+    translation: `Halo, nama saya Sakura. Saya tinggal di Tokyo, Jepang. Saya berusia 20 tahun dan sedang belajar bahasa Jepang di universitas. Saya sangat suka belajar bahasa Jepang. Setiap hari, saya mendengarkan buku, film, dan musik dalam bahasa Jepang untuk berlatih bahasa Jepang.\n\nHobi saya adalah mendengarkan musik dan menggambar. Saya sangat senang mengekspresikan pemikiran saya dengan gambar. Selain itu, saya juga suka mencoba banyak makanan Jepang. Makanan favorit saya adalah sushi dan ramen. Pada akhir pekan, saya sering berjalan-jalan di taman dengan teman-teman dan menonton film bersama.\n\nSaya menikmati kehidupan saya dan selalu merasa bersemangat setiap hari. Namun, saya ingin menjadi lebih baik dalam berbicara bahasa Jepang, jadi saya berencana untuk belajar lebih banyak. Impian saya adalah mengajar bahasa Jepang di Jepang dan mengajarkan bahasa Jepang kepada banyak orang. Oleh karena itu, saya tidak akan menyerah dalam belajar bahasa Jepang dan akan terus berusaha.\n\nSenang bertemu dengan Anda.`,
   },
 ];
