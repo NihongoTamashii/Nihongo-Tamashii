@@ -7,7 +7,7 @@ import { ArrowLeft, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { kanjiN5 } from "@/lib/data/kanjiN5";
+import { kanjiN4 } from "@/lib/data/kanjiN4";
 import { cn } from "@/lib/utils";
 import {
   AlertDialog,
@@ -41,7 +41,7 @@ export default function KanjiQuizPage() {
   const [showResults, setShowResults] = useState(false);
   
   const allKanjiCards = useMemo(
-    () => kanjiN5.filter((card) => card.character && card.character.trim() !== ""),
+    () => kanjiN4.filter((card) => card.character && card.character.trim() !== ""),
     []
   );
 
@@ -165,7 +165,7 @@ export default function KanjiQuizPage() {
           <ArrowLeft className="h-5 w-5" />
         </Button>
         <h1 className="font-headline text-xl font-semibold md:text-2xl">
-          Latihan Kanji
+          Latihan Kanji N4
         </h1>
         <div className="w-9"></div>
       </header>
@@ -231,7 +231,7 @@ export default function KanjiQuizPage() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="flex-col gap-2 sm:flex-row">
-            <Button variant="outline" onClick={() => router.push('/kanji/practice')}>
+            <Button variant="outline" onClick={() => router.push('/kanji/practice/n4')}>
               Pilih Bagian Lain
             </Button>
             <Button onClick={handleRetry}>

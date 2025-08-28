@@ -1,43 +1,21 @@
 
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React from "react";
 import { ArrowLeft, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useRouter } from "next/navigation";
-import { kanjiN5 } from "@/lib/data/kanjiN5";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
-const ITEMS_PER_PART = 30;
-
-export default function PracticeKanjiSelectionPage() {
-  const router = useRouter();
-  const kanjiFlashcards = useMemo(
-    () =>
-      kanjiN5.filter((card) => card.character && card.character.trim() !== ""),
-    []
-  );
-
-  const totalParts = Math.ceil(kanjiFlashcards.length / ITEMS_PER_PART);
-  const [selectedParts, setSelectedParts] = useState<number[]>([]);
-
-  const handlePartSelection = (part: number) => {
-    setSelectedParts((prev) =>
-      prev.includes(part)
-        ? prev.filter((p) => p !== part)
-        : [...prev, part]
-    );
-  };
-
-  const startPractice = () => {
-    if (selectedParts.length > 0) {
-      const partsQuery = selectedParts.join(",");
-      router.push(`/kanji/practice/quiz?parts=${partsQuery}`);
-    }
-  };
-
+export default function KanjiPracticeLevelSelectionPage() {
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
@@ -48,54 +26,50 @@ export default function PracticeKanjiSelectionPage() {
             </Button>
           </Link>
           <h1 className="font-headline text-2xl font-semibold">
-            Pilih Bagian Latihan Kanji
+            Pilih Level Latihan
           </h1>
         </div>
       </header>
 
       <main className="flex-1 overflow-y-auto p-6">
-        <div className="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {Array.from({ length: totalParts }, (_, i) => i + 1).map((part) => (
-            <Card
-              key={part}
-              onClick={() => handlePartSelection(part)}
-              className={`flex transform cursor-pointer flex-col justify-between transition-all duration-300 hover:shadow-xl ${
-                selectedParts.includes(part)
-                  ? "scale-105 border-primary shadow-lg"
-                  : "hover:scale-105"
-              }`}
-            >
+        <Alert className="mb-6">
+          <Terminal className="h-4 w-4" />
+          <AlertTitle>Tips Latihan</AlertTitle>
+          <AlertDescription>
+            Pilih satu atau beberapa bagian dari setiap level untuk menguji pemahaman Anda. Semakin sering berlatih, semakin cepat Anda menguasai.
+          </AlertDescription>
+        </Alert>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <Link href="/kanji/practice/n5" passHref>
+            <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <ClipboardCheck className="size-8 text-primary" />
-                    <CardTitle>Bagian {part}</CardTitle>
-                  </div>
-                  <Checkbox
-                    checked={selectedParts.includes(part)}
-                    onCheckedChange={() => handlePartSelection(part)}
-                    aria-label={`Select part ${part}`}
-                  />
+                <div className="flex items-center gap-4">
+                  <ClipboardCheck className="size-8 text-primary" />
+                  <CardTitle>Latihan Kanji N5</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Kanji {(part - 1) * ITEMS_PER_PART + 1} -{" "}
-                  {Math.min(part * ITEMS_PER_PART, kanjiFlashcards.length)}
+                  Uji pemahaman kanji dasar Anda.
                 </p>
               </CardContent>
             </Card>
-          ))}
-        </div>
-        <div className="flex justify-center">
-          <Button
-            onClick={startPractice}
-            disabled={selectedParts.length === 0}
-            size="lg"
-            className="bg-primary hover:bg-primary/90"
-          >
-            Mulai Latihan ({selectedParts.length} bagian dipilih)
-          </Button>
+          </Link>
+          <Link href="/kanji/practice/n4" passHref>
+            <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <ClipboardCheck className="size-8 text-primary" />
+                  <CardTitle>Latihan Kanji N4</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Tingkatkan penguasaan kanji Anda ke level berikutnya.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </main>
     </div>
