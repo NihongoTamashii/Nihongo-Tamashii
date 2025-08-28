@@ -25,9 +25,7 @@ import {
   LogOut,
   LogIn,
   ChevronDown,
-  Feather,
-  PenSquare,
-  BookMarked,
+  Book,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -66,7 +64,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <Feather />
+                  <Book />
                   <span>Hiragana</span>
                 </SidebarMenuButton>
               </Link>
@@ -74,7 +72,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/katakana">
                 <SidebarMenuButton isActive>
-                  <PenSquare />
+                  <Book />
                   <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
@@ -82,7 +80,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/kanji">
                 <SidebarMenuButton>
-                  <BookMarked />
+                  <Book />
                   <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
@@ -90,7 +88,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/kotoba">
                 <SidebarMenuButton>
-                  <BookText />
+                  <Book />
                   <span>Kotoba</span>
                 </SidebarMenuButton>
               </Link>
@@ -98,7 +96,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/grammar">
                 <SidebarMenuButton>
-                  <GitBranch />
+                  <Book />
                   <span>Grammar</span>
                 </SidebarMenuButton>
               </Link>
