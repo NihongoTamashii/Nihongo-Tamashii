@@ -264,6 +264,58 @@ export const kanjiN5 = [
     front: "南",
     back: "On'yomi: ナン (nan), ナ (na)\nKun'yomi: みなみ (minami)\nArti: south",
   },
+  {
+    front: "万",
+    back: "On'yomi: マン (man), バン (ban)\nKun'yomi: よろず (yorozu)\nArti: ten thousand",
+  },
+  {
+    front: "毎",
+    back: "On'yomi: マイ (mai)\nKun'yomi: ごと (goto)\nArti: every",
+  },
+  {
+    front: "白",
+    back: "On'yomi: ハク (haku), ビャク (byaku)\nKun'yomi: しろ (shiro), しら- (shira-)\nArti: white",
+  },
+  {
+    front: "天",
+    back: "On'yomi: テン (ten)\nKun'yomi: あまつ (amatsu), あめ (ame), あま (ama)\nArti: heavens, sky, imperial",
+  },
+  {
+    front: "母",
+    back: "On'yomi: ボ (bo)\nKun'yomi: はは (haha), も (mo)\nArti: mama, mother",
+  },
+  {
+    front: "火",
+    back: "On'yomi: カ (ka)\nKun'yomi: ひ (hi), -び (-bi), ほ- (ho-)\nArti: fire",
+  },
+  {
+    front: "右",
+    back: "On'yomi: ウ (u), ユウ (yū)\nKun'yomi: みぎ (migi)\nArti: right",
+  },
+  {
+    front: "読",
+    back: "On'yomi: ドク (doku), トク (toku), トウ (tō)\nKun'yomi: よむ (yomu)\nArti: read",
+  },
+  {
+    front: "友",
+    back: "On'yomi: ユウ (yū)\nKun'yomi: とも (tomo)\nArti: friend",
+  },
+  {
+    front: "左",
+    back: "On'yomi: サ (sa), シャ (sha)\nKun'yomi: ひだり (hidari)\nArti: left",
+  },
+  {
+    front: "休",
+    back: "On'yomi: キュウ (kyū)\nKun'yomi: やすむ (yasumu), やすまる (yasumaru), やすめる (yasumeru)\nArti: rest, day off, retire, sleep",
+  },
+  {
+    front: "父",
+    back: "On'yomi: フ (fu)\nKun'yomi: ちち (chichi)\nArti: father",
+  },
+  {
+    front: "雨",
+    back: "On'yomi: ウ (u)\nKun'yomi: あめ (ame), あま- (-ama-), -さめ (-same)\nArti: rain",
+  },
 ];
 export const kanjiN4: any[] = [];
 
