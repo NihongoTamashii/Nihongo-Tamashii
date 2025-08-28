@@ -51,7 +51,7 @@ export default function LearningKotobaPage({ params }: { params: Promise<{ part:
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
@@ -136,9 +136,12 @@ export default function LearningKotobaPage({ params }: { params: Promise<{ part:
             )}
           >
             {/* Front of the card */}
-            <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card [backface-visibility:hidden]">
-              <h2 className="text-5xl font-bold text-card-foreground">
+            <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-2 rounded-xl bg-card [backface-visibility:hidden]">
+               <p className="text-2xl text-muted-foreground">
                 {currentCard.front}
+              </p>
+              <h2 className="text-5xl font-bold text-card-foreground">
+                {currentCard.frontSub}
               </h2>
               <p className="text-xl text-muted-foreground">
                 {currentCard.romaji}
