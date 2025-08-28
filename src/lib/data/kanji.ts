@@ -74,7 +74,7 @@ export const kanjiN5: Kanji[] = [
       { japanese: '大きい', reading: 'おおきい (ookii)', meaning: 'Besar' },
     ],
   },
-  {
+    {
     character: '十',
     onyomi: 'ジュウ (jū), ジッ (jittsu)',
     kunyomi: 'とお (tō), と (to)',
@@ -575,24 +575,6 @@ export const kanjiN5: Kanji[] = [
     ],
   },
   {
-    character: '百',
-    onyomi: 'ヒャク (hyaku)',
-    kunyomi: '-',
-    meaning: 'Seratus',
-    examples: [
-      { japanese: '百円です。', reading: 'ひゃくえんです (hyakuen desu)', meaning: 'Itu seratus yen.' },
-    ],
-  },
-  {
-    character: '千',
-    onyomi: 'セン (sen)',
-    kunyomi: 'ち (chi)',
-    meaning: 'Seribu',
-    examples: [
-      { japanese: '千人が来ました。', reading: 'せんにんがきました (sennin ga kimashita)', meaning: 'Seribu orang datang.' },
-    ],
-  },
-  {
     character: '飲',
     onyomi: 'イン (in)',
     kunyomi: 'のむ (nomu)',
@@ -638,15 +620,6 @@ export const kanjiN5: Kanji[] = [
     ],
   },
   {
-    character: '分',
-    onyomi: 'ブン (bun), フン (fun)',
-    kunyomi: 'わける (wakeru)',
-    meaning: 'Menit / Bagian',
-    examples: [
-      { japanese: '五分待ってください。', reading: 'ごふんまってください (gofun matte kudasai)', meaning: 'Tolong tunggu 5 menit.' },
-    ],
-  },
-  {
     character: '回',
     onyomi: 'カイ (kai)',
     kunyomi: 'まわる (mawaru)',
@@ -671,15 +644,6 @@ export const kanjiN5: Kanji[] = [
     meaning: 'Sedikit',
     examples: [
       { japanese: 'お金が少ないです。', reading: 'おかねがすくないです (okane ga sukunai desu)', meaning: 'Saya punya sedikit uang.' },
-    ],
-  },
-  {
-    character: '上',
-    onyomi: 'ジョウ (jou)',
-    kunyomi: 'うえ (ue), あがる (agaru)',
-    meaning: 'Atas',
-    examples: [
-      { japanese: '本は机の上にあります。', reading: 'ほんはつくえのうえにあります (hon wa tsukue no ue ni arimasu)', meaning: 'Buku ada di atas meja.' },
     ],
   },
   {
@@ -710,12 +674,129 @@ export const kanjiN5: Kanji[] = [
     ],
   },
   {
-    character: '長',
-    onyomi: 'チョウ (chou)',
-    kunyomi: 'ながい (nagai)',
-    meaning: 'Panjang / Pemimpin',
+    character: '道',
+    onyomi: 'ドウ (dou)',
+    kunyomi: 'みち (michi)',
+    meaning: 'Jalan / Arah',
     examples: [
-      { japanese: '長い話を聞きました。', reading: 'ながいはなしをききました (nagai hanashi o kikimashita)', meaning: 'Saya mendengar cerita panjang.' },
+      { japanese: 'この道は駅へ行きますか。', reading: 'このみちはえきへいきますか (Kono michi wa eki e ikimasu ka)', meaning: 'Apakah jalan ini menuju stasiun?' },
+    ],
+  },
+  {
+    character: '友',
+    onyomi: 'ユウ (yuu)',
+    kunyomi: 'とも (tomo)',
+    meaning: 'Teman',
+    examples: [
+      { japanese: '友だちとあそびます。', reading: 'ともだちとあそびます (Tomodachi to asobimasu)', meaning: 'Saya bermain dengan teman.' },
+    ],
+  },
+  {
+    character: '午',
+    onyomi: 'ゴ (go)',
+    kunyomi: '-',
+    meaning: 'Siang',
+    examples: [
+      { japanese: '午前10時に会いましょう。', reading: 'ごぜんじゅうじにあいましょう (Gozen jūji ni aimashō)', meaning: 'Mari bertemu pukul 10 pagi.' },
+    ],
+  },
+  {
+    character: '後',
+    onyomi: 'ゴ (go), コウ (kou)',
+    kunyomi: 'あと (ato), うしろ (ushiro)',
+    meaning: 'Setelah / Belakang',
+    examples: [
+      { japanese: '学校の後ろに公園があります。', reading: 'がっこうのうしろにこうえんがあります (Gakkō no ushiro ni kōen ga arimasu)', meaning: 'Ada taman di belakang sekolah.' },
+    ],
+  },
+  {
+    character: '会',
+    onyomi: 'カイ (kai)',
+    kunyomi: 'あう (au)',
+    meaning: 'Bertemu / Rapat',
+    examples: [
+      { japanese: '明日 友だちに会います。', reading: 'あしたともだちにあいます (Ashita tomodachi ni aimasu)', meaning: 'Besok saya bertemu teman.' },
+    ],
+  },
+  {
+    character: '話',
+    onyomi: 'ワ (wa)',
+    kunyomi: 'はなす (hanasu)',
+    meaning: 'Bicara / Cerita',
+    examples: [
+      { japanese: '日本語で話しましょう。', reading: 'にほんごではなしましょう (Nihongo de hanashimashō)', meaning: 'Mari bicara dalam bahasa Jepang.' },
+    ],
+  },
+  {
+    character: '教',
+    onyomi: 'キョウ (kyou)',
+    kunyomi: 'おしえる (oshieru)',
+    meaning: 'Mengajar / Ajaran',
+    examples: [
+      { japanese: '先生が日本語を教えます。', reading: 'せんせいがにほんごをおしえます (Sensei ga nihongo o oshiemasu)', meaning: 'Guru mengajar bahasa Jepang.' },
+    ],
+  },
+  {
+    character: '朝',
+    onyomi: 'チョウ (chou)',
+    kunyomi: 'あさ (asa)',
+    meaning: 'Pagi',
+    examples: [
+      { japanese: '朝ごはんを食べました。', reading: 'あさごはんをたべました (Asa gohan o tabemashita)', meaning: 'Saya makan sarapan pagi.' },
+    ],
+  },
+  {
+    character: '晩',
+    onyomi: 'バン (ban)',
+    kunyomi: '-',
+    meaning: 'Malam (waktu)',
+    examples: [
+      { japanese: '今晩映画を見ます。', reading: 'こんばんえいがをみます (Konban eiga o mimasu)', meaning: 'Malam ini saya akan menonton film.' },
+    ],
+  },
+  {
+    character: '牛',
+    onyomi: 'ギュウ (gyuu)',
+    kunyomi: 'うし (ushi)',
+    meaning: 'Sapi / Daging sapi',
+    examples: [
+      { japanese: '牛肉が好きです。', reading: 'ぎゅうにくがすきです (Gyūniku ga suki desu)', meaning: 'Saya suka daging sapi.' },
+    ],
+  },
+  {
+    character: '魚',
+    onyomi: 'ギョ (gyo)',
+    kunyomi: 'さかな (sakana)',
+    meaning: 'Ikan',
+    examples: [
+      { japanese: '川で魚を見ました。', reading: 'かわでさかなをみました (Kawa de sakana o mimashita)', meaning: 'Saya melihat ikan di sungai.' },
+    ],
+  },
+  {
+    character: '音',
+    onyomi: 'オン (on)',
+    kunyomi: 'おと (oto)',
+    meaning: 'Suara / Bunyi',
+    examples: [
+      { japanese: '音が大きいです。', reading: 'おとがおおきいです (Oto ga ookii desu)', meaning: 'Suaranya keras.' },
+    ],
+  },
+  {
+    character: '楽',
+    onyomi: 'ガク (gaku), ラク (raku)',
+    kunyomi: 'たのしい (tanoshii)',
+    meaning: 'Menyenangkan / Musik',
+    examples: [
+      { japanese: '音楽が楽しいです。', reading: 'おんがくがたのしいです (Ongaku ga tanoshii desu)', meaning: 'Musik itu menyenangkan.' },
+    ],
+  },
+  {
+    character: '店',
+    onyomi: 'テン (ten)',
+    kunyomi: 'みせ (mise)',
+    meaning: 'Toko / Warung',
+    examples: [
+      { japanese: 'あの店はとても有名です。', reading: 'あのみせはとてもゆうめいです (Ano mise wa totemo yūmei desu)', meaning: 'Toko itu sangat terkenal.' },
     ],
   },
 ];
