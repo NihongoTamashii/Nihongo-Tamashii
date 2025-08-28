@@ -16,16 +16,13 @@ import {
 import {
   Home,
   BookText,
-  SquarePen,
   GitBranch,
   Settings,
-  Type,
   Atom,
   BookOpen,
   LogOut,
   LogIn,
   ChevronDown,
-  SpellCheck,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -64,7 +61,7 @@ export default function GrammarPage() {
              <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <Type />
+                  <span className="text-2xl font-bold">あ</span>
                   <span>Hiragana</span>
                 </SidebarMenuButton>
               </Link>
@@ -72,7 +69,7 @@ export default function GrammarPage() {
              <SidebarMenuItem>
               <Link href="/katakana">
                 <SidebarMenuButton>
-                  <SpellCheck />
+                  <span className="text-2xl font-bold">ア</span>
                   <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
@@ -80,7 +77,7 @@ export default function GrammarPage() {
             <SidebarMenuItem>
               <Link href="/kanji">
                 <SidebarMenuButton>
-                  <SquarePen />
+                  <span className="text-2xl font-bold">日</span>
                   <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
@@ -167,7 +164,7 @@ export default function GrammarPage() {
               <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <Type className="size-8 text-primary" />
+                    <span className="text-3xl">形</span>
                     <CardTitle>Kata Sifat</CardTitle>
                   </div>
                 </CardHeader>
@@ -394,3 +391,5 @@ export default function GrammarPage() {
     </SidebarProvider>
   );
 }
+
+    

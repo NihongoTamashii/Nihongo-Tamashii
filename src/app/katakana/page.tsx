@@ -16,7 +16,6 @@ import {
 import {
   Home,
   BookText,
-  SquarePen,
   GitBranch,
   Settings,
   BookOpenCheck,
@@ -26,8 +25,6 @@ import {
   LogOut,
   LogIn,
   ChevronDown,
-  Type,
-  SpellCheck,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -66,7 +63,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <Type />
+                  <span className="text-2xl font-bold">あ</span>
                   <span>Hiragana</span>
                 </SidebarMenuButton>
               </Link>
@@ -74,7 +71,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/katakana">
                 <SidebarMenuButton isActive>
-                  <SpellCheck />
+                  <span className="text-2xl font-bold">ア</span>
                   <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
@@ -82,7 +79,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/kanji">
                 <SidebarMenuButton>
-                  <SquarePen />
+                  <span className="text-2xl font-bold">日</span>
                   <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
@@ -219,3 +216,5 @@ export default function KatakanaPage() {
     </SidebarProvider>
   );
 }
+
+    
