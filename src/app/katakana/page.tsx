@@ -19,8 +19,10 @@ import {
   SquarePen,
   GitBranch,
   Settings,
+  BookOpenCheck,
+  FileText,
+  ClipboardCheck,
   BookOpen,
-  Construction,
   LogOut,
   LogIn,
   ChevronDown,
@@ -29,17 +31,15 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useAuth } from "@/hooks/useAuth";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-export default function ReadingFeatureComingSoonPage({ params }: { params: Promise<{ bookId: string }> }) {
-  React.use(params);
+export default function KatakanaPage() {
   const { user, logout } = useAuth();
   
   return (
@@ -63,7 +63,7 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
-             <SidebarMenuItem>
+            <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
                   <Type />
@@ -71,9 +71,9 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
-             <SidebarMenuItem>
+            <SidebarMenuItem>
               <Link href="/katakana">
-                <SidebarMenuButton>
+                <SidebarMenuButton isActive>
                   <SpellCheck />
                   <span>Katakana</span>
                 </SidebarMenuButton>
@@ -105,7 +105,7 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
             </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/reading">
-                <SidebarMenuButton isActive>
+                <SidebarMenuButton>
                   <BookOpen />
                   <span>Reading Book</span>
                 </SidebarMenuButton>
@@ -137,12 +137,12 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
                 </Button>
               </>
             ) : (
-                <Link href="/login" passHref>
-                    <Button variant="ghost" className="w-full justify-start gap-2">
-                        <LogIn />
-                        <span>Login / Signup</span>
-                    </Button>
-                </Link>
+              <Link href="/login" passHref>
+                <Button variant="ghost" className="w-full justify-start gap-2">
+                    <LogIn />
+                    <span>Login / Signup</span>
+                </Button>
+              </Link>
             )}
            </div>
         </SidebarFooter>
@@ -150,7 +150,7 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
-          <h1 className="font-headline text-2xl font-semibold">E-Book Library</h1>
+          <h1 className="font-headline text-2xl font-semibold">Katakana</h1>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost">
@@ -163,23 +163,57 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 items-center justify-center p-6">
-           <Card className="w-full max-w-md">
-            <CardHeader className="items-center text-center">
-              <Construction className="size-16 text-primary" />
-              <CardTitle className="text-2xl font-headline">
-                Feature Coming Soon!
-              </CardTitle>
-              <CardDescription>
-                Fitur perpustakaan e-book sedang dalam pengembangan. Nantikan pembaruan selanjutnya!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-center">
-                <Link href="/reading" passHref>
-                    <Button>Kembali ke Library</Button>
+        <main className="flex-1 space-y-6 p-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <BookOpenCheck className="size-8 text-primary" />
+                  <CardTitle>Learning Katakana</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Mulai perjalanan Anda dengan mempelajari karakter Katakana.
+                </p>
+                <Link href="/katakana/learning" passHref>
+                  <Button className="w-full">Mulai Belajar</Button>
                 </Link>
-            </CardContent>
-           </Card>
+              </CardContent>
+            </Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <FileText className="size-8 text-primary" />
+                  <CardTitle>Reading Katakana Text</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Asah kemampuan membaca Anda dengan teks-teks dalam Katakana.
+                </p>
+                <Link href="/katakana/reading" passHref>
+                  <Button className="w-full">Mulai Membaca</Button>
+                </Link>
+              </CardContent>
+            </Card>
+            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <ClipboardCheck className="size-8 text-primary" />
+                  <CardTitle>Katakana Practice</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Uji dan perkuat pemahaman Katakana Anda melalui latihan interaktif.
+                </p>
+                <Link href="/katakana/practice" passHref>
+                  <Button className="w-full">Mulai Latihan</Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
         </main>
       </SidebarInset>
     </SidebarProvider>

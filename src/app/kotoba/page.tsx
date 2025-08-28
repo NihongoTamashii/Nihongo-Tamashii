@@ -27,6 +27,8 @@ import {
   LogOut,
   LogIn,
   ChevronDown,
+  Type,
+  SpellCheck,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -62,19 +64,35 @@ export default function KotobaPage() {
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
+             <SidebarMenuItem>
+              <Link href="/hiragana">
+                <SidebarMenuButton>
+                  <Type />
+                  <span>Hiragana</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+             <SidebarMenuItem>
+              <Link href="/katakana">
+                <SidebarMenuButton>
+                  <SpellCheck />
+                  <span>Katakana</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+             <SidebarMenuItem>
+              <Link href="/kanji">
+                <SidebarMenuButton>
+                  <SquarePen />
+                  <span>Kanji</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
             <SidebarMenuItem>
               <Link href="/kotoba">
                 <SidebarMenuButton isActive>
                   <BookText />
                   <span>Kotoba</span>
-                </SidebarMenuButton>
-              </Link>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <Link href="/kanji">
-                <SidebarMenuButton>
-                  <SquarePen />
-                  <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
@@ -90,7 +108,7 @@ export default function KotobaPage() {
               <Link href="/reading">
                 <SidebarMenuButton>
                   <BookOpen />
-                  <span>Reading</span>
+                  <span>Reading Book</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
@@ -172,22 +190,6 @@ export default function KotobaPage() {
                 </p>
                 <Link href="/kotoba/learning" passHref>
                   <Button className="w-full">Mulai Belajar</Button>
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="flex transform flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <FileText className="size-8 text-primary" />
-                  <CardTitle>Reading Hiragana</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Asah kemampuan membaca Anda dengan teks-teks dalam Hiragana.
-                </p>
-                <Link href="/kotoba/reading" passHref>
-                  <Button className="w-full">Mulai Membaca</Button>
                 </Link>
               </CardContent>
             </Card>

@@ -23,6 +23,8 @@ import {
   LogOut,
   LogIn,
   ChevronDown,
+  Type,
+  SpellCheck,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -61,10 +63,18 @@ export default function ReadingPage() {
               </Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <Link href="/kotoba">
+              <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <BookText />
-                  <span>Kotoba</span>
+                  <Type />
+                  <span>Hiragana</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+             <SidebarMenuItem>
+              <Link href="/katakana">
+                <SidebarMenuButton>
+                  <SpellCheck />
+                  <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
@@ -73,6 +83,14 @@ export default function ReadingPage() {
                 <SidebarMenuButton>
                   <SquarePen />
                   <span>Kanji</span>
+                </SidebarMenuButton>
+              </Link>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <Link href="/kotoba">
+                <SidebarMenuButton>
+                  <BookText />
+                  <span>Kotoba</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
@@ -88,7 +106,7 @@ export default function ReadingPage() {
               <Link href="/reading">
                 <SidebarMenuButton isActive>
                   <BookOpen />
-                  <span>Reading</span>
+                  <span>Reading Book</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>
