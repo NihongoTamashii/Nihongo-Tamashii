@@ -23,6 +23,7 @@ import {
   Atom,
   BookOpen,
   LogOut,
+  LogIn,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -34,8 +35,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 export default function GrammarPage() {
   const { user, logout } = useAuth();
-  if (!user) return null;
-  
+
   return (
     <SidebarProvider>
       <Sidebar>
@@ -93,24 +93,35 @@ export default function GrammarPage() {
         </SidebarContent>
         <SidebarFooter>
            <div className="flex flex-col gap-2">
-            <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
-                <Avatar className="size-9">
-                <AvatarImage src={user.photoURL ?? "https://picsum.photos/100/100"} data-ai-hint="person face" />
-                <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
-                </Avatar>
-                <div className="flex flex-col">
-                <span className="font-headline font-semibold text-sidebar-foreground">
-                    {user.displayName ?? user.email}
-                </span>
-                <span className="text-xs text-sidebar-foreground/70">
-                    Nihongo Member
-                </span>
+            {user ? (
+                <>
+                <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
+                    <Avatar className="size-9">
+                    <AvatarImage src={user.photoURL ?? "https://picsum.photos/100/100"} data-ai-hint="person face" />
+                    <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col">
+                    <span className="font-headline font-semibold text-sidebar-foreground">
+                        {user.displayName ?? user.email}
+                    </span>
+                    <span className="text-xs text-sidebar-foreground/70">
+                        Nihongo Member
+                    </span>
+                    </div>
                 </div>
-            </div>
-            <Button variant="ghost" className="w-full justify-start gap-2" onClick={logout}>
-                <LogOut />
-                <span>Logout</span>
-            </Button>
+                <Button variant="ghost" className="w-full justify-start gap-2" onClick={logout}>
+                    <LogOut />
+                    <span>Logout</span>
+                </Button>
+                </>
+            ) : (
+                <Link href="/login" passHref>
+                <Button variant="ghost" className="w-full justify-start gap-2">
+                    <LogIn />
+                    <span>Login / Signup</span>
+                </Button>
+                </Link>
+            )}
            </div>
         </SidebarFooter>
       </Sidebar>
