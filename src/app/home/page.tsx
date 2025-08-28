@@ -22,9 +22,9 @@ import {
   LogOut,
   LogIn,
   ChevronDown,
-  Pipette,
-  SquareAsterisk,
-  Blocks,
+  Feather,
+  PenSquare,
+  BookMarked,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -72,7 +72,7 @@ export default function HomePage() {
             <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <Pipette />
+                  <Feather />
                   <span>Hiragana</span>
                 </SidebarMenuButton>
               </Link>
@@ -80,7 +80,7 @@ export default function HomePage() {
              <SidebarMenuItem>
               <Link href="/katakana">
                 <SidebarMenuButton>
-                  <SquareAsterisk />
+                  <PenSquare />
                   <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
@@ -88,7 +88,7 @@ export default function HomePage() {
             <SidebarMenuItem>
               <Link href="/kanji">
                 <SidebarMenuButton>
-                  <Blocks />
+                  <BookMarked />
                   <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
