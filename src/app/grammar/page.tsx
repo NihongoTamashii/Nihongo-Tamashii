@@ -23,6 +23,9 @@ import {
   LogOut,
   LogIn,
   ChevronDown,
+  Pipette,
+  SquareAsterisk,
+  Blocks,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -61,7 +64,7 @@ export default function GrammarPage() {
              <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <span className="text-xl font-bold">あ</span>
+                  <Pipette />
                   <span>Hiragana</span>
                 </SidebarMenuButton>
               </Link>
@@ -69,7 +72,7 @@ export default function GrammarPage() {
              <SidebarMenuItem>
               <Link href="/katakana">
                 <SidebarMenuButton>
-                  <span className="text-xl font-bold">ア</span>
+                  <SquareAsterisk />
                   <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
@@ -77,7 +80,7 @@ export default function GrammarPage() {
             <SidebarMenuItem>
               <Link href="/kanji">
                 <SidebarMenuButton>
-                  <span className="text-xl font-bold">日</span>
+                  <Blocks />
                   <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
@@ -391,5 +394,3 @@ export default function GrammarPage() {
     </SidebarProvider>
   );
 }
-
-    
