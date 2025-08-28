@@ -56,20 +56,22 @@ export default function KanjiLevelSelectionPage() {
               </CardContent>
             </Card>
           </Link>
-          <Card className="flex transform cursor-not-allowed flex-col justify-between bg-muted/50 transition-transform duration-300">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <BookOpenCheck className="size-8 text-muted-foreground" />
-                <CardTitle className="text-muted-foreground">Kanji N4</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                (Segera Hadir) Lanjutkan perjalanan Kanji Anda ke level
-                berikutnya.
-              </p>
-            </CardContent>
-          </Card>
+          <Link href="/kanji/learning/n4" passHref>
+            <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <BookOpenCheck className="size-8 text-primary" />
+                  <CardTitle>Kanji N4</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Lanjutkan perjalanan Kanji Anda ke level
+                  berikutnya.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </main>
     </div>
