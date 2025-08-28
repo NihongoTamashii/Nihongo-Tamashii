@@ -115,23 +115,21 @@ export default function LearningKatakanaPage({ params }: { params: Promise<{ typ
           </p>
         </div>
 
-        <Card className="flex h-64 w-full max-w-sm flex-col items-center justify-center gap-4 rounded-xl border-2 shadow-xl">
+        <Card className="relative flex h-64 w-full max-w-sm flex-col items-center justify-center gap-4 rounded-xl border-2 shadow-xl">
            <h2 className="text-8xl font-bold text-card-foreground">
               {currentCard.character}
             </h2>
-            <div className="flex items-center gap-2">
-                <p className="text-3xl text-muted-foreground">
-                {currentCard.romaji}
-                </p>
-                <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                onClick={() => handleSpeak(currentCard.character)}
-                >
-                <Volume2 />
-                </Button>
-            </div>
+            <p className="text-3xl text-muted-foreground">
+            {currentCard.romaji}
+            </p>
+            <Button
+            variant="ghost"
+            size="icon"
+            className="absolute bottom-4 right-4 rounded-full"
+            onClick={() => handleSpeak(currentCard.character)}
+            >
+            <Volume2 />
+            </Button>
         </Card>
       
         <div className="flex w-full max-w-2xl items-center justify-between">
