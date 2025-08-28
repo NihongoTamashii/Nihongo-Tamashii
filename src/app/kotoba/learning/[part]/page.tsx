@@ -14,7 +14,7 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { flashcards } from "@/lib/data/data";
+import { flashcards } from "@/lib/data/kotoba";
 
 const ITEMS_PER_PART = 30;
 
@@ -51,7 +51,7 @@ export default function LearningKotobaPage({ params }: { params: Promise<{ part:
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex + 1);
+      setCurrentIndex(currentIndex - 1);
     }
   };
 

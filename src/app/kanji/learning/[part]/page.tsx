@@ -14,7 +14,7 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { flashcards } from "@/lib/data/data";
+import { kanjiN5 } from "@/lib/data/kanji";
 
 const ITEMS_PER_PART = 30;
 
@@ -23,7 +23,7 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
   const part = parseInt(partString, 10);
   
   const kanjiFlashcards = useMemo(
-    () => flashcards.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
     []
   );
 

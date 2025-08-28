@@ -6,13 +6,13 @@ import { ArrowLeft, BookOpenCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { flashcards } from "@/lib/data/data";
+import { kanjiN5 } from "@/lib/data/kanji";
 
 const ITEMS_PER_PART = 30;
 
 export default function LearningKanjiSelectionPage() {
   const kanjiFlashcards = useMemo(
-    () => flashcards.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
     []
   );
 

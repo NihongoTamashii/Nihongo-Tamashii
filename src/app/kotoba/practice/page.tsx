@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
-import { flashcards } from "@/lib/data/data";
+import { flashcards } from "@/lib/data/kotoba";
 
 const ITEMS_PER_PART = 30;
 

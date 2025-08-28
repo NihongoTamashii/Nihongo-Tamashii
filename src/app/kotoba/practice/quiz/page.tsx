@@ -7,7 +7,7 @@ import { ArrowLeft, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { flashcards } from "@/lib/data/data";
+import { flashcards } from "@/lib/data/kotoba";
 import { cn } from "@/lib/utils";
 import {
   AlertDialog,

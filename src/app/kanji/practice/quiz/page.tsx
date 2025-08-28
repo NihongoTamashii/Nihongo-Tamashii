@@ -7,7 +7,7 @@ import { ArrowLeft, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { flashcards } from "@/lib/data/data";
+import { kanjiN5 } from "@/lib/data/kanji";
 import { cn } from "@/lib/utils";
 import {
   AlertDialog,
@@ -41,7 +41,7 @@ export default function KanjiQuizPage() {
   const [showResults, setShowResults] = useState(false);
   
   const allKanjiCards = useMemo(
-    () => flashcards.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
     []
   );
 
@@ -51,7 +51,7 @@ export default function KanjiQuizPage() {
 
   useEffect(() => {
     if (selectedParts.length > 0) {
-      let questions: typeof flashcards = [];
+      let questions: typeof allKanjiCards = [];
       selectedParts.forEach((part) => {
         const startIndex = (part - 1) * ITEMS_PER_PART;
         const endIndex = startIndex + ITEMS_PER_PART;
@@ -114,7 +114,7 @@ export default function KanjiQuizPage() {
     setIsCorrect(null);
     // Re-shuffle and generate new cards
      if (selectedParts.length > 0) {
-      let questions: typeof flashcards = [];
+      let questions: typeof allKanjiCards = [];
       selectedParts.forEach((part) => {
         const startIndex = (part - 1) * ITEMS_PER_PART;
         const endIndex = startIndex + ITEMS_PER_PART;
