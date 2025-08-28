@@ -1802,4 +1802,1210 @@ export const kanjiN4: Kanji[] = [
       },
     ],
   },
+  {
+    character: '待',
+    onyomi: 'タイ (tai)',
+    kunyomi: 'ま(つ) (ma(tsu))',
+    meaning: 'menunggu',
+    examples: [
+      {
+        japanese: 'ここで待ってください。',
+        reading: 'Koko de matte kudasai.',
+        meaning: 'Tolong tunggu di sini.',
+      },
+      {
+        japanese: '招待状を受け取りました。',
+        reading: 'Shōtaijō o uketorimashita.',
+        meaning: 'Saya menerima surat undangan.',
+      },
+    ],
+  },
+  {
+    character: '試',
+    onyomi: 'シ (shi)',
+    kunyomi: 'こころ(みる) (kokoro(miru)), ため(す) (tame(su))',
+    meaning: 'tes, coba',
+    examples: [
+      {
+        japanese: '試験は難しいです。',
+        reading: 'Shiken wa muzukashii desu.',
+        meaning: 'Ujiannya sulit.',
+      },
+      {
+        japanese: '新しい服を試着します。',
+        reading: 'Atarashii fuku o shichaku shimasu.',
+        meaning: 'Saya mencoba baju baru.',
+      },
+    ],
+  },
+  {
+    character: '族',
+    onyomi: 'ゾク (zoku)',
+    kunyomi: '',
+    meaning: 'suku, keluarga',
+    examples: [
+      {
+        japanese: '家族と一緒に旅行します。',
+        reading: 'Kazoku to issho ni ryokō shimasu.',
+        meaning: 'Saya berwisata bersama keluarga.',
+      },
+      {
+        japanese: '王族の歴史を学びます。',
+        reading: 'Ōzoku no rekishi o manabimasu.',
+        meaning: 'Saya mempelajari sejarah keluarga kerajaan.',
+      },
+    ],
+  },
+  {
+    character: '銀',
+    onyomi: 'ギン (gin)',
+    kunyomi: '',
+    meaning: 'perak',
+    examples: [
+      {
+        japanese: '銀行へ行きます。',
+        reading: 'Ginkō e ikimasu.',
+        meaning: 'Saya pergi ke bank.',
+      },
+      {
+        japanese: '銀色の車が好きです。',
+        reading: 'Gin\'iro no kuruma ga suki desu.',
+        meaning: 'Saya suka mobil warna perak.',
+      },
+    ],
+  },
+  {
+    character: '早',
+    onyomi: 'ソウ (sou), サッ (sa)',
+    kunyomi: 'はや(い) (haya(i))',
+    meaning: 'awal, cepat',
+    examples: [
+      {
+        japanese: '早起きは三文の徳。',
+        reading: 'Hayaoki wa sanmon no toku.',
+        meaning: 'Bangun pagi itu baik (pepatah).',
+      },
+      {
+        japanese: '早速、始めましょう。',
+        reading: 'Sassoku, hajimemashō.',
+        meaning: 'Mari kita mulai segera.',
+      },
+    ],
+  },
+  {
+    character: '映',
+    onyomi: 'エイ (ei)',
+    kunyomi: 'うつ(る) (utsu(ru)), は(える) (ha(eru))',
+    meaning: 'memantulkan, memproyeksikan',
+    examples: [
+      {
+        japanese: '映画館で映画を見ます。',
+        reading: 'Eigakan de eiga o mimasu.',
+        meaning: 'Saya menonton film di bioskop.',
+      },
+      {
+        japanese: '湖に山の影が映っています。',
+        reading: 'Mizuumi ni yama no kage ga utsutte imasu.',
+        meaning: 'Bayangan gunung terpantul di danau.',
+      },
+    ],
+  },
+  {
+    character: '親',
+    onyomi: 'シン (shin)',
+    kunyomi: 'おや (oya), した(しい) (shita(shii))',
+    meaning: 'orang tua, akrab',
+    examples: [
+      {
+        japanese: '両親はとても親切です。',
+        reading: 'Ryōshin wa totemo shinsetsu desu.',
+        meaning: 'Kedua orang tua saya sangat baik hati.',
+      },
+      {
+        japanese: '親しい友達と話します。',
+        reading: 'Shitashii tomodachi to hanashimasu.',
+        meaning: 'Saya berbicara dengan teman akrab.',
+      },
+    ],
+  },
+  {
+    character: '験',
+    onyomi: 'ケン (ken)',
+    kunyomi: '',
+    meaning: 'verifikasi, efek, pengujian',
+    examples: [
+      {
+        japanese: '実験は成功しました。',
+        reading: 'Jikken wa seikō shimashita.',
+        meaning: 'Eksperimennya berhasil.',
+      },
+      {
+        japanese: '経験が豊富です。',
+        reading: 'Keiken ga hōfu desu.',
+        meaning: 'Pengalamannya banyak.',
+      },
+    ],
+  },
+  {
+    character: '英',
+    onyomi: 'エイ (ei)',
+    kunyomi: '',
+    meaning: 'Inggris, pahlawan',
+    examples: [
+      {
+        japanese: '英語を勉強しています。',
+        reading: 'Eigo o benkyō shite imasu.',
+        meaning: 'Saya sedang belajar bahasa Inggris.',
+      },
+      {
+        japanese: '彼は英雄です。',
+        reading: 'Kare wa eiyū desu.',
+        meaning: 'Dia adalah seorang pahlawan.',
+      },
+    ],
+  },
+  {
+    character: '医',
+    onyomi: 'イ (i)',
+    kunyomi: '',
+    meaning: 'dokter, obat',
+    examples: [
+      {
+        japanese: '医者に診てもらいます。',
+        reading: 'Isha ni mite moraimasu.',
+        meaning: 'Saya akan diperiksa oleh dokter.',
+      },
+      {
+        japanese: '医学部で勉強しています。',
+        reading: 'Igakubu de benkyō shite imasu.',
+        meaning: 'Saya belajar di fakultas kedokteran.',
+      },
+    ],
+  },
+  {
+    character: '仕',
+    onyomi: 'シ (shi)',
+    kunyomi: '',
+    meaning: 'melayani, melakukan',
+    examples: [
+      {
+        japanese: '仕事を探しています。',
+        reading: 'Shigoto o sagashite imasu.',
+        meaning: 'Saya sedang mencari pekerjaan.',
+      },
+      {
+        japanese: '仕方がない。',
+        reading: 'Shikata ga nai.',
+        meaning: 'Tidak ada cara lain (Mau bagaimana lagi).',
+      },
+    ],
+  },
+  {
+    character: '去',
+    onyomi: 'キョ (kyo), コ (ko)',
+    kunyomi: 'さ(る) (sa(ru))',
+    meaning: 'pergi, lalu',
+    examples: [
+      {
+        japanese: '去年、日本へ行きました。',
+        reading: 'Kyonen, Nihon e ikimashita.',
+        meaning: 'Tahun lalu saya pergi ke Jepang.',
+      },
+      {
+        japanese: '彼は会社を去りました。',
+        reading: 'Kare wa kaisha o sarimashita.',
+        meaning: 'Dia telah meninggalkan perusahaan.',
+      },
+    ],
+  },
+  {
+    character: '味',
+    onyomi: 'ミ (mi)',
+    kunyomi: 'あじ (aji)',
+    meaning: 'rasa',
+    examples: [
+      {
+        japanese: 'このスープはいい味がします。',
+        reading: 'Kono sūpu wa ii aji ga shimasu.',
+        meaning: 'Sup ini rasanya enak.',
+      },
+      {
+        japanese: '趣味は料理です。',
+        reading: 'Shumi wa ryōri desu.',
+        meaning: 'Hobi saya adalah memasak.',
+      },
+    ],
+  },
+  {
+    character: '写',
+    onyomi: 'シャ (sha)',
+    kunyomi: 'うつ(る) (utsu(ru))',
+    meaning: 'menyalin, memotret',
+    examples: [
+      {
+        japanese: '写真を撮ってもいいですか。',
+        reading: 'Shashin o totte mo ii desu ka.',
+        meaning: 'Bolehkah saya mengambil foto?',
+      },
+      {
+        japanese: '黒板の字を写します。',
+        reading: 'Kokuban no ji o utsushimasu.',
+        meaning: 'Saya menyalin tulisan di papan tulis.',
+      },
+    ],
+  },
+  {
+    character: '字',
+    onyomi: 'ジ (ji)',
+    kunyomi: '',
+    meaning: 'karakter, huruf',
+    examples: [
+      {
+        japanese: '漢字を読むのが好きです。',
+        reading: 'Kanji o yomu no ga suki desu.',
+        meaning: 'Saya suka membaca kanji.',
+      },
+      {
+        japanese: 'きれいな字を書きますね。',
+        reading: 'Kirei na ji o kakimasu ne.',
+        meaning: 'Anda menulis dengan tulisan yang indah ya.',
+      },
+    ],
+  },
+  {
+    character: '答',
+    onyomi: 'トウ (tou)',
+    kunyomi: 'こた(える) (kota(eru))',
+    meaning: 'jawaban, solusi',
+    examples: [
+      {
+        japanese: '質問に答えてください。',
+        reading: 'Shitsumon ni kotaete kudasai.',
+        meaning: 'Tolong jawab pertanyaannya.',
+      },
+      {
+        japanese: '解答用紙に記入します。',
+        reading: 'Kaitō yōshi ni kinyū shimasu.',
+        meaning: 'Saya mengisi lembar jawaban.',
+      },
+    ],
+  },
+  {
+    character: '夜',
+    onyomi: 'ヤ (ya)',
+    kunyomi: 'よ (yo), よる (yoru)',
+    meaning: 'malam',
+    examples: [
+      {
+        japanese: '今夜は月がきれいです。',
+        reading: 'Kon\'ya wa tsuki ga kirei desu.',
+        meaning: 'Malam ini bulannya indah.',
+      },
+      {
+        japanese: '夜中に目が覚めました。',
+        reading: 'Yonaka ni me ga samemashita.',
+        meaning: 'Saya terbangun tengah malam.',
+      },
+    ],
+  },
+  {
+    character: '音',
+    onyomi: 'オン (on)',
+    kunyomi: 'おと (oto), ね (ne)',
+    meaning: 'suara, bunyi',
+    examples: [
+      {
+        japanese: '音楽を聴きます。',
+        reading: 'Ongaku o kikimasu.',
+        meaning: 'Saya mendengarkan musik.',
+      },
+      {
+        japanese: '発音がきれいです。',
+        reading: 'Hatsuon ga kirei desu.',
+        meaning: 'Pelafalannya bagus.',
+      },
+    ],
+  },
+  {
+    character: '注',
+    onyomi: 'チュウ (chuu)',
+    kunyomi: 'そそ(ぐ) (soso(gu)), さ(す) (sa(su)), つ(ぐ) (tsu(gu))',
+    meaning: 'menuangkan, fokus',
+    examples: [
+      {
+        japanese: '注意してください。',
+        reading: 'Chūi shite kudasai.',
+        meaning: 'Harap berhati-hati.',
+      },
+      {
+        japanese: '注文をお願いします。',
+        reading: 'Chūmon o onegai shimasu.',
+        meaning: 'Saya ingin memesan.',
+      },
+    ],
+  },
+  {
+    character: '帰',
+    onyomi: 'キ (ki)',
+    kunyomi: 'かえ(る) (kae(ru)), かえ(す) (kae(su))',
+    meaning: 'pulang',
+    examples: [
+      {
+        japanese: '家に帰ります。',
+        reading: 'Uchi ni kaerimasu.',
+        meaning: 'Saya pulang ke rumah.',
+      },
+      {
+        japanese: '帰国子女です。',
+        reading: 'Kikoku shijo desu.',
+        meaning: 'Dia adalah anak yang kembali dari luar negeri.',
+      },
+    ],
+  },
+  {
+    character: '古',
+    onyomi: 'コ (ko)',
+    kunyomi: 'ふる(い) (furu(i))',
+    meaning: 'tua',
+    examples: [
+      {
+        japanese: '古いお寺を見に行きます。',
+        reading: 'Furui otera o mi ni ikimasu.',
+        meaning: 'Saya pergi melihat kuil tua.',
+      },
+      {
+        japanese: '中古車を買いました。',
+        reading: 'Chūkosha o kaimashita.',
+        meaning: 'Saya membeli mobil bekas.',
+      },
+    ],
+  },
+  {
+    character: '歌',
+    onyomi: 'カ (ka)',
+    kunyomi: 'うた (uta), うた(う) (uta(u))',
+    meaning: 'lagu, menyanyi',
+    examples: [
+      {
+        japanese: 'カラオケで歌います。',
+        reading: 'Karaoke de utaimasu.',
+        meaning: 'Saya bernyanyi di karaoke.',
+      },
+      {
+        japanese: '歌手になりたいです。',
+        reading: 'Kashu ni naritai desu.',
+        meaning: 'Saya ingin menjadi penyanyi.',
+      },
+    ],
+  },
+  {
+    character: '買',
+    onyomi: 'バイ (bai)',
+    kunyomi: 'か(う) (ka(u))',
+    meaning: 'membeli',
+    examples: [
+      {
+        japanese: 'スーパーで買い物をします。',
+        reading: 'Sūpā de kaimono o shimasu.',
+        meaning: 'Saya berbelanja di supermarket.',
+      },
+      {
+        japanese: '売買契約を結びます。',
+        reading: 'Baibai keiyaku o musubimasu.',
+        meaning: 'Membuat perjanjian jual beli.',
+      },
+    ],
+  },
+  {
+    character: '悪',
+    onyomi: 'アク (aku)',
+    kunyomi: 'わる(い) (waru(i))',
+    meaning: 'buruk, jahat',
+    examples: [
+      {
+        japanese: '気分が悪いです。',
+        reading: 'Kibun ga warui desu.',
+        meaning: 'Saya merasa tidak enak badan.',
+      },
+      {
+        japanese: '悪魔のような人だ。',
+        reading: 'Akuma no yō na hito da.',
+        meaning: 'Dia orang yang seperti iblis.',
+      },
+    ],
+  },
+  {
+    character: '図',
+    onyomi: 'ズ (zu), ト (to)',
+    kunyomi: 'はか(る) (haka(ru))',
+    meaning: 'peta, gambar',
+    examples: [
+      {
+        japanese: '図書館はどこですか。',
+        reading: 'Toshokan wa doko desu ka.',
+        meaning: 'Di mana perpustakaan?',
+      },
+      {
+        japanese: '地図を見て説明します。',
+        reading: 'Chizu o mite setsumei shimasu.',
+        meaning: 'Saya akan menjelaskan sambil melihat peta.',
+      },
+    ],
+  },
+  {
+    character: '週',
+    onyomi: 'シュウ (shuu)',
+    kunyomi: '',
+    meaning: 'minggu',
+    examples: [
+      {
+        japanese: '今週は忙しいです。',
+        reading: 'Konshū wa isogashii desu.',
+        meaning: 'Minggu ini saya sibuk.',
+      },
+      {
+        japanese: '週末に何をしますか。',
+        reading: 'Shūmatsu ni nani o shimasu ka.',
+        meaning: 'Apa yang akan kamu lakukan akhir pekan ini?',
+      },
+    ],
+  },
+  {
+    character: '室',
+    onyomi: 'シツ (shitsu)',
+    kunyomi: 'むろ (muro)',
+    meaning: 'ruangan',
+    examples: [
+      {
+        japanese: '教室で勉強します。',
+        reading: 'Kyōshitsu de benkyō shimasu.',
+        meaning: 'Saya belajar di ruang kelas.',
+      },
+      {
+        japanese: '会議室はこちらです。',
+        reading: 'Kaigishitsu wa kochira desu.',
+        meaning: 'Ruang rapatnya di sebelah sini.',
+      },
+    ],
+  },
+  {
+    character: '歩',
+    onyomi: 'ホ (ho), ブ (bu)',
+    kunyomi: 'ある(く) (aru(ku)), あゆ(む) (ayu(mu))',
+    meaning: 'berjalan',
+    examples: [
+      {
+        japanese: '毎日、散歩します。',
+        reading: 'Mainichi, sanpo shimasu.',
+        meaning: 'Setiap hari saya jalan-jalan.',
+      },
+      {
+        japanese: '駅まで歩いて行きます。',
+        reading: 'Eki made aruite ikimasu.',
+        meaning: 'Saya pergi ke stasiun dengan berjalan kaki.',
+      },
+    ],
+  },
+  {
+    character: '風',
+    onyomi: 'フウ (fuu), フ (fu)',
+    kunyomi: 'かぜ (kaze), かざ- (kaza-)',
+    meaning: 'angin, gaya',
+    examples: [
+      {
+        japanese: '今日は風が強いです。',
+        reading: 'Kyō wa kaze ga tsuyoi desu.',
+        meaning: 'Hari ini anginnya kencang.',
+      },
+      {
+        japanese: 'お風呂に入ります。',
+        reading: 'Ofuro ni hairimasu.',
+        meaning: 'Saya akan mandi.',
+      },
+    ],
+  },
+  {
+    character: '紙',
+    onyomi: 'シ (shi)',
+    kunyomi: 'かみ (kami)',
+    meaning: 'kertas',
+    examples: [
+      {
+        japanese: '手紙を書きます。',
+        reading: 'Tegami o kakimasu.',
+        meaning: 'Saya menulis surat.',
+      },
+      {
+        japanese: '折り紙で鶴を折ります。',
+        reading: 'Origami de tsuru o orimasu.',
+        meaning: 'Saya melipat bangau dengan origami.',
+      },
+    ],
+  },
+  {
+    character: '黒',
+    onyomi: 'コク (koku)',
+    kunyomi: 'くろ (kuro)',
+    meaning: 'hitam',
+    examples: [
+      {
+        japanese: '黒い猫が好きです。',
+        reading: 'Kuroi neko ga suki desu.',
+        meaning: 'Saya suka kucing hitam.',
+      },
+      {
+        japanese: '黒板に字を書きます。',
+        reading: 'Kokuban ni ji o kakimasu.',
+        meaning: 'Saya menulis di papan tulis hitam.',
+      },
+    ],
+  },
+  {
+    character: '花',
+    onyomi: 'カ (ka), ケ (ke)',
+    kunyomi: 'はな (hana)',
+    meaning: 'bunga',
+    examples: [
+      {
+        japanese: '庭にきれいな花が咲いています。',
+        reading: 'Niwa ni kirei na hana ga saite imasu.',
+        meaning: 'Di taman sedang mekar bunga yang indah.',
+      },
+      {
+        japanese: '花火大会に行きます。',
+        reading: 'Hanabi taikai ni ikimasu.',
+        meaning: 'Saya akan pergi ke festival kembang api.',
+      },
+    ],
+  },
+  {
+    character: '春',
+    onyomi: 'シュン (shun)',
+    kunyomi: 'はる (haru)',
+    meaning: 'musim semi',
+    examples: [
+      {
+        japanese: '春は桜がきれいです。',
+        reading: 'Haru wa sakura ga kirei desu.',
+        meaning: 'Pada musim semi, bunga sakura indah.',
+      },
+      {
+        japanese: '青春時代を思い出します。',
+        reading: 'Seishun jidai o omoidashimasu.',
+        meaning: 'Saya teringat masa muda saya.',
+      },
+    ],
+  },
+  {
+    character: '赤',
+    onyomi: 'セキ (seki), シャク (shaku)',
+    kunyomi: 'あか(い) (aka(i))',
+    meaning: 'merah',
+    examples: [
+      {
+        japanese: '赤いドレスが素敵です。',
+        reading: 'Akai doresu ga suteki desu.',
+        meaning: 'Gaun merah itu bagus sekali.',
+      },
+      {
+        japanese: '赤ちゃんが笑っています。',
+        reading: 'Akachan ga waratte imasu.',
+        meaning: 'Bayinya sedang tertawa.',
+      },
+    ],
+  },
+  {
+    character: '青',
+    onyomi: 'セイ (sei), ショウ (shou)',
+    kunyomi: 'あお(い) (ao(i))',
+    meaning: 'biru',
+    examples: [
+      {
+        japanese: '青い空が広がっています。',
+        reading: 'Aoi sora ga hirogatte imasu.',
+        meaning: 'Langit biru terbentang luas.',
+      },
+      {
+        japanese: '青年は夢を追いかけます。',
+        reading: 'Seinen wa yume o oikakemasu.',
+        meaning: 'Pemuda mengejar mimpi.',
+      },
+    ],
+  },
+  {
+    character: '館',
+    onyomi: 'カン (kan)',
+    kunyomi: 'やかた (yakata)',
+    meaning: 'gedung, bangunan',
+    examples: [
+      {
+        japanese: '図書館で本を借ります。',
+        reading: 'Toshokan de hon o karimasu.',
+        meaning: 'Saya meminjam buku di perpustakaan.',
+      },
+      {
+        japanese: '映画館は満員でした。',
+        reading: 'Eigakan wa man\'in deshita.',
+        meaning: 'Bioskopnya penuh sesak.',
+      },
+    ],
+  },
+  {
+    character: '屋',
+    onyomi: 'オク (oku)',
+    kunyomi: 'や (ya)',
+    meaning: 'atap, toko',
+    examples: [
+      {
+        japanese: '本屋で雑誌を買います。',
+        reading: 'Hon\'ya de zasshi o kaimasu.',
+        meaning: 'Saya membeli majalah di toko buku.',
+      },
+      {
+        japanese: '部屋を掃除します。',
+        reading: 'Heya o sōji shimasu.',
+        meaning: 'Saya membersihkan kamar.',
+      },
+    ],
+  },
+  {
+    character: '色',
+    onyomi: 'ショク (shoku), シキ (shiki)',
+    kunyomi: 'いろ (iro)',
+    meaning: 'warna',
+    examples: [
+      {
+        japanese: '何色が好きですか。',
+        reading: 'Nani-iro ga suki desu ka.',
+        meaning: 'Kamu suka warna apa?',
+      },
+      {
+        japanese: '景色が素晴らしいです。',
+        reading: 'Keshiki ga subarashii desu.',
+        meaning: 'Pemandangannya luar biasa.',
+      },
+    ],
+  },
+  {
+    character: '走',
+    onyomi: 'ソウ (sou)',
+    kunyomi: 'はし(る) (hashi(ru))',
+    meaning: 'lari',
+    examples: [
+      {
+        japanese: '毎朝、公園を走ります。',
+        reading: 'Maiasa, kōen o hashirimasu.',
+        meaning: 'Setiap pagi saya berlari di taman.',
+      },
+      {
+        japanese: '競争相手に勝ちました。',
+        reading: 'Kyōsō aite ni kachimashita.',
+        meaning: 'Saya menang melawan pesaing.',
+      },
+    ],
+  },
+  {
+    character: '秋',
+    onyomi: 'シュウ (shuu)',
+    kunyomi: 'あき (aki)',
+    meaning: 'musim gugur',
+    examples: [
+      {
+        japanese: '秋は紅葉がきれいです。',
+        reading: 'Aki wa kōyō ga kirei desu.',
+        meaning: 'Pada musim gugur, daun-daun berubah warna menjadi indah.',
+      },
+      {
+        japanese: '秋分の日です。',
+        reading: 'Shūbun no hi desu.',
+        meaning: 'Ini adalah hari ekuinoks musim gugur.',
+      },
+    ],
+  },
+  {
+    character: '夏',
+    onyomi: 'カ (ka), ゲ (ge)',
+    kunyomi: 'なつ (natsu)',
+    meaning: 'musim panas',
+    examples: [
+      {
+        japanese: '夏休みには海へ行きます。',
+        reading: 'Natsuyasumi ni wa umi e ikimasu.',
+        meaning: 'Pada liburan musim panas saya akan pergi ke laut.',
+      },
+      {
+        japanese: '夏至は一年で一番昼が長いです。',
+        reading: 'Geshi wa ichinen de ichiban hiru ga nagai desu.',
+        meaning: 'Solstis musim panas adalah hari terpanjang dalam setahun.',
+      },
+    ],
+  },
+  {
+    character: '習',
+    onyomi: 'シュウ (shuu)',
+    kunyomi: 'なら(う) (nara(u))',
+    meaning: 'belajar',
+    examples: [
+      {
+        japanese: 'ピアノを習っています。',
+        reading: 'Piano o naratte imasu.',
+        meaning: 'Saya sedang belajar piano.',
+      },
+      {
+        japanese: '予習と復習は大切です。',
+        reading: 'Yoshū to fukushū wa taisetsu desu.',
+        meaning: 'Persiapan dan ulasan itu penting.',
+      },
+    ],
+  },
+  {
+    character: '駅',
+    onyomi: 'エキ (eki)',
+    kunyomi: '',
+    meaning: 'stasiun',
+    examples: [
+      {
+        japanese: '駅で友達を待ちます。',
+        reading: 'Eki de tomodachi o machimasu.',
+        meaning: 'Saya menunggu teman di stasiun.',
+      },
+      {
+        japanese: '駅員に道を聞きました。',
+        reading: 'Ekiin ni michi o kikimashita.',
+        meaning: 'Saya bertanya jalan pada petugas stasiun.',
+      },
+    ],
+  },
+  {
+    character: '洋',
+    onyomi: 'ヨウ (you)',
+    kunyomi: '',
+    meaning: 'samudra, barat',
+    examples: [
+      {
+        japanese: '洋服を買いに行きます。',
+        reading: 'Yōfuku o kai ni ikimasu.',
+        meaning: 'Saya pergi membeli pakaian gaya barat.',
+      },
+      {
+        japanese: '太平洋は広いです。',
+        reading: 'Taiheiyō wa hiroi desu.',
+        meaning: 'Samudra Pasifik itu luas.',
+      },
+    ],
+  },
+  {
+    character: '旅',
+    onyomi: 'リョ (ryo)',
+    kunyomi: 'たび (tabi)',
+    meaning: 'perjalanan, wisata',
+    examples: [
+      {
+        japanese: '来年、海外旅行をします。',
+        reading: 'Rainen, kaigai ryokō o shimasu.',
+        meaning: 'Tahun depan saya akan berwisata ke luar negeri.',
+      },
+      {
+        japanese: '旅館に泊まります。',
+        reading: 'Ryokan ni tomarimasu.',
+        meaning: 'Saya akan menginap di penginapan ala Jepang.',
+      },
+    ],
+  },
+  {
+    character: '服',
+    onyomi: 'フク (fuku)',
+    kunyomi: '',
+    meaning: 'pakaian',
+    examples: [
+      {
+        japanese: '新しい服を買いました。',
+        reading: 'Atarashii fuku o kaimashita.',
+        meaning: 'Saya membeli baju baru.',
+      },
+      {
+        japanese: '制服を着て学校へ行きます。',
+        reading: 'Seifuku o kite gakkō e ikimasu.',
+        meaning: 'Saya pergi ke sekolah dengan memakai seragam.',
+      },
+    ],
+  },
+  {
+    character: '夕',
+    onyomi: '(none)',
+    kunyomi: 'ゆう (yuu)',
+    meaning: 'sore',
+    examples: [
+      {
+        japanese: '夕ごはんの準備をします。',
+        reading: 'Yūgohan no junbi o shimasu.',
+        meaning: 'Saya menyiapkan makan malam.',
+      },
+      {
+        japanese: '七夕祭りに行きます。',
+        reading: 'Tanabata matsuri ni ikimasu.',
+        meaning: 'Saya pergi ke festival Tanabata.',
+      },
+    ],
+  },
+  {
+    character: '借',
+    onyomi: 'シャク (shaku)',
+    kunyomi: 'か(りる) (ka(riru))',
+    meaning: 'meminjam',
+    examples: [
+      {
+        japanese: '図書館で本を借ります。',
+        reading: 'Toshokan de hon o karimasu.',
+        meaning: 'Saya meminjam buku di perpustakaan.',
+      },
+      {
+        japanese: '借金を返します。',
+        reading: 'Shakkin o kaeshimasu.',
+        meaning: 'Saya mengembalikan utang.',
+      },
+    ],
+  },
+  {
+    character: '曜',
+    onyomi: 'ヨウ (you)',
+    kunyomi: '',
+    meaning: 'hari kerja',
+    examples: [
+      {
+        japanese: '今日は何曜日ですか。',
+        reading: 'Kyō wa nan\'yōbi desu ka.',
+        meaning: 'Hari ini hari apa?',
+      },
+      {
+        japanese: '日曜日に休みます。',
+        reading: 'Nichiyōbi ni yasumimasu.',
+        meaning: 'Saya libur pada hari Minggu.',
+      },
+    ],
+  },
+  {
+    character: '飲',
+    onyomi: 'イン (in)',
+    kunyomi: 'の(む) (no(mu))',
+    meaning: 'minum',
+    examples: [
+      {
+        japanese: 'お茶を飲みます。',
+        reading: 'Ocha o nomimasu.',
+        meaning: 'Saya minum teh.',
+      },
+      {
+        japanese: '飲食店で働いています。',
+        reading: 'Inshokuten de hataraite imasu.',
+        meaning: 'Saya bekerja di restoran.',
+      },
+    ],
+  },
+  {
+    character: '肉',
+    onyomi: 'ニク (niku)',
+    kunyomi: '',
+    meaning: 'daging',
+    examples: [
+      {
+        japanese: '牛肉と豚肉、どちらが好きですか。',
+        reading: 'Gyūniku to butaniku, dochira ga suki desu ka.',
+        meaning: 'Anda lebih suka daging sapi atau daging babi?',
+      },
+      {
+        japanese: '筋肉をつけたいです。',
+        reading: 'Kinniku o tsuketai desu.',
+        meaning: 'Saya ingin membentuk otot.',
+      },
+    ],
+  },
+  {
+    character: '貸',
+    onyomi: 'タイ (tai)',
+    kunyomi: 'か(す) (ka(su)), かし (kashi)',
+    meaning: 'meminjamkan',
+    examples: [
+      {
+        japanese: '友達にお金を貸しました。',
+        reading: 'Tomodachi ni okane o kashimashita.',
+        meaning: 'Saya meminjamkan uang kepada teman.',
+      },
+      {
+        japanese: '貸し出しカウンターはどこですか。',
+        reading: 'Kashidashi kauntā wa doko desu ka.',
+        meaning: 'Di mana meja peminjaman?',
+      },
+    ],
+  },
+  {
+    character: '堂',
+    onyomi: 'ドウ (dou)',
+    kunyomi: '',
+    meaning: 'aula, ruang publik',
+    examples: [
+      {
+        japanese: '食堂で昼ごはんを食べます。',
+        reading: 'Shokudō de hirugohan o tabemasu.',
+        meaning: 'Saya makan siang di kantin.',
+      },
+      {
+        japanese: '彼は堂々としています。',
+        reading: 'Kare wa dōdō to shite imasu.',
+        meaning: 'Dia tampak agung (percaya diri).',
+      },
+    ],
+  },
+  {
+    character: '鳥',
+    onyomi: 'チョウ (chou)',
+    kunyomi: 'とり (tori)',
+    meaning: 'burung',
+    examples: [
+      {
+        japanese: '鳥が空を飛んでいます。',
+        reading: 'Tori ga sora o tonde imasu.',
+        meaning: 'Burung sedang terbang di langit.',
+      },
+      {
+        japanese: '白鳥は美しいです。',
+        reading: 'Hakuchō wa utsukushii desu.',
+        meaning: 'Angsa itu indah.',
+      },
+    ],
+  },
+  {
+    character: '飯',
+    onyomi: 'ハン (han)',
+    kunyomi: 'めし (meshi)',
+    meaning: 'makanan, nasi',
+    examples: [
+      {
+        japanese: '晩ごはんを食べます。',
+        reading: 'Bangohan o tabemasu.',
+        meaning: 'Saya makan malam.',
+      },
+      {
+        japanese: 'ご飯のおかわりはいかがですか。',
+        reading: 'Gohan no okawari wa ikaga desu ka.',
+        meaning: 'Apakah Anda mau tambah nasi?',
+      },
+    ],
+  },
+  {
+    character: '勉',
+    onyomi: 'ベン (ben)',
+    kunyomi: 'つと(める) (tsuto(meru))',
+    meaning: 'berusaha, rajin',
+    examples: [
+      {
+        japanese: '一生懸命、勉強します。',
+        reading: 'Isshōkenmei, benkyō shimasu.',
+        meaning: 'Saya belajar dengan sungguh-sungguh.',
+      },
+      {
+        japanese: '彼は勤勉な学生です。',
+        reading: 'Kare wa kinben na gakusei desu.',
+        meaning: 'Dia adalah siswa yang rajin.',
+      },
+    ],
+  },
+  {
+    character: '冬',
+    onyomi: 'トウ (tou)',
+    kunyomi: 'ふゆ (fuyu)',
+    meaning: 'musim dingin',
+    examples: [
+      {
+        japanese: '冬は雪が降ります。',
+        reading: 'Fuyu wa yuki ga furimasu.',
+        meaning: 'Pada musim dingin, salju turun.',
+      },
+      {
+        japanese: '冬休みが楽しみです。',
+        reading: 'Fuyuyasumi ga tanoshimi desu.',
+        meaning: 'Saya menantikan liburan musim dingin.',
+      },
+    ],
+  },
+  {
+    character: '昼',
+    onyomi: 'チュウ (chuu)',
+    kunyomi: 'ひる (hiru)',
+    meaning: 'siang hari',
+    examples: [
+      {
+        japanese: '昼ごはんの時間です。',
+        reading: 'Hirugohan no jikan desu.',
+        meaning: 'Sudah waktunya makan siang.',
+      },
+      {
+        japanese: '昼夜を問わず働きます。',
+        reading: 'Chūya o towazu hatarakimasu.',
+        meaning: 'Saya bekerja siang dan malam.',
+      },
+    ],
+  },
+  {
+    character: '茶',
+    onyomi: 'チャ (cha), サ (sa)',
+    kunyomi: '',
+    meaning: 'teh',
+    examples: [
+      {
+        japanese: '緑茶を飲みます。',
+        reading: 'Ryokucha o nomimasu.',
+        meaning: 'Saya minum teh hijau.',
+      },
+      {
+        japanese: '喫茶店で会いましょう。',
+        reading: 'Kissaten de aimashō.',
+        meaning: 'Mari bertemu di kedai kopi.',
+      },
+    ],
+  },
+  {
+    character: '弟',
+    onyomi: 'テイ (tei), ダイ (dai), デ (de)',
+    kunyomi: 'おとうと (otouto)',
+    meaning: 'adik laki-laki',
+    examples: [
+      {
+        japanese: '私には弟が一人います。',
+        reading: 'Watashi ni wa otōto ga hitori imasu.',
+        meaning: 'Saya punya satu adik laki-laki.',
+      },
+      {
+        japanese: '兄弟はいますか。',
+        reading: 'Kyōdai wa imasu ka.',
+        meaning: 'Apakah Anda punya saudara kandung?',
+      },
+    ],
+  },
+  {
+    character: '牛',
+    onyomi: 'ギュウ (gyuu)',
+    kunyomi: 'うし (ushi)',
+    meaning: 'sapi',
+    examples: [
+      {
+        japanese: '牛乳を毎日飲みます。',
+        reading: 'Gyūnyū o mainichi nomimasu.',
+        meaning: 'Saya minum susu setiap hari.',
+      },
+      {
+        japanese: '牧場で牛を見ました。',
+        reading: 'Bokujō de ushi o mimashita.',
+        meaning: 'Saya melihat sapi di peternakan.',
+      },
+    ],
+  },
+  {
+    character: '魚',
+    onyomi: 'ギョ (gyo)',
+    kunyomi: 'うお (uo), さかな (sakana)',
+    meaning: 'ikan',
+    examples: [
+      {
+        japanese: '魚料理が好きです。',
+        reading: 'Sakana ryōri ga suki desu.',
+        meaning: 'Saya suka masakan ikan.',
+      },
+      {
+        japanese: '金魚を飼っています。',
+        reading: 'Kingyo o katte imasu.',
+        meaning: 'Saya memelihara ikan mas.',
+      },
+    ],
+  },
+  {
+    character: '兄',
+    onyomi: 'キョウ (kyou), ケイ (kei)',
+    kunyomi: 'あに (ani)',
+    meaning: 'kakak laki-laki',
+    examples: [
+      {
+        japanese: '兄は大学生です。',
+        reading: 'Ani wa daigakusei desu.',
+        meaning: 'Kakak laki-laki saya adalah mahasiswa.',
+      },
+      {
+        japanese: '兄弟喧嘩をしました。',
+        reading: 'Kyōdai genka o shimashita.',
+        meaning: 'Saya bertengkar dengan saudara.',
+      },
+    ],
+  },
+  {
+    character: '犬',
+    onyomi: 'ケン (ken)',
+    kunyomi: 'いぬ (inu)',
+    meaning: 'anjing',
+    examples: [
+      {
+        japanese: '犬の散歩に行きます。',
+        reading: 'Inu no sanpo ni ikimasu.',
+        meaning: 'Saya pergi mengajak anjing jalan-jalan.',
+      },
+      {
+        japanese: '番犬が家を守ります。',
+        reading: 'Banken ga ie o mamorimasu.',
+        meaning: 'Anjing penjaga melindungi rumah.',
+      },
+    ],
+  },
+  {
+    character: '妹',
+    onyomi: 'マイ (mai)',
+    kunyomi: 'いもうと (imouto)',
+    meaning: 'adik perempuan',
+    examples: [
+      {
+        japanese: '妹は高校生です。',
+        reading: 'Imōto wa kōkōsei desu.',
+        meaning: 'Adik perempuan saya adalah siswi SMA.',
+      },
+      {
+        japanese: '姉妹は仲がいいです。',
+        reading: 'Shimai wa naka ga ii desu.',
+        meaning: 'Kakak beradik (perempuan) itu akrab.',
+      },
+    ],
+  },
+  {
+    character: '姉',
+    onyomi: 'シ (shi)',
+    kunyomi: 'あね (ane)',
+    meaning: 'kakak perempuan',
+    examples: [
+      {
+        japanese: '姉は結婚しています。',
+        reading: 'Ane wa kekkon shite imasu.',
+        meaning: 'Kakak perempuan saya sudah menikah.',
+      },
+      {
+        japanese: 'お姉さん、こんにちは。',
+        reading: 'Onēsan, konnichiwa.',
+        meaning: 'Halo, Mbak.',
+      },
+    ],
+  },
+  {
+    character: '漢',
+    onyomi: 'カン (kan)',
+    kunyomi: '',
+    meaning: 'Cina',
+    examples: [
+      {
+        japanese: '漢字を勉強します。',
+        reading: 'Kanji o benkyō shimasu.',
+        meaning: 'Saya belajar kanji.',
+      },
+      {
+        japanese: '漢方薬を飲みます。',
+        reading: 'Kanpōyaku o nomimasu.',
+        meaning: 'Saya minum obat herbal Cina.',
+      },
+    ],
+  },
 ];
