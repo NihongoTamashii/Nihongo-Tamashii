@@ -26,6 +26,7 @@ import {
   BookOpen,
   LogOut,
   LogIn,
+  ChevronDown,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -135,8 +136,9 @@ export default function KotobaPage() {
           <h1 className="font-headline text-2xl font-semibold">Kotoba</h1>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost">
                 <Settings />
+                <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
