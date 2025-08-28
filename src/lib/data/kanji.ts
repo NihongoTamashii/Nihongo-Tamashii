@@ -120,5 +120,74 @@ export const kanjiN5 = [
     front: "学",
     back: "On'yomi: ガク (gaku)\nKun'yomi: まなぶ (manabu)\nArti: belajar, ilmu",
   },
+  {
+    front: "高",
+    back: "On'yomi: コウ (kō)\nKun'yomi: たかい (takai)\nArti: tall, high, expensive",
+  },
+  {
+    front: "円",
+    back: "On'yomi: エン (en)\nKun'yomi: まるい (marui)\nArti: circle, yen, round",
+  },
+  {
+    front: "子",
+    back: "On'yomi: シ (shi), ス (su)\nKun'yomi: こ (ko)\nArti: child, sign of the rat, 11PM-1AM, first sign of Chinese zodiac",
+  },
+  {
+    front: "外",
+    back: "On'yomi: ガイ (gai), ゲ (ge)\nKun'yomi: そと (soto), ほか (hoka), はずす (hazusu), はずれる (hazureru)\nArti: outside",
+  },
+  {
+    front: "八",
+    back: "On'yomi: ハチ (hachi)\nKun'yomi: や (ya), やっつ (yattsu), よう (yō)\nArti: eight",
+  },
+  {
+    front: "六",
+    back: "On'yomi: ロク (roku), リク (riku)\nKun'yomi: む (mu), むっつ (muttsu)\nArti: six",
+  },
+  {
+    front: "下",
+    back: "On'yomi: カ (ka), ゲ (ge)\nKun'yomi: した (shita), しも (shimo), もと (moto), さげる (sageru), さがる (sagaru), くだる (kudaru)\nArti: below, down, descend, give, low, inferior",
+  },
+  {
+    front: "来",
+    back: "On'yomi: ライ (rai), タイ (tai)\nKun'yomi: くる (kuru), きたる (kitaru), きる (kiru)\nArti: come, due, next, cause, become",
+  },
+  {
+    front: "気",
+    back: "On'yomi: キ (ki), ケ (ke)\nKun'yomi: いき (iki)\nArti: spirit, mind",
+  },
+  {
+    front: "小",
+    back: "On'yomi: ショウ (shō)\nKun'yomi: ちいさい (chiisai), こ- (ko-), お- (o-)\nArti: little, small",
+  },
+  {
+    front: "七",
+    back: "On'yomi: シチ (shichi)\nKun'yomi: なな (nana), ななつ (nanatsu)\nArti: seven",
+  },
+  {
+    front: "山",
+    back: "On'yomi: サン (san), セン (sen)\nKun'yomi: やま (yama)\nArti: mountain",
+  },
+  {
+    front: "話",
+    back: "On'yomi: ワ (wa)\nKun'yomi: はなす (hanasu), はなし (hanashi)\nArti: tale, talk",
+  },
+  {
+    front: "女",
+    back: "On'yomi: ジョ (jo), ニョ (nyo)\nKun'yomi: おんな (onna)\nArti: woman, female",
+  },
+  {
+    front: "北",
+    back: "On'yomi: ホク (hoku)\nKun'yomi: きた (kita)\nArti: north",
+  },
+  {
+    front: "午",
+    back: "On'yomi: ゴ (go)\nKun'yomi: うま (uma)\nArti: noon, sign of the horse, 11AM-1PM, seventh sign of Chinese zodiac",
+  },
+  {
+    front: "百",
+    back: "On'yomi: ヒャク (hyaku)\nKun'yomi: (none)\nArti: hundred",
+  },
 ];
 export const kanjiN4: any[] = [];
+
