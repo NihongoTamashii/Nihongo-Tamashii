@@ -12,7 +12,7 @@ const ITEMS_PER_PART = 30;
 
 export default function LearningKanjiSelectionPage() {
   const kanjiFlashcards = useMemo(
-    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiN5,
     []
   );
 
