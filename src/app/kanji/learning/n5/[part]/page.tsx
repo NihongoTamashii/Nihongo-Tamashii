@@ -66,12 +66,10 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
     setIsFlipped(!isFlipped);
   };
 
-  const handleSpeak = (e: React.MouseEvent) => {
+  const handleSpeak = (e: React.MouseEvent, text: string) => {
     e.stopPropagation();
-    if (speech && currentFlashcards.length > 0) {
-      const utterance = new SpeechSynthesisUtterance(
-        currentFlashcards[currentIndex].front
-      );
+    if (speech && text) {
+      const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "ja-JP";
       speech.speak(utterance);
     }
@@ -83,16 +81,6 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
     }
     return null;
   }, [currentIndex, currentFlashcards]);
-  
-  const cardBackContent = useMemo(() => {
-    if (!currentCard) return [];
-    return currentCard.back.split('\n').map(line => {
-      const [label, ...valueParts] = line.split(':');
-      const value = valueParts.join(':');
-      return { label: label.trim(), value: value.trim() };
-    });
-  }, [currentCard]);
-
 
   if (!currentCard) {
     return (
@@ -138,14 +126,14 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
       </header>
 
       <main className="flex flex-1 flex-col items-center justify-center space-y-8 p-6">
-        <div className="w-full max-w-2xl space-y-2">
+        <div className="w-full max-w-3xl space-y-2">
           <Progress value={progress} />
           <p className="text-center text-sm text-muted-foreground">
             {currentIndex + 1} / {currentFlashcards.length}
           </p>
         </div>
 
-        <div className="relative h-64 w-full max-w-2xl [perspective:1000px]">
+        <div className="relative h-[22rem] w-full max-w-3xl [perspective:1000px] md:h-96">
           <Card
             onClick={handleFlip}
             className={cn(
@@ -156,36 +144,57 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
             {/* Front of the card */}
             <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card [backface-visibility:hidden]">
               <h2 className="text-8xl font-bold text-card-foreground">
-                {currentCard.front}
+                {currentCard.character}
               </h2>
               <Button
                 variant="ghost"
                 size="icon"
                 className="absolute bottom-4 right-4 rounded-full"
-                onClick={handleSpeak}
+                onClick={(e) => handleSpeak(e, currentCard.character)}
               >
                 <Volume2 />
               </Button>
             </CardContent>
 
             {/* Back of the card */}
-            <CardContent className="absolute flex h-full w-full flex-col items-start justify-center gap-2 rounded-xl bg-card p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-              <div className="w-full space-y-4">
-                {cardBackContent.map((item, index) => (
-                  <div key={index} className="w-full">
-                    <div className="space-y-1">
-                      <h4 className="text-sm font-medium leading-none text-primary">{item.label}</h4>
-                      <p className="text-lg text-foreground">{item.value}</p>
-                    </div>
-                    {index < cardBackContent.length - 1 && <Separator className="my-3" />}
+            <CardContent className="absolute flex h-full w-full flex-col items-start justify-center gap-2 overflow-y-auto rounded-xl bg-card p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="grid w-full grid-cols-2 gap-x-6 gap-y-3">
+                  <div className="col-span-2 space-y-1 sm:col-span-1">
+                      <h4 className="text-sm font-medium leading-none text-primary">Arti</h4>
+                      <p className="text-lg text-foreground">{currentCard.meaning}</p>
                   </div>
+                   <Separator className="col-span-2 sm:hidden"/>
+                  <div className="space-y-1">
+                      <h4 className="text-sm font-medium leading-none text-primary">On'yomi</h4>
+                      <p className="text-lg text-foreground">{currentCard.onyomi}</p>
+                  </div>
+                  <div className="space-y-1">
+                      <h4 className="text-sm font-medium leading-none text-primary">Kun'yomi</h4>
+                      <p className="text-lg text-foreground">{currentCard.kunyomi}</p>
+                  </div>
+              </div>
+
+              <Separator className="my-3 w-full" />
+              
+              <div className="w-full space-y-3">
+                <h4 className="text-sm font-medium leading-none text-primary">Contoh Kata</h4>
+                <div className="space-y-2">
+                {currentCard.examples.map((item, index) => (
+                    <div key={index} className="flex items-center justify-between">
+                        <div className="flex items-baseline gap-3">
+                            <p className="text-xl font-bold text-foreground">{item.japanese}</p>
+                            <p className="text-muted-foreground">{item.reading}</p>
+                        </div>
+                        <p className="text-sm">{item.meaning}</p>
+                    </div>
                 ))}
+                </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        <div className="flex w-full max-w-2xl items-center justify-between">
+        <div className="flex w-full max-w-3xl items-center justify-between">
           <Button
             onClick={handlePrevious}
             disabled={currentIndex === 0}
