@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ArrowLeft, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const ITEMS_PER_PART = 30;
 const NUM_CHOICES = 4;
@@ -28,7 +29,7 @@ type QuizCard = {
   choices: string[];
 };
 
-export default function KotobaQuizPage() {
+function KotobaQuizComponent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const partsQuery = searchParams.get("parts");
@@ -53,7 +54,6 @@ export default function KotobaQuizPage() {
         questions = [...questions, ...flashcards.slice(startIndex, endIndex)];
       });
 
-      // Fisher-Yates shuffle algorithm
       for (let i = questions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [questions[i], questions[j]] = [questions[j], questions[i]];
@@ -107,7 +107,6 @@ export default function KotobaQuizPage() {
     setScore(0);
     setSelectedAnswer(null);
     setIsCorrect(null);
-    // Re-shuffle and generate new cards
      if (selectedParts.length > 0) {
       let questions: typeof flashcards = [];
       selectedParts.forEach((part) => {
@@ -175,7 +174,7 @@ export default function KotobaQuizPage() {
 
           <Card className="text-center">
             <CardHeader>
-              <CardTitle className="text-3xl md:text-4xl font-bold">
+              <CardTitle className="text-3xl font-bold md:text-4xl">
                 {currentCard.question}
               </CardTitle>
             </CardHeader>
@@ -220,7 +219,7 @@ export default function KotobaQuizPage() {
             <AlertDialogTitle className="text-center text-2xl font-bold">Hasil Latihan</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
               Skor Anda:
-              <p className="text-5xl font-bold text-primary my-4">{Math.round((score / quizCards.length) * 100)}</p>
+              <p className="my-4 text-5xl font-bold text-primary">{Math.round((score / quizCards.length) * 100)}</p>
               Benar {score} dari {quizCards.length} pertanyaan.
             </AlertDialogDescription>
           </AlertDialogHeader>
@@ -236,4 +235,45 @@ export default function KotobaQuizPage() {
       </AlertDialog>
     </div>
   );
+}
+
+function LoadingSkeleton() {
+    return (
+        <div className="flex h-screen w-full flex-col bg-background">
+            <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
+                <Skeleton className="h-9 w-9" />
+                <Skeleton className="h-6 w-48" />
+                <div className="w-9"></div>
+            </header>
+            <main className="flex flex-1 flex-col items-center justify-center p-4 md:p-6">
+                <div className="w-full max-w-2xl space-y-8">
+                    <div className="space-y-2">
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="mx-auto h-4 w-32" />
+                    </div>
+                    <Card className="text-center">
+                        <CardHeader>
+                            <Skeleton className="mx-auto h-10 w-3/4" />
+                        </CardHeader>
+                        <CardContent>
+                            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                                <Skeleton className="h-14 w-full" />
+                                <Skeleton className="h-14 w-full" />
+                                <Skeleton className="h-14 w-full" />
+                                <Skeleton className="h-14 w-full" />
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+            </main>
+        </div>
+    );
+}
+
+export default function KotobaQuizPage() {
+    return (
+        <Suspense fallback={<LoadingSkeleton />}>
+            <KotobaQuizComponent />
+        </Suspense>
+    );
 }
