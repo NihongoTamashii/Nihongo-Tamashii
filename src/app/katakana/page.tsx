@@ -63,7 +63,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/hiragana">
                 <SidebarMenuButton>
-                  <span className="text-2xl font-bold">あ</span>
+                  <span className="text-xl font-bold">あ</span>
                   <span>Hiragana</span>
                 </SidebarMenuButton>
               </Link>
@@ -71,7 +71,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/katakana">
                 <SidebarMenuButton isActive>
-                  <span className="text-2xl font-bold">ア</span>
+                  <span className="text-xl font-bold">ア</span>
                   <span>Katakana</span>
                 </SidebarMenuButton>
               </Link>
@@ -79,7 +79,7 @@ export default function KatakanaPage() {
             <SidebarMenuItem>
               <Link href="/kanji">
                 <SidebarMenuButton>
-                  <span className="text-2xl font-bold">日</span>
+                  <span className="text-xl font-bold">日</span>
                   <span>Kanji</span>
                 </SidebarMenuButton>
               </Link>
