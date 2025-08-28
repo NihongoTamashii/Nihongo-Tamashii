@@ -32,6 +32,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "@/hooks/useAuth";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export default function ReadingFeatureComingSoonPage({ params }: { params: Promise<{ bookId: string }> }) {
   React.use(params);
@@ -130,9 +132,16 @@ export default function ReadingFeatureComingSoonPage({ params }: { params: Promi
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
           <h1 className="font-headline text-2xl font-semibold">E-Book Library</h1>
-          <Button variant="ghost" size="icon">
-            <Settings />
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Settings />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <ThemeToggle />
+            </DropdownMenuContent>
+          </DropdownMenu>
         </header>
         <main className="flex flex-1 items-center justify-center p-6">
            <Card className="w-full max-w-md">

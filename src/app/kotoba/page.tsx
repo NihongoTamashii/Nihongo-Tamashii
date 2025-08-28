@@ -34,6 +34,8 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import Link from "next/link";
 import { useAuth } from "@/hooks/useAuth";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export default function KotobaPage() {
   const { user, logout } = useAuth();
@@ -131,9 +133,16 @@ export default function KotobaPage() {
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
           <h1 className="font-headline text-2xl font-semibold">Kotoba</h1>
-          <Button variant="ghost" size="icon">
-            <Settings />
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Settings />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <ThemeToggle />
+            </DropdownMenuContent>
+          </DropdownMenu>
         </header>
         <main className="flex-1 space-y-6 p-6">
           <Card className="border-primary/50 bg-primary/5">
