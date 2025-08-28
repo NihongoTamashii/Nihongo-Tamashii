@@ -41,7 +41,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "@/hooks/useAuth"; 
 import { ThemeToggle } from "@/components/theme-toggle";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export default function HomePage() {
   const { user, logout } = useAuth();
@@ -120,26 +120,43 @@ export default function HomePage() {
         <SidebarFooter>
            <div className="flex flex-col gap-2">
             {user ? (
-              <>
-                <div className="flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors hover:bg-sidebar-accent/10">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="h-auto justify-start gap-3 px-2">
                     <Avatar className="size-9">
-                    <AvatarImage src={user.photoURL ?? "https://picsum.photos/100/100"} data-ai-hint="person face" />
-                    <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
+                      <AvatarImage src={user.photoURL ?? "https://picsum.photos/100/100"} data-ai-hint="person face" />
+                      <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
                     </Avatar>
-                    <div className="flex flex-col">
-                    <span className="font-headline font-semibold text-sidebar-foreground">
-                        {user.displayName ?? user.email}
-                    </span>
-                    <span className="text-xs text-sidebar-foreground/70">
-                        Nihongo Member
-                    </span>
+                    <div className="flex flex-col items-start truncate">
+                      <span className="font-headline font-semibold text-sidebar-foreground truncate">
+                          {user.displayName ?? user.email}
+                      </span>
+                      <span className="text-xs text-sidebar-foreground/70">
+                          Nihongo Member
+                      </span>
                     </div>
-                </div>
-                <Button variant="ghost" className="w-full justify-start gap-2" onClick={logout}>
-                    <LogOut />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="end" forceMount>
+                  <DropdownMenuLabel className="font-normal">
+                    <div className="flex flex-col space-y-1">
+                      <p className="text-sm font-medium leading-none">{user.displayName ?? "Pengguna"}</p>
+                      <p className="text-xs leading-none text-muted-foreground">
+                        {user.email}
+                      </p>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuGroup>
+                    <ThemeToggle />
+                  </DropdownMenuGroup>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={logout}>
+                    <LogOut className="mr-2 h-4 w-4" />
                     <span>Logout</span>
-                </Button>
-              </>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             ) : (
                 <Link href="/login" passHref>
                     <Button variant="ghost" className="w-full justify-start gap-2">
@@ -155,17 +172,7 @@ export default function HomePage() {
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
           <SidebarTrigger />
           <h1 className="font-headline text-2xl font-semibold">Dashboard</h1>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost">
-                <Settings />
-                <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <ThemeToggle />
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div />
         </header>
         <main className="flex-1 space-y-6 p-6">
           <div className="flex items-center justify-between">
