@@ -119,17 +119,19 @@ export default function LearningHiraganaPage({ params }: { params: Promise<{ typ
            <h2 className="text-8xl font-bold text-card-foreground">
               {currentCard.character}
             </h2>
-            <p className="text-3xl text-muted-foreground">
-              {currentCard.romaji}
-            </p>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute bottom-4 right-4 rounded-full"
-              onClick={() => handleSpeak(currentCard.character)}
-            >
-              <Volume2 />
-            </Button>
+            <div className="flex items-center gap-2">
+                <p className="text-3xl text-muted-foreground">
+                {currentCard.romaji}
+                </p>
+                <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+                onClick={() => handleSpeak(currentCard.character)}
+                >
+                <Volume2 />
+                </Button>
+            </div>
         </Card>
       
         <div className="flex w-full max-w-2xl items-center justify-between">
