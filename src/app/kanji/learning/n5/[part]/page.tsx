@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { kanjiN5 } from "@/lib/data/kanji";
+import { Separator } from "@/components/ui/separator";
 
 const ITEMS_PER_PART = 30;
 
@@ -82,6 +83,16 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
     }
     return null;
   }, [currentIndex, currentFlashcards]);
+  
+  const cardBackContent = useMemo(() => {
+    if (!currentCard) return [];
+    return currentCard.back.split('\n').map(line => {
+      const [label, ...valueParts] = line.split(':');
+      const value = valueParts.join(':');
+      return { label: label.trim(), value: value.trim() };
+    });
+  }, [currentCard]);
+
 
   if (!currentCard) {
     return (
@@ -158,9 +169,17 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
             </CardContent>
 
             {/* Back of the card */}
-            <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-              <div className="whitespace-pre-wrap text-center text-xl font-semibold text-card-foreground">
-                {currentCard.back}
+            <CardContent className="absolute flex h-full w-full flex-col items-start justify-center gap-2 rounded-xl bg-card p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="w-full space-y-4">
+                {cardBackContent.map((item, index) => (
+                  <div key={index} className="w-full">
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-medium leading-none text-primary">{item.label}</h4>
+                      <p className="text-lg text-foreground">{item.value}</p>
+                    </div>
+                    {index < cardBackContent.length - 1 && <Separator className="my-3" />}
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
@@ -190,3 +209,4 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
     </div>
   );
 }
+
