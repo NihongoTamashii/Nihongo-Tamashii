@@ -319,6 +319,142 @@ export const kanjiN5: Kanji[] = [
     examples: [
       { japanese: '日本語がわかりますか。', reading: 'にほんごがわかりますか。', meaning: 'Apakah kamu mengerti bahasa Jepang?' },
     ],
+  },
+  {
+    character: '帰',
+    onyomi: 'キ (ki)',
+    kunyomi: 'かえる (kaeru)',
+    meaning: 'Pulang',
+    examples: [
+        { japanese: '家へ帰ります。', reading: 'いえへかえります。', meaning: 'Saya pulang ke rumah.' },
+    ],
+  },
+  {
+    character: '曜',
+    onyomi: 'ヨウ (you)',
+    kunyomi: '-',
+    meaning: 'Hari (dalam minggu)',
+    examples: [
+        { japanese: '月曜日から金曜日まで 学校があります。', reading: 'げつようびからきんようびまでがっこうがあります。', meaning: 'Sekolah dari Senin sampai Jumat.' },
+    ],
+  },
+  {
+    character: '電',
+    onyomi: 'デン (den)',
+    kunyomi: '-',
+    meaning: 'Listrik',
+    examples: [
+        { japanese: '電話をかけます。', reading: 'でんわをかけます。', meaning: 'Saya menelepon.' },
+    ],
+  },
+  {
+    character: '話',
+    onyomi: 'ワ (wa)',
+    kunyomi: 'はなす (hanasu)',
+    meaning: 'Bicara / Cerita',
+    examples: [
+        { japanese: '先生と話しました。', reading: 'せんせいとはなしました。', meaning: 'Saya bicara dengan guru.' },
+        { japanese: '友だちと話しました。', reading: 'ともだちとはなしました。', meaning: 'Saya berbicara dengan teman.' },
+    ],
+  },
+  {
+    character: '新',
+    onyomi: 'シン (shin)',
+    kunyomi: 'あたらしい (atarashii)',
+    meaning: 'Baru',
+    examples: [
+        { japanese: '新しい車を買いました。', reading: 'あたらしいくるまをかいました。', meaning: 'Saya membeli mobil baru.' },
+    ],
+  },
+  {
+    character: '古',
+    onyomi: 'コ (ko)',
+    kunyomi: 'ふるい (furui)',
+    meaning: 'Lama',
+    examples: [
+        { japanese: '古い本を読みました。', reading: 'ふるいほんをよみました。', meaning: 'Saya membaca buku lama.' },
+    ],
+  },
+  {
+    character: '書',
+    onyomi: 'ショ (sho)',
+    kunyomi: 'かく (kaku)',
+    meaning: 'Menulis',
+    examples: [
+        { japanese: '名前を書いてください。', reading: 'なまえをかいてください。', meaning: 'Tolong tulis namamu.' },
+    ],
+  },
+  {
+    character: '読',
+    onyomi: 'ドク (doku)',
+    kunyomi: 'よむ (yomu)',
+    meaning: 'Membaca',
+    examples: [
+        { japanese: '本を読みます。', reading: 'ほんをよみます。', meaning: 'Saya membaca buku.' },
+    ],
+  },
+  {
+    character: '聞',
+    onyomi: 'ブン (bun)',
+    kunyomi: 'きく (kiku) / きこえる (kikoeru)',
+    meaning: 'Mendengar / Bertanya',
+    examples: [
+        { japanese: '音楽を聞きます。', reading: 'おんがくをききます。', meaning: 'Saya mendengarkan musik.' },
+    ],
+  },
+  {
+    character: '買',
+    onyomi: 'バイ (bai)',
+    kunyomi: 'かう (kau)',
+    meaning: 'Membeli',
+    examples: [
+        { japanese: 'パンを買いました。', reading: 'パンをかいました。', meaning: 'Saya membeli roti.' },
+    ],
+  },
+  {
+    character: '安',
+    onyomi: 'アン (an)',
+    kunyomi: 'やすい (yasui)',
+    meaning: 'Murah / Aman',
+    examples: [
+        { japanese: 'この店は安いです。', reading: 'このみせはやすいです。', meaning: 'Toko ini murah.' },
+    ],
+  },
+  {
+    character: '白',
+    onyomi: 'ハク (haku)',
+    kunyomi: 'しろ (shiro) / しろい (shiroi)',
+    meaning: 'Putih',
+    examples: [
+        { japanese: '白い服を着ます。', reading: 'しろいふくをきます。', meaning: 'Saya memakai baju putih.' },
+    ],
+  },
+  {
+    character: '黒',
+    onyomi: 'コク (koku)',
+    kunyomi: 'くろ (kuro) / くろい (kuroi)',
+    meaning: 'Hitam',
+    examples: [
+        { japanese: '黒い車が好きです。', reading: 'くろいくるまがすきです。', meaning: 'Saya suka mobil hitam.' },
+    ],
+  },
+  {
+    character: '空',
+    onyomi: 'クウ (kuu)',
+    kunyomi: 'そら (sora) / あく (aku) / から (kara)',
+    meaning: 'Langit / Kosong',
+    examples: [
+        { japanese: '空が青いです。', reading: 'そらがあおいです。', meaning: 'Langit berwarna biru.' },
+    ],
+  },
+  {
+    character: '花',
+    onyomi: 'カ (ka)',
+    kunyomi: 'はな (hana)',
+    meaning: 'Bunga',
+    examples: [
+        { japanese: '花が咲きました。', reading: 'はながさきました。', meaning: 'Bunganya sudah mekar.' },
+    ],
   }
 ];
 export const kanjiN4: any[] = [];
