@@ -158,5 +158,167 @@ export const kanjiN5: Kanji[] = [
         { japanese: '子どもが公園で遊んでいます。', reading: 'こどもがこうえんであそんでいます。', meaning: 'Anak-anak sedang bermain di taman.' },
     ],
   },
+  {
+    character: '中',
+    onyomi: 'チュウ (chuu)',
+    kunyomi: 'なか (naka)',
+    meaning: 'Di dalam',
+    examples: [
+      { japanese: '箱の中に本があります。', reading: 'はこのなかにほんがあります。', meaning: 'Di dalam kotak ada buku.' },
+    ],
+  },
+  {
+    character: '出',
+    onyomi: 'シュツ (shutsu)',
+    kunyomi: 'でる (deru), だす (dasu)',
+    meaning: 'Keluar',
+    examples: [
+      { japanese: '友だちは家を出ました。', reading: 'ともだちはいえをでました。', meaning: 'Teman telah keluar dari rumah.' },
+    ],
+  },
+  {
+    character: '入',
+    onyomi: 'ニュウ (nyuu)',
+    kunyomi: 'はいる (hairu), いれる (ireru)',
+    meaning: 'Masuk',
+    examples: [
+      { japanese: '学校に入ります。', reading: 'がっこうにはいります。', meaning: 'Masuk sekolah.' },
+    ],
+  },
+  {
+    character: '天',
+    onyomi: 'テン (ten)',
+    kunyomi: 'あま (ama)',
+    meaning: 'Langit',
+    examples: [
+      { japanese: '天気がいいです。', reading: 'てんきがいいです。', meaning: 'Cuacanya bagus.' },
+    ],
+  },
+  {
+    character: '年',
+    onyomi: 'ネン (nen)',
+    kunyomi: 'とし (toshi)',
+    meaning: 'Tahun',
+    examples: [
+      { japanese: '来年、日本へ行きます。', reading: 'らいねん、にほんへいきます。', meaning: 'Tahun depan saya pergi ke Jepang.' },
+    ],
+  },
+  {
+    character: '先',
+    onyomi: 'セン (sen)',
+    kunyomi: 'さき (saki)',
+    meaning: 'Sebelumnya',
+    examples: [
+      { japanese: '先生は学校にいます。', reading: 'せんせいはがっこうにいます。', meaning: 'Guru ada di sekolah.' },
+    ],
+  },
+  {
+    character: '生',
+    onyomi: 'セイ (sei), ショウ (shou)',
+    kunyomi: 'いきる (ikiru), うまれる (umareru)',
+    meaning: 'Hidup / Lahir',
+    examples: [
+      { japanese: '学生です。', reading: 'がくせいです。', meaning: 'Saya adalah murid.' },
+    ],
+  },
+  {
+    character: '時',
+    onyomi: 'ジ (ji)',
+    kunyomi: 'とき (toki)',
+    meaning: 'Waktu / Jam',
+    examples: [
+      { japanese: '今は10時です。', reading: 'いまはじゅうじです。', meaning: 'Sekarang pukul 10.' },
+    ],
+  },
+  {
+    character: '分',
+    onyomi: 'ブン (bun), フン (fun)',
+    kunyomi: 'わける (wakeru)',
+    meaning: 'Menit / Bagian',
+    examples: [
+      { japanese: '五分だけ待ってください。', reading: 'ごふんだけまってください。', meaning: 'Tolong tunggu 5 menit saja.' },
+    ],
+  },
+  {
+    character: '名',
+    onyomi: 'メイ (mei), ミョウ (myou)',
+    kunyomi: 'な (na)',
+    meaning: 'Nama',
+    examples: [
+      { japanese: '名前はなんですか。', reading: 'なまえはなんですか。', meaning: 'Namamu siapa?' },
+    ],
+  },
+  {
+    character: '校',
+    onyomi: 'コウ (kou)',
+    kunyomi: '-',
+    meaning: 'Sekolah',
+    examples: [
+      { japanese: '学校は家の近くです。', reading: 'がっこうはいえのちかくです。', meaning: 'Sekolah ada di dekat rumah.' },
+    ],
+  },
+  {
+    character: '車',
+    onyomi: 'シャ (sha)',
+    kunyomi: 'くるま (kuruma)',
+    meaning: 'Mobil / Kendaraan',
+    examples: [
+      { japanese: '車で行きます。', reading: 'くるまでいきます。', meaning: 'Saya pergi dengan mobil.' },
+    ],
+  },
+  {
+    character: '金',
+    onyomi: 'キン (kin)',
+    kunyomi: 'かね (kane)',
+    meaning: 'Uang / Emas',
+    examples: [
+      { japanese: 'お金がありません。', reading: 'おかねがありません。', meaning: 'Saya tidak punya uang.' },
+    ],
+  },
+  {
+    character: '火',
+    onyomi: 'カ (ka)',
+    kunyomi: 'ひ (hi)',
+    meaning: 'Api',
+    examples: [
+      { japanese: '火曜日に会いましょう。', reading: 'かようびにあいましょう。', meaning: 'Mari bertemu hari Selasa.' },
+    ],
+  },
+  {
+    character: '今',
+    onyomi: 'コン (kon)',
+    kunyomi: 'いま (ima)',
+    meaning: 'Sekarang',
+    examples: [
+      { japanese: '今、何時ですか。', reading: 'いま、なんじですか。', meaning: 'Sekarang jam berapa?' },
+    ],
+  },
+  {
+    character: '店',
+    onyomi: 'テン (ten)',
+    kunyomi: 'みせ (mise)',
+    meaning: 'Toko',
+    examples: [
+      { japanese: 'あの店は安いです。', reading: 'あのみせはやすいです。', meaning: 'Toko itu murah.' },
+    ],
+  },
+  {
+    character: '会',
+    onyomi: 'カイ (kai)',
+    kunyomi: 'あう (au)',
+    meaning: 'Bertemu / Rapat',
+    examples: [
+      { japanese: '明日友だちに会います。', reading: 'あしたともだちにあいます。', meaning: 'Besok saya bertemu teman.' },
+    ],
+  },
+  {
+    character: '語',
+    onyomi: 'ゴ (go)',
+    kunyomi: 'かたる (kataru)',
+    meaning: 'Bahasa / Kata',
+    examples: [
+      { japanese: '日本語がわかりますか。', reading: 'にほんごがわかりますか。', meaning: 'Apakah kamu mengerti bahasa Jepang?' },
+    ],
+  }
 ];
 export const kanjiN4: any[] = [];
