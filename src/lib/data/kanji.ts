@@ -717,6 +717,19 @@ export const kanjiN5: Kanji[] = [
     ],
   },
   {
+    character: '入',
+    onyomi: 'ニュウ (nyuu)',
+    kunyomi: 'はいる (hairu), いれる (ireru)',
+    meaning: 'Masuk',
+    examples: [
+      {
+        japanese: '学校に 入ります。',
+        reading: 'Gakkō ni hairimasu.',
+        meaning: 'Saya masuk sekolah.',
+      },
+    ],
+  },
+  {
     character: '出',
     onyomi: 'シュツ (shutsu)',
     kunyomi: 'でる (deru), だす (dasu)',
@@ -830,6 +843,19 @@ export const kanjiN5: Kanji[] = [
         japanese: '夜に 本を 読みます。',
         reading: 'Yoru ni hon o yomimasu.',
         meaning: 'Saya membaca buku di malam hari.',
+      },
+    ],
+  },
+  {
+    character: '天',
+    onyomi: 'テン (ten)',
+    kunyomi: '–',
+    meaning: 'Langit / Cuaca',
+    examples: [
+      {
+        japanese: '天気が いいです。',
+        reading: 'Tenki ga ii desu.',
+        meaning: 'Cuacanya bagus.',
       },
     ],
   },
@@ -973,6 +999,19 @@ export const kanjiN5: Kanji[] = [
         japanese: 'これは 何ですか。',
         reading: 'Kore wa nan desu ka.',
         meaning: 'Ini apa?',
+      },
+    ],
+  },
+  {
+    character: '分',
+    onyomi: 'ブン (bun), フン (fun)',
+    kunyomi: 'わける (wakeru)',
+    meaning: 'Menit / Bagian',
+    examples: [
+      {
+        japanese: '五分 待ってください。',
+        reading: 'Go-fun matte kudasai.',
+        meaning: 'Tolong tunggu 5 menit.',
       },
     ],
   },
@@ -1146,6 +1185,32 @@ export const kanjiN5: Kanji[] = [
     ],
   },
   {
+    character: '会',
+    onyomi: 'カイ (kai)',
+    kunyomi: 'あう (au)',
+    meaning: 'Bertemu / Rapat',
+    examples: [
+      {
+        japanese: '明日 友だちに 会います。',
+        reading: 'Ashita tomodachi ni aimasu.',
+        meaning: 'Besok saya bertemu teman.',
+      },
+    ],
+  },
+  {
+    character: '話',
+    onyomi: 'ワ (wa)',
+    kunyomi: 'はなす (hanasu)',
+    meaning: 'Bicara / Cerita',
+    examples: [
+      {
+        japanese: '日本語で 話しましょう。',
+        reading: 'Nihongo de hanashimashō.',
+        meaning: 'Mari bicara dalam bahasa Jepang.',
+      },
+    ],
+  },
+  {
     character: '教',
     onyomi: 'キョウ (kyou)',
     kunyomi: 'おしえる (oshieru)',
@@ -1155,6 +1220,19 @@ export const kanjiN5: Kanji[] = [
         japanese: '先生が 日本語を 教えます。',
         reading: 'Sensei ga Nihongo o oshiemasu.',
         meaning: 'Guru mengajar bahasa Jepang.',
+      },
+    ],
+  },
+  {
+    character: '朝',
+    onyomi: 'チョウ (chou)',
+    kunyomi: 'あさ (asa)',
+    meaning: 'Pagi',
+    examples: [
+      {
+        japanese: '朝ごはんを 食べました。',
+        reading: 'Asa gohan o tabemashita.',
+        meaning: 'Saya makan sarapan pagi.',
       },
     ],
   },
@@ -1220,6 +1298,19 @@ export const kanjiN5: Kanji[] = [
         japanese: '音楽が 楽しいです。',
         reading: 'Ongaku ga tanoshii desu.',
         meaning: 'Musik itu menyenangkan.',
+      },
+    ],
+  },
+  {
+    character: '店',
+    onyomi: 'テン (ten)',
+    kunyomi: 'みせ (mise)',
+    meaning: 'Toko / Warung',
+    examples: [
+      {
+        japanese: 'あの店は とても 有名です。',
+        reading: 'Ano mise wa totemo yūmei desu.',
+        meaning: 'Toko itu sangat terkenal.',
       },
     ],
   },
