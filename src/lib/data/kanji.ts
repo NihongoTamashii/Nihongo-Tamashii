@@ -188,6 +188,85 @@ export const kanjiN5 = [
     front: "百",
     back: "On'yomi: ヒャク (hyaku)\nKun'yomi: (none)\nArti: hundred",
   },
+  {
+    front: "書",
+    back: "On'yomi: ショ (sho)\nKun'yomi: かく (kaku), -がき (-gaki)\nArti: write",
+  },
+  {
+    front: "先",
+    back: "On'yomi: セン (sen)\nKun'yomi: さき (saki)\nArti: before, ahead, previous, future, precedence",
+  },
+  {
+    front: "名",
+    back: "On'yomi: メイ (mei), ミョウ (myō)\nKun'yomi: な (na)\nArti: name, noted, distinguished, reputation",
+  },
+  {
+    front: "川",
+    back: "On'yomi: セン (sen)\nKun'yomi: かわ (kawa)\nArti: stream, river",
+  },
+  {
+    front: "千",
+    back: "On'yomi: セン (sen)\nKun'yomi: ち (chi)\nArti: thousand",
+  },
+  {
+    front: "水",
+    back: "On'yomi: スイ (sui)\nKun'yomi: みず (mizu)\nArti: water",
+  },
+  {
+    front: "半",
+    back: "On'yomi: ハン (han)\nKun'yomi: なかば (nakaba)\nArti: half, middle, odd number, semi-, part-",
+  },
+  {
+    front: "男",
+    back: "On'yomi: ダン (dan), ナン (nan)\nKun'yomi: おとこ (otoko)\nArti: male",
+  },
+  {
+    front: "西",
+    back: "On'yomi: セイ (sei), サイ (sai)\nKun'yomi: にし (nishi)\nArti: west, Spain",
+  },
+  {
+    front: "電",
+    back: "On'yomi: デン (den)\nKun'yomi: (none)\nArti: electricity",
+  },
+  {
+    front: "校",
+    back: "On'yomi: コウ (kō)\nKun'yomi: (none)\nArti: exam, school, printing, proof, correction",
+  },
+  {
+    front: "語",
+    back: "On'yomi: ゴ (go)\nKun'yomi: かたる (kataru)\nArti: word, speech, language",
+  },
+  {
+    front: "土",
+    back: "On'yomi: ド (do), ト (to)\nKun'yomi: つち (tsuchi)\nArti: soil, earth, ground",
+  },
+  {
+    front: "木",
+    back: "On'yomi: ボク (boku), モク (moku)\nKun'yomi: き (ki), こ- (ko-)\nArti: tree, wood",
+  },
+  {
+    front: "聞",
+    back: "On'yomi: ブン (bun), モン (mon)\nKun'yomi: きく (kiku), きこえる (kikoeru)\nArti: hear, ask, listen",
+  },
+  {
+    front: "食",
+    back: "On'yomi: ショク (shoku), ジキ (jiki)\nKun'yomi: くう (kuu), くらう (kurau), たべる (taberu)\nArti: eat, food",
+  },
+  {
+    front: "車",
+    back: "On'yomi: シャ (sha)\nKun'yomi: くるま (kuruma)\nArti: car",
+  },
+  {
+    front: "何",
+    back: "On'yomi: カ (ka)\nKun'yomi: なに (nani), なん (nan)\nArti: what",
+  },
+  {
+    front: "南",
+    back: "On'yomi: ナン (nan), ナ (na)\nKun'yomi: みなみ (minami)\nArti: south",
+  },
 ];
 export const kanjiN4: any[] = [];
 
+
+
+    
