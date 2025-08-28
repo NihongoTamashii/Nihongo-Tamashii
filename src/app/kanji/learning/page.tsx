@@ -1,23 +1,21 @@
 
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import { ArrowLeft, BookOpenCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { kanjiN5 } from "@/lib/data/kanji";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
-const ITEMS_PER_PART = 30;
-
-export default function LearningKanjiSelectionPage() {
-  const kanjiFlashcards = useMemo(
-    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
-    []
-  );
-
-  const totalParts = Math.ceil(kanjiFlashcards.length / ITEMS_PER_PART);
-
+export default function KanjiLevelSelectionPage() {
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
@@ -28,30 +26,50 @@ export default function LearningKanjiSelectionPage() {
             </Button>
           </Link>
           <h1 className="font-headline text-2xl font-semibold">
-            Pilih Bagian Kanji
+            Pilih Level Kanji
           </h1>
         </div>
       </header>
 
       <main className="flex-1 overflow-y-auto p-6">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {Array.from({ length: totalParts }, (_, i) => i + 1).map((part) => (
-            <Link key={part} href={`/kanji/learning/${part}`} passHref>
-              <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <BookOpenCheck className="size-8 text-primary" />
-                    <CardTitle>Bagian {part}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Kanji {(part - 1) * ITEMS_PER_PART + 1} - {Math.min(part * ITEMS_PER_PART, kanjiFlashcards.length)}
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+        <Alert className="mb-6">
+          <Terminal className="h-4 w-4" />
+          <AlertTitle>Tips Belajar</AlertTitle>
+          <AlertDescription>
+            Mulailah dari level N5 untuk membangun fondasi yang kuat sebelum
+            melanjutkan ke level yang lebih tinggi.
+          </AlertDescription>
+        </Alert>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <Link href="/kanji/learning/n5" passHref>
+            <Card className="flex transform cursor-pointer flex-col justify-between transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <BookOpenCheck className="size-8 text-primary" />
+                  <CardTitle>Kanji N5</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Dasar-dasar Kanji yang wajib dikuasai untuk pemula.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
+          <Card className="flex transform cursor-not-allowed flex-col justify-between bg-muted/50 transition-transform duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <BookOpenCheck className="size-8 text-muted-foreground" />
+                <CardTitle className="text-muted-foreground">Kanji N4</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                (Segera Hadir) Lanjutkan perjalanan Kanji Anda ke level
+                berikutnya.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </main>
     </div>

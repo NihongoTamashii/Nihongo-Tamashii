@@ -18,16 +18,12 @@ import { kanjiN5 } from "@/lib/data/kanji";
 
 const ITEMS_PER_PART = 30;
 
-export default function LearningKanjiPage({ params }: { params: { level: string, part: string } }) {
-  const { level, part: partString } = params;
-  const part = parseInt(partString, 10);
+export default function LearningKanjiPage({ params }: { params: { part: string } }) {
+  const part = parseInt(params.part, 10);
   
-  // For now, we only have N5 data. We can add a switch or if/else here later for N4.
-  const kanjiData = kanjiN5;
-
   const kanjiFlashcards = useMemo(
-    () => kanjiData.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
-    [kanjiData]
+    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    []
   );
 
   const startIndex = (part - 1) * ITEMS_PER_PART;
@@ -91,7 +87,7 @@ export default function LearningKanjiPage({ params }: { params: { level: string,
         <div className="flex h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
         <div className="flex items-center gap-4">
-          <Link href={`/kanji/learning/${level}`} passHref>
+          <Link href="/kanji/learning/n5" passHref>
             <Button variant="ghost" size="icon">
               <ArrowLeft className="h-5 w-5" />
             </Button>
@@ -115,13 +111,13 @@ export default function LearningKanjiPage({ params }: { params: { level: string,
     <div className="flex h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-6 backdrop-blur-sm">
         <div className="flex items-center gap-4">
-          <Link href={`/kanji/learning/${level}`} passHref>
+          <Link href="/kanji/learning/n5" passHref>
             <Button variant="ghost" size="icon">
               <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
           <h1 className="font-headline text-2xl font-semibold">
-            Learning Kanji {level.toUpperCase()} - Bagian {part}
+            Learning Kanji N5 - Bagian {part}
           </h1>
         </div>
         <Button variant="ghost" size="icon">
@@ -196,4 +192,3 @@ export default function LearningKanjiPage({ params }: { params: { level: string,
     </div>
   );
 }
-
