@@ -18,8 +18,8 @@ import { kanjiN5 } from "@/lib/data/kanji";
 
 const ITEMS_PER_PART = 30;
 
-export default function LearningKanjiPage({ params }: { params: { level: string, part: string } }) {
-  const { level, part: partString } = params;
+export default function LearningKanjiPage({ params }: { params: Promise<{ level: string, part: string }> }) {
+  const { level, part: partString } = React.use(params);
   const part = parseInt(partString, 10);
   
   // For now, we only have N5 data. We can add a switch or if/else here later for N4.

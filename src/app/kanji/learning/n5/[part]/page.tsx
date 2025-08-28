@@ -18,8 +18,9 @@ import { kanjiN5 } from "@/lib/data/kanji";
 
 const ITEMS_PER_PART = 30;
 
-export default function LearningKanjiPage({ params }: { params: { part: string } }) {
-  const part = parseInt(params.part, 10);
+export default function LearningKanjiPage({ params }: { params: Promise<{ part: string }> }) {
+  const { part: partString } = React.use(params);
+  const part = parseInt(partString, 10);
   
   const kanjiFlashcards = useMemo(
     () => kanjiN5,
