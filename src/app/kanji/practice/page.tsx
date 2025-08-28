@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
-import { kanjiN5 } from "@/lib/data/kanji";
+import { kanjiN5 } from "@/lib/data/kanjiN5";
 
 const ITEMS_PER_PART = 30;
 
@@ -16,7 +16,7 @@ export default function PracticeKanjiSelectionPage() {
   const router = useRouter();
   const kanjiFlashcards = useMemo(
     () =>
-      kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+      kanjiN5.filter((card) => card.character && card.character.trim() !== ""),
     []
   );
 

@@ -6,7 +6,7 @@ import { ArrowLeft, BookOpenCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { kanjiN5 } from "@/lib/data/kanji";
+import { kanjiN5 } from "@/lib/data/kanjiN5";
 
 const ITEMS_PER_PART = 30;
 

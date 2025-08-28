@@ -1315,5 +1315,3 @@ export const kanjiN5: Kanji[] = [
     ],
   },
 ];
-
-export const kanjiN4: any[] = [];

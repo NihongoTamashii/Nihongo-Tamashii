@@ -14,7 +14,7 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { kanjiN5 } from "@/lib/data/kanji";
+import { kanjiN5 } from "@/lib/data/kanjiN5";
 
 const ITEMS_PER_PART = 30;
 
@@ -26,7 +26,7 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ level:
   const kanjiData = kanjiN5;
 
   const kanjiFlashcards = useMemo(
-    () => kanjiData.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiData.filter((card) => card.character && card.character.trim() !== ""),
     [kanjiData]
   );
 
@@ -72,7 +72,7 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ level:
     e.stopPropagation();
     if (speech && currentFlashcards.length > 0) {
       const utterance = new SpeechSynthesisUtterance(
-        currentFlashcards[currentIndex].front
+        currentFlashcards[currentIndex].character
       );
       utterance.lang = "ja-JP";
       speech.speak(utterance);
@@ -148,10 +148,10 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ level:
             {/* Front of the card */}
             <CardContent className="absolute flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-card [backface-visibility:hidden]">
               <h2 className="text-5xl font-bold text-card-foreground">
-                {currentCard.frontSub}
+                {currentCard.character}
               </h2>
               <p className="text-xl text-muted-foreground">
-                {currentCard.front}
+                {currentCard.kunyomi}
               </p>
               <Button
                 variant="ghost"
@@ -166,7 +166,7 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ level:
             {/* Back of the card */}
             <CardContent className="absolute flex h-full w-full items-center justify-center rounded-xl bg-card [backface-visibility:hidden] [transform:rotateY(180deg)]">
               <h3 className="text-4xl font-semibold text-card-foreground">
-                {currentCard.back}
+                {currentCard.meaning}
               </h3>
             </CardContent>
           </Card>
@@ -196,4 +196,3 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ level:
     </div>
   );
 }
-

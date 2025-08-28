@@ -14,7 +14,7 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { kanjiN5 } from "@/lib/data/kanji";
+import { kanjiN5 } from "@/lib/data/kanjiN5";
 import { Separator } from "@/components/ui/separator";
 
 const ITEMS_PER_PART = 30;
@@ -218,4 +218,3 @@ export default function LearningKanjiPage({ params }: { params: Promise<{ part: 
     </div>
   );
 }
-

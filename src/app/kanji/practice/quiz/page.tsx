@@ -7,7 +7,7 @@ import { ArrowLeft, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { kanjiN5 } from "@/lib/data/kanji";
+import { kanjiN5 } from "@/lib/data/kanjiN5";
 import { cn } from "@/lib/utils";
 import {
   AlertDialog,
@@ -41,7 +41,7 @@ export default function KanjiQuizPage() {
   const [showResults, setShowResults] = useState(false);
   
   const allKanjiCards = useMemo(
-    () => kanjiN5.filter((card) => card.frontSub && card.frontSub.trim() !== ""),
+    () => kanjiN5.filter((card) => card.character && card.character.trim() !== ""),
     []
   );
 
@@ -66,16 +66,16 @@ export default function KanjiQuizPage() {
 
       const generatedQuizCards = questions.map((card) => {
         const incorrectAnswers = allKanjiCards
-          .filter((f) => f.frontSub !== card.frontSub)
+          .filter((f) => f.character !== card.character)
           .sort(() => 0.5 - Math.random())
           .slice(0, NUM_CHOICES - 1)
-          .map((f) => f.frontSub!);
+          .map((f) => f.character!);
         
-        const choices = [card.frontSub!, ...incorrectAnswers].sort(() => 0.5 - Math.random());
+        const choices = [card.character!, ...incorrectAnswers].sort(() => 0.5 - Math.random());
 
         return {
-          question: card.back,
-          correctAnswer: card.frontSub!,
+          question: card.meaning,
+          correctAnswer: card.character!,
           choices: choices,
         };
       });
@@ -128,16 +128,16 @@ export default function KanjiQuizPage() {
 
       const generatedQuizCards = questions.map((card) => {
         const incorrectAnswers = allKanjiCards
-          .filter((f) => f.frontSub !== card.frontSub)
+          .filter((f) => f.character !== card.character)
           .sort(() => 0.5 - Math.random())
           .slice(0, NUM_CHOICES - 1)
-          .map((f) => f.frontSub!);
+          .map((f) => f.character!);
         
-        const choices = [card.frontSub!, ...incorrectAnswers].sort(() => 0.5 - Math.random());
+        const choices = [card.character!, ...incorrectAnswers].sort(() => 0.5 - Math.random());
 
         return {
-          question: card.back,
-          correctAnswer: card.frontSub!,
+          question: card.meaning,
+          correctAnswer: card.character!,
           choices: choices,
         };
       });
